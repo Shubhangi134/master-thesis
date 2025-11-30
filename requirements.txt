@@ -1,0 +1,23 @@
+# PDF processing
+pdfplumber==0.10.1         # Extract text from PDFs (open-source)
+pytesseract==0.3.10        # OCR for scanned PDFs
+Pillow==10.1.0             # Required by pytesseract for image handling
+
+# Data manipulation
+numpy==1.26.0
+pandas==2.1.1
+
+# Text & embeddings
+sentence-transformers==2.2.2  # Create semantic embeddings (HuggingFace, open-source)
+faiss-cpu==1.7.4             # Efficient vector search
+
+# Lexical retrieval
+Whoosh==2.7.4               # BM25 indexing & search (fully open-source)
+
+# OpenAI GPT-4 API
+openai==2.8.1           # For GPT-4 generation (requires OpenAI account)
+
+# Utilities
+python-dotenv==1.0.1        # Load API keys from .env
+scikit-learn==1.3.1         # Evaluation metrics (precision, recall, F1)
+tqdm==4.66.1                # Progress bars
