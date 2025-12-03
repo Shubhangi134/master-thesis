@@ -1,0 +1,850 @@
+इंटरनेट मानक
+Disclosure to Promote the Right To Information
+Whereas the Parliament of India has set out to provide a practical regime of right to
+information for citizens to secure access to information under the control of public authorities,
+in order to promote transparency and accountability in the working of every public authority,
+and whereas the attached publication of the Bureau of Indian Standards is of particular interest
+to the public, particularly disadvantaged communities and those engaged in the pursuit of
+education and knowledge, the attached public safety standard is made available to promote the
+timely dissemination of this information in an accurate manner to the public.
+“जान1 का अ+धकार, जी1 का अ+धकार” “प0रा1 को छोड न’ 5 तरफ”
+Mazdoor Kisan Shakti Sangathan Jawaharlal Nehru
+“The Right to Information, The Right to Live” “Step Out From the Old to the New”
+IS 15139 (2002): Automotive Vehicles -- Safety Belt
+Anchorages - [TED 6: Automotive Body, Chassis, Accessories
+and Garage Equipments]
+“!ान $ एक न’ भारत का +नम-ण”
+Satyanarayan Gangaram Pitroda
+““IInnvveenntt aa NNeeww IInnddiiaa UUssiinngg KKnnoowwlleeddggee””
+“!ान एक ऐसा खजाना > जो कभी च0राया नहB जा सकता हहहहै””ै”
+Bhartṛhari—Nītiśatakam
+“Knowledge is such a treasure which cannot be stolen”
+
+
+
+
+
+Is 15139:2002
+Indian Standard
+AUTOMOTIVE VEHICLES — SAFETY BELT
+ANCHORAGES — SPECIFICATION
+1CS43.040.60
+--
+0 BIS 2002
+i BUREAU OF INDIAN STANDARDS
+MANAK BHAVAN, 9 BAHADUR SHAH ZAFAR MARG
+NEWDELH1110002
+July2002 Price Group7
+/’ i’
+
+Automotiv~ Body, Chassis Accessories and Garage Equipment Sectional Committee, TED 6
+FOREWORD
+This Indian Standard was adopted bythe Bureau ofIndian Standards, after the drafl finalized bythe Automotive
+Body, Chassis Accessories and Garage Equipment Sectional Committee had been approved by the Transport
+Engineering “DivisionCouncil.
+In the preparation of this standard considerable assistance has been taken from AIS 015.2000 AUTOMOTIVE
+VEHICLES: SAFETY BELTANCHORAGES —SPECIFICATIONS, preparedbyAutomotive IndustryStandards
+Committee setupbytheMinistry ofRoadTransport andHighways, Government ofIndia.AIS015.2000 isfurther
+based onECE Regulation 14.02‘Uniform Provisions Concerning theApproval ofVehicles with Regard to Safety
+BeltAnchorages’andEECDirective76/115/EECasamendedby96/38/EEC‘MotorVehicleSafetyBeltAnchorages’.
+Seats, safety belts, safety belt anchorages, etc, are safety critical items for the passengers in case of sudden
+deceleration and accidents. Further, seats and their design, mounting, etc, constitute substantially to the riding
+comforts ofthe vehicle users. Safety belts have become mandatory titments on frontseats of Mand Ncategories
+of vehicles from April 1994 in India. Safety belts without a proper anchorage does not serve any purpose.
+Hence, it is necessary to have a standard for safety belt anchorages to supplement the safety belts standard
+IS 15140:2002 ‘Automotive vehicles-safety beltassembly—Specification’.
+The composition ofthe Committee responsible forformulation ofthis standard isgiven inAnnex B.
+For the purpose of deciding whether aparticular requirement of this standard iscomplied with, the final value,
+observed or calculated, expressing the result of a test or analysis, shall be rounded off in accordance with
+IS 2:1960 ‘Rules forrounding off numerical values (revised’. Thenumber ofsignificant places retained inthe
+rounded off value should be the same asthat ofthe specified value inthis standard.
+z
+.
+i’l-
+i
+
+LA
+Is 15139:2002
+.-
+-— Indian Standard
+AUTOMOTIVE VEHICLES — SAFETY BELT
+ANCHORAGES — SPECIFICATION
+\ 1 SCOPE its wearer, in the event of collision or abrupt vehicle
+deceleration by limiting the mobility of the body of
+1.1 This standard specifies the requirements of safety
+wearer. Such an arrangement is referred to as a ‘belt
+belt anchorages namely, minimum numbers, their
+assembly’,atermalsoembracing anydeviceforenergy
+locations, static strength to reduce the possibility of
+absorption or belt retraction.
+their failure during accidental crashes for effective
+occupant restraint and the test procedures. 3.5Strap Guide — Adevice which altersthe lieofthe
+strap inrelation tothe wearer ofthe belt assembly.
+1.2 This standard applies to the anchorages of safety
+beltsforadultoccupants offorward-facing orrearward 3.6 Effective Belt Anchorage — The point used to
+facingseatsinvehiclesofcategories&landNas defined determine conventionally asspecified in4.4,the angle
+inIS14272(Part 1). ofeach part ofthe safety belt inrelation to the wearer
+that is the point to which a strap would need to be
+2 REFERENCES attached to provide the same lie asthe intended lie of
+the beltwhen worn, andwhich may ormay not bethe
+2.1 The following standards contain provisions which
+actual belt anchorage depending onthe configuration
+through reference in this text, constitute provision of
+ofthe safety belt hardware at itsattachment tothe belt
+this standard. At the time of publication, the editions
+anchorage.
+indicated were valid. All standards are subject to
+revision, and parties to agreements based on this 3.6.1 Where a safety belt incorporates a rigid part
+standard are encouraged to investigate the possibility which is attached to a lower belt anchorage, either
+of applying the most recent editions of the standards fixedorfreetoswivel, theeffective belt anchorage for
+-- indicated below: allpositions of seat adjustment isthe point where the
+strap is attached to that rigid part.
+IS No. Title
+13749:1993 Automotive vehicles — Determinat- 3.6.2 Where a strap guide is used on the vehicle or
+ion ofH-Point — Method ofTest seat structure, the middle point of the guide at the
+14272 Automotive vehicles — Types — place where the strap leaves the guide on the belt of
+(Part1): 1995 Terminology: Part 1Three andfour wearer side, shall be considered as the effective belt
+wheelers anchorage.
+3 TERMINOLOGY 3.6.3 Where the belt runs directly from the wearer to
+a retractor attached to the vehicle or seat structure
+Forthe purposes ofthis standard, the following terms
+without an intervening strap guide, the effective belt
+and definitions shall apply.
+anchorage shall be considered as being the inter-
+3.1 Approval of aVehicle — Theapprovalofavehicle sections oftheaxisofthereelforstoring thestrapwith
+type with anchorage$ for given types of safety-belts. the plane passing through the centre Iine of the strap
+onthe reel.
+3.2 Vehicle Type -– A category of power-driven
+vehicles which don~tdiffer insuch essential respects 3.7 Floor— The lower part ofthe vehicle body-work
+asthe dimensions, lines and materials of components connecting the vehicle sidewalls. Inthis context, this
+of the vehicle structure or seat structure to which the includes ribs, swages and possibly other reinforce-
+anchorages are attached. ments, even if they are below the floor, such as
+longitudinal and transverse members.
+3.3 Belt Anchorage — The parts of the vehicle
+structure or the seat structure or any other part of the 3.8Seat — Astructurewhichmayor maynotbeintegral
+vehicle to which the safety belt assemblies are to be withthevehiclestructurecompletewithtrim,intendedto
+secured. seatoneadultperson.Thetermcoversbothanindividual
+seatorpartofabench seatintendedto seatoneperson.
+3.4 Safety Belt/!3eat Belt/Belt — An arrangement of
+straps with a securing buckle, adjusting devices and 3.9 Front Passenger Seat — Any seat where the
+attachments whii$his capable of being anchored to a ‘H pointmeasured intheforemost position’ ofthe seat
+vehicle and desi$ned to diminish the risk of injury to in question is in or in front of the vehicle transverse
+1
+
+IS 15139:2002
+plane through the driver R-point, 3.22 R Point or the Seating Reference Point — Itis
+the design point defined by the manufacturer which
+3.10 Group of Seats — A bench-type seat, or seats
+has co-ordinates determined inrelation to the vehicle
+which are separate but side by side (that is, with the
+structure and corresponds to the theoretical positions
+foremost anchorages ofoneseatinlinewithorforward
+of the point of torso/legs rotation for the lowest and
+ofthe rearmost anchorages and inline with orbehind
+therearmost normal driving position orposition ofuse
+the foremost anchorages of another seat) and acco-
+giventoeachseatprovided bythevehiclemanufacturer
+mmodate one or more seated adult persons.
+(see Fig. 1).
+3.11 Bench Seat — A structure complete with trim,
+3.23 Torso Angle — It isthe inclination of the seat
+intended to seat more than one adult person.
+back in relation to the vertical.
+3.12 Folding Seat — An auxiliary seat intended for
+3.24 Actual Torso Angle — Itisthe angle formed by
+occasional use which isnormally folded.
+the vertical through the H point with reference to the
+3.13 Seat Type — A category of seats which do not torso line of the human body represented by the
+differ in parameters such as : manikin described in IS 13749.
+a) The shape, dimensions and materials of the 3.25 Design Torso Angle — Itisthe angle prescribed
+seat structure; by the manufacturer which determines the seat back
+b) The type and dimensions of the adjustment angle forthe lowestandmostrearward normal driving
+systems and all locking systems; and position or position of use given to each seat by the
+c) The type and dimensions of the belt anchor- vehicle manufacturer.
+ages onthe seat, oftheseatanchorage andof
+3.26 Torso Reference Line of the Manikin — Itisa
+the affected parts of thd vehicle structure.
+straight linepassing through thejoint between the leg
+3.14 Normal Seating Position — Theseatingposition and the pelvis and the theoretical joint between the
+to which the seat is designed to sit as defined by the neckandthorax (seeFig. l).
+vehicle manufacturer.
+3.27 Reference Zone — It isthe space between two
+3.15Outboard Seat —Theforward facingseatnextto vertical longitudinal planes, 400 mm and symmetrical
+the side doorslside walls of body shell. with respect to the H Point and defined by rotation
+from thevertical tothehorizontal position ofthe head
+3.16Outboard Seating Position —Theseatingposition
+form apparatus. This consists of a spherical head,
+near to the side doorslside walls o~the shell of the
+165mm indiameter andanarrangement bywhich the
+vehicle in case of bench seat.
+dimensions from thepivotal point ofthe hiptothe top
+3.17 Seat Anchorage —Thesystembywhichtheseat ofheadsphere iscontinuously adjustable between 736
+assembly issecured to the vehic le structure including mmand840mm.Thisshallbesettoamaximum length
+the affected parts of the vehicle str u cture. of840mmandpositioned foreachseating position for
+which the manufacturer has made provision as given
+3.18 Adjustment System — The device bywhich the
+below:
+seat or itsparts can be adjusted to aposition suited to
+the morphology of the seated occupant; this device a) Inthe case of sliding seats :
+may permit:
+1) Atthe H Point; and
+a)longitudinal displacement;
+2) At apoint situated horizontally 127mm
+b) vertical displacement; and forward of the H point and either at a
+c)angular displacement. height resulting from the variation inthe
+height oftheHpoint causedbyaforward
+3.19 Displacement System — Adevice enabling the
+shift of 127mm or of 19mm.
+seatoroneofitspartstobedisplaced orrotatedwithout
+afixed intermediate position, to permit easyaccessto b) Inthe case of non-sliding seats:
+the space behind the seat concerned.
+Atthe H Point ofthe seat considered.
+3.20 Locking System — A device ensuring that the 4REQUIREMENTS
+seat and its parts are maintained in any position of
+use and the seat relative to the vehicle. 4.1 General
+3.21 H Point — Itrepresents the pivot centre oftorso Anchorages for safety belt shall be sodesigned, made
+andtheoccupant intheseatedposition inthepassenger and situated asto:
+compartment. It is measured with the manikin as
+a)- Enabletheinstallationofasuitablesafetybelt.
+described inIS 13749.
+2
+,
+
+Is 15139: 2UUZ
+The belt anchorages of the front ,outboard 4.3.4 If seat belts are provided by the vehicle manu-
+positions shall be suitable for safety belts facturer as original equipment fitrnent for the other
+incorporating a retractor and pulley, taking outboard seats of the vehicle category Ml, there shall
+into consideration in particular the strength betwo lower belt anchorages ifonly 2-point lap belts
+characteristics ofthe belt anchorages, unless areprovided andadditionally oneupper beltanchorage
+the manufacturer supplies the vehicle if3-point belts areprovided.
+equipped withothertypeofsafetybeltswhich
+4.3.5 If seat belts are provided by the vehicle manu-
+incorporate retractors. If the anchorages are
+facturer asoriginal equipment tlment forother seatsin
+suitable only for particular types of safety
+Mlcategory vehicle and all other non-protected seats
+belts, it should be clearly indicated;
+in categories other than Ml as given in 4.3.1, there
+b) Reduce toaminimum the risk ofthe slipping
+shall be atleasttwo lower belt anchorages.
+of the belt when worn correctly;
+4.3.6 For folding seats, andalltheseatsofany vehicle
+c) Reduce to aminimum the risk of strap dam-
+not covered by4.3.1, 4.3.2 or4.3.3 nobelt anchorages
+age due to contact with sharp rigid parts of
+are required. However, if the vehicle is fitted with
+the vehicle or seat structures;
+anchorages forsuchseats,theanchorages shallcomply
+d) Enable the vehicle, innormal use, to comply
+with the provisions of this standard. In this case, two
+with the provisions of this standard; and
+lower anchorages shall be adequate.
+e) For anchorages which take updifferent posi-
+tions to, allow persons to enter the vehicle 4.3.7 In the case of the upper deck of a double-deck
+and to restrain the occupants, the require- vehicle, the requirements for the centre front seating
+ments shall apply to the anchorages in the position shall apply also inthe outboard front seating
+effective restraint position. positions.
+4.2 The vehicle manufacturer shall provide tothe test 4.4 Location of Belt Anchorages
+agency all the relevant information /specifications of
+4.4.1 Fortherequirements related toareasof locations
+the anchorages in the format provided in Annex A.
+of effective belt anchorages are shown in Fig. 1.The
+4.3 Minimum Number of Belt Anchorages to be belt anchorages for any onebelt may be located either
+Provided completely in the vehicle structure or in the seat
+structure or any other part of the vehicle or dispersed
+4.3.1 For the front seats ofvehicles incategory A4and
+between these locations. Any one belt anchorage may
+category N,two lower belt anchorages and one upper
+beused for attaching the ends of two adjacent safety
+belt anchorage shall be provided. However, for front
+beltsprovided that the test requirements are met.
+central seats, two lower belt anchorages shall be
+considered sufficient where thewind screen islocated 4.4.2Location of the Effective Lower Belt Anchorages
+outside the reference zone defined in3.27. Asregards
+4.4.2.1 Points LI and Lz are the lower effective belt
+the belt anchorages, the windscree n is considered to
+anchorages. The angles af and az are respectively the
+beapartofthereference zoneifitiscapableofentering
+angles between ahorizontal plane and planes perpen-
+into contact with the test apparatus according to the
+dicular tothemedian longitudinal plane ofthe vehicle
+method described in3.27.
+andpassing through point Hand the points L, and L2.
+4.3.2 For out board seating positions, other than front,
+of vehicles of category Ml, two lower anchorages are 4.4.2.2 Front seats, vehicle category Ml
+allowed, where there exists apassage between aseat
+Inmotor vehicles of category Ml, the angle a, (other
+and the nearest side-wall of the vehicle intended to
+than buckle side) shall be within the range of 30° to
+permit access of passengers to other parts of the
+80° andthe angle a2 (buckle side) shall be within the
+vehicle. A space between a seat and the side-wall is
+range of45° to 80°. Both angle requirements shall be
+considered as a passage if the distance between that
+valid for all normal traveling positions of the front
+side-wall, with all doors closed and a vertical longi-
+seats, Where at least one of the angles al or az is
+tudinal plane passing through the centre line of the
+constant(forexample anchorage fixedattheseat)inall
+seat concerned, measured atthe R-point position and
+normal positions ofuse, itsvalue shall be60l 100.In
+perpendicular to the median longitudinal plane ofthe
+the case of adjustable seats with an adjusting device
+vehicle ismorethan 500mm.
+asdescribed in3.18 with aseatback angle of lessthan
+4.3.3 The minimum number of safety belt anchorages 20°(seeFig. 1),theangleal maybe belowtheminimum
+for rearward facing seats in all locations istwo lower value (30°) given above, provided it is not less than
+anchorages. 20° inanynormal position ofuse.
+3
+
+IS 15139:2002
+PERMITTED AREA FOR
+DR= 315+1.85
+DDITIONAL ANCHORAGES
+BR=260+S
+( 4.4.3.10.2)
+(4,4.3.5 AND 4.4.3.6 )
+r
+i p REFERENCE LINE
+( 3.26)
+DISTANCE C
+(4.4.3.9 )
+,h-.
+ANGLE SPECIFIED IN *
+5.1.2 R SEATING REFERENCE POINT
+A
+( 3.22)
+0 -+ ..—
+i
+\
+I
+L ---~eO ‘ L1
+LOWER EFFECTIVE BELT
+ANCHORAGES
+( L.4.2. 1)
+I MEDIAN LONGITUDINAL
+PLANE OF THE SEAT P
+I r
+4
+R & 350MIN
+i
+120MIN
+/
+sd40MlN
+I
+FOR LEFT HANO EFFECTIVE UPPER
+OUTER SEAT/S BELT ANCHORA JG LE
+FIG.1AREASOFLOCATIONOFEFFECTIVEBELTANCHORAGES
+
+Is 15139:2002
+4.4.2.3 Rear seats, vehicle category Ml 2X: asegment perpendicular tothe median longi-
+tudinal plane of the vehicle, measured from
+Inmotor vehicles ofcategory Ml,the angles al andaz
+point Zinthe direction of the anchorage and
+shallbewithin therange of30°to80°forallrearseats.
+120mmlong;and
+If rear seats are adjustable, the above angles shall be
+valid forallnormal traveling positions. XJI :asegment perpendicular tothe plane defined
+by segments RZ and ZXmeasured in a for-
+4.4.2.4 Front seats, vehicle categories other than Ml warddirection frompointXand 60mm long.
+Inmotor vehiclesofcategoriesotherthanMl, theangles 4.4.3.2 PointJ2 isdetermined bysymmetry with point
+ctland a2must be between 30°and 80° forallnormal JI aboutthelongitudinal verticalplanepassingthrough
+traveling positions of the front seats. In the case of the torso reference line of the manikin positioned in
+vehicleshavingamaximumvehiclemassnotexceeding the seat in question (3.26 and Fig. 1).
+3.5 t,and atleastone ofthe angles al oraz isconstant
+4.4.3.3 Where a two-door configuration is used to
+inallnormal positions of use(for example anchorage
+provide accesstoboth the front and rear seats and the
+fixed atthe seat) anditsvalue shallbe60°&10°.
+upper anchorage is fitted to the ‘B’ post, the system
+4.4.2.5 Rear seats and special front or rear seats, mustbedesignedsoasnottoimpedeaccesstooregress
+vehicle categories other than Ml from the vehicle.
+InvehiclesofcategoriesofotherthanMl, inthecaseof 4.4.3.4 Sisthe distance inmillimetres ofthe effective
+upperbeltanchorages fromareference plane Pparallel
+a) bench seats;
+tothelongitudinal median plane ofthevehicle defined
+b) adjustable seats (front and rear) with an
+asfollows.
+adjusting device as described in 3.18 with a
+seat back angle of lessthan 20° (see Fig. 1); 4.4.3.4.1 Ifthe seating position iswell defined bythe
+and shapeoftheseat,theplane Pshallbethemedian plane
+c) other rear seats. of this seat.
+Angles czland az maybe between 20° and 80° inany 4.4.3.4.2 In the absence of awell defined position:
+normal position of use. Where inthe case ofthe front
+a) The plane Pfortheseat ofdriver isavertical
+seats of vehicles having amaximum vehicle massnot
+plane parallel to the median longitudinal
+exceeding 3.5 t,at least one of the angles al or a2 is
+planeofthevehicle which passesthrough the
+constant in all normal position of use (for example,
+centre of the steering-wheel in the plane of
+anchorage fixed attheseat),itsvalueshallbe60+ 100.
+the steering-wheel “rimwhen the steering-
+Incaseoftheseats,otherthanfrontseats,ofthevehicle wheel, ifadjustable, isinitscentral position;
+category Mz and MS, the angle s rz, and az shall be b) Theplane P forthe front outboard passenger
+between 45° and 90° for all normal position of use. shallbesymmetrical withthat ofthe driver;
+c) The plane P for the rear outboard seating
+4.4.2.6 The distance between the two vertical planes
+position shall bethat specified by the manu-
+parallel to median longitudinal plane of the vehicle
+facturer, on the condition that the limits for
+and passing through the two effective lower belt
+distance A between the longitudinal median
+anchorages L]and Lz,shall not be lessthan 350 mm.
+planeofthevehicleandplanePare asfollows;
+The median longitudinal plane of the seat shall pass
+between points L1andLzand shallbe atleast 120mm d) A isequal or more than 200 mm ifthe bench
+from these points. seat has been designed to accommodate two
+passengers only; and
+4.4.3 Location of the Effective Upper Belt Anchorages
+e) A isequal or more than 300 mm ifthe bench
+(see Fig.1)
+seathasbeendesigned toaccommodate more
+4.4.3.1 Ifastrap guide or similar device isusedwhich than two passengers.
+affects the location of the effective upper belt
+4.4.3.5 Theeffective upper anchorages shall liebelow
+anchorage, this location shall be determined in a
+the plane FN, which runs perpendicular to the
+conventional way by considering the position of the
+longitudinal median piane of the seat and makes an
+anchorage when the longitudinal centre line of the
+angleof65°withthereference line.Theangle may be
+strap passes through a point JI defined successively
+reduced to 60° inthe case of rear seats. The plane FN
+from theR point bythe following three segments:
+shallbesoplaced asto intersect thereference lineata
+RZ: a segment of the reference line measured in pointDsuchthatDR=315 mm+ 1.8S.However, when
+anupwarddirection formR and530mmlong; tl~ 200mm,thenDR =675 mm.
+5
+
+Is 15139:2002
+4.4.3.6 The effective upper belt anchorage shall lie 4.4.3.11.1 Inthecaseofasingle anchorage, within the
+behind a plane FK, running perpendicular to the areacommon totwo dihedrals defined bytheverticals
+longitudinal median plane ofthe seat and intersecting passing through points J] andJ2 asdefined in4.4.3.1
+the reference lineatanangle of 120°atapoint Bsuch and whose horizontal sections are shown in Fig 2.
+thatBR=260mm+S,whereS>280mmthemanufacturer
+4.4.3.11.2 In the case of two anchorages, within
+mayuseBR =260 mm+ 0.8S@his discretion.
+whichever of the above defined dihedrals is suitable,
+4.4.3.7 The value ofSshall not belessthan 140mm. provided that each anchorage isnot more than 50mm
+distant from the symmetrically-located, mirror-image
+4.4.3.8 The effective upper belt anchorages shall be
+position of the other anchorage about the plane P, as
+situated to the rear of a vertical plane perpendicular
+defined in4.4.3.4 of the seat.
+to the median longitudinal plane of the vehicle and
+passing through the R point as shown in Fig. 1. 4.5 Strength of Anchorages
+4.4.3.9 Point C is a point situated 450 mm vertically 4.5.1 Eachanchorage shallbecapable ofwithstanding
+abovetheR point. However, ifthedistanceSasdefined the tests prescribed in 5.3 and 5.4. Permanent
+in4.4.3.4 isnot lessthan 280 mm and the alternative deformation, including rupture or breakage, of any
+formula BR = 260 mm + 0.8S specified in 4.4.3.6 is anchorage or surrounding area shall not constitute
+chosen by the manufacturer, the vertical distance failure if the required force is sustained for the
+between CandR shall be500 mm. Theeffective upper specified time during the test, the minimum spacing
+belt anchorages shall be situated above the horizontal for the effective lower belt anchorages specified
+plane passing through the point C. in4.4.2.6 andthe requirement of 4.4.3.9 for effective
+upper belt anchorages shall be met.
+4.4.3.10 In addition to the upper anchorage specified
+in 4.4.3.1, other effective upper anchorages may be 4.5.2 In vehicles where the above devices are used,
+provided, ifoneofthefollowing conditions issatisfied. the displacement and release systems which enable
+allthe occupants to leavethe vehicle shall be capable
+4.4.3.10.1 The additional anchorages comply withthe
+ofbeing actuated manually after the tractive force has
+requirements of4.4.3.1 to4.4.3,9.
+ceased.
+4.4.3.10.2 The additional anchorages can be used
+without the aidoftools, comply withtherequirements 4.6Dimensions ofThreaded Anchorage Holes
+of 4.4.3.8 and 4.4.3.9 and are located in one of the
+4.6.1 An anchorage shall have a threaded hole of
+areas determined byshifting the area shown inFig. 1,
+7/16 inch (20UNF 2B).
+80mmupwards ordownwards inavertical direction.
+4.6.2 Ifthe vehicle isfitted bythe manufacturer with
+4.4.3.11 Theanchorage(s) is/areintended foraharness
+safety belts which are attached to all anchorages
+belt,complies/comply withtherequirements laiddown
+prescribed fortheseat,theseanchorages neednotmeet
+in 4.4.3.9, if it lie(s) behind the transverse plane
+the requirement set out in 4.6.1, provided that they
+passing through the reference line and is/are located.
+(Y
+1(Y
+FIG. 2 EFFECTIVEUPPER BELT ANCHORAGES
+6
+
+Is 15139:2002
+comply with the other provisions of this standard. In 5.2.3 It.isrecommended that the structure should rest
+addition, the requirement set out in 4.6.1 shall not onsupportsarranged inlinewiththeaxesofthewheels
+applytoadditional anchorages which meettherequire- or if that is not possible, in line with the point of
+ment setout in4.4.3.11. attachment of the suspension.
+4.6.3 It shall be possible to remove the safety belt 5.2.4 If a securing method other than that prescribed
+without damaging the anchorage. in5.2.1 to5.2,3 isusedanevidence shall befurnished
+that ibis equivalent and shall be checked for its
+5 TESTS completeness.
+5.1 General 5.3 General Test Requirements
+5.1.1 The tests maybe carried out either on avehicle 5.3.1 All the belt anchorages of the same group of
+structure oron acompletely finished vehicle, with the seatsshallbetested simultaneously. However, ifthere
+windows and doors fitted ornot and closed ornot and isariskthatnon-symmetrical loading ofthe seatsand/
+any fitting normally provided and likely to contribute or anchorages may lead to failures, an additional test
+totherigidity ofthevehicle structure fitted. Theabove may be carried out with non-symmetrical loading.
+should not violate the provisions of 5.2.
+5.3.2 The tractive force shall be applied in a forward
+5.1.2 Theseatsshallbefittedandplaced intheposition direction atanangleof 10°* 5°abovethehorizontal in
+for driving or use chosen by the testing authority to aplane parallel tothemedian longitudinal plane ofthe
+give the most adverse conditions with respect to the vehicle.
+strength of the system. The position ofthe seats shall
+5.3.3 Full application of the load shall be achieved
+be stated in the report. The seat-back shall, if its
+in not more than 30 s. The belt anchorages must
+inclination isadjustable, be locked asspecified bythe
+withstand the specified load for not lessthan 0.2 s.
+manufacturer or, in the absence of any such specifi-
+cation, in a position corresponding to an effective 5.3.4 The belt anchorages for seats for which upper
+seat-back angle asclose aspossible to25° for vehicle belt anchorages areprovided shall betested under the
+of categories MIand N, and to 15°for vehicles of all following conditions.
+other categories.
+5.3.4.1 Front outboard seats
+5.1.3 The tests may be restricted to the anchorages
+a) Thebeltanchorages shallbesubmitted tothe
+relating to only one seat or one group of seats on the
+test prescribed in 5.4.1 in which the loads
+condition that:
+aretransmitted tothem bymeans ofadevice
+a) the relevant anchorages have the same reproducing thegeometry ofathree-point belt
+structural charact e ristics as the anchor- equipped with aretractor having a pulley or
+ages relating to the o ther seats or group strap guide at the upper belt anchorage. In
+of seats; and addition, ifthenumber ofanchorages ismore
+b) where suchanchorages arefittedentirely than that in 4.3, these anchorages shall be
+orpartially onthe seat orgroup ofseats, subjected to the test specified in 5.4.5, in
+the structural characteristics of the seat which the loads shall be transmitted to the
+or group of seats are the same as those anchorages bymeansofadevice reproducing
+for the other seat or group of seats. the geometry ofthetype of safety belt inten-
+ded to be attached to them.
+5.2Securing of the Vehicle
+b) Inthecasewhere theretractor is,lotattached
+5.2.1 The method used to secure the vehicIe during
+totherequired outboard lowerbeltanchorage
+the test shall not be such as to strengthen the ancho-
+or inthe case where the retractor isattached
+rages or the anchorage areas or to lessen the normal
+to the upper belt anchorage, the lower belt
+deformation ofthe structure.
+anchorages shallalsobesubmitted tothe test
+5.2.2Asecuringdeviceshallberegardedassatisfactory prescribed in5.4.3.
+if itproduces no effect on an area extending over the
+c) Intheabove casethetestsprescribed in5.4.1
+whole width of the structure and ifthe vehicle or the
+and 5.4.3 shall be performed on two differ-
+structure isblocked orfixed infront atadistanceofnot
+entstructures ifdesired bythemanufacturer.
+lessthan 500 mm from the anchorage tobetested and
+heldorfixed attherear notlessthan 300mmfromthat 5.3.4.2 Rear outboard seats and all centre seats
+anchorage.
+The belt anchorages shall be subjected to the test
+7
+
+Is 15139:2002
+prescribed in 5.4.2 in which the loads are transmitted inthe caseofvehicle ofcategories M,andN,. The test
+tothembymeansofadevicereproducing thegeometry loadshallbe675*20 daNforcategories MzandNzand
+of a three point safety belt without a retractor and to 450+20 daN forcategories A4zandNB.
+the test prescribed in 5.4.3 in which the loads are
+5.4.2 Test in Configuration of a Three Point Belt
+transmitted tothetwo lowerbelt anchorages bymeans
+Without Retractor or with a Retractor at the Upper
+of a device reproducing the geometry of a lap belt.
+Belt Anchorage
+The two tests can be performed on two different
+structures ifdesired by the manufacturer. 5.4.2.1 Atestloadof 1350+20 daNshallbeapplied to
+atraction device (see Fig. 3)attached tothe upper belt
+5.3.4.3 When amanufacturer submits hisvehicle with
+anchorage andtotheopposite lower belt anchorage of
+safety-be Its,the corresponding belt anchorages may,
+thesamebelt,using, ifsupplied bythemanufacturer, a
+atthe request of the manufacturer, be submitted only
+retractor fixed atthe upper belt anchorage, inthe case
+to atest inwhich the loads aretransmitted to them by
+ofvehicle ofcategories M,and N,. The test load shalI
+means of a device reproducing the geometry of the
+be675+20 daNforcategories M2andN1and450+20
+type of belts to be attached tothese anchorages.
+daN for categories My and Ny.
+5.3.5 Ifno upper belt anchorages areprovided for the
+5.4.2.2 Atthesame time atractive force of 1350* 20
+rear outboard seatsandthe centre seats,the lowerbelt
+daN shall be applied to a traction device (see Fig. 4)
+anchorages shall be submitted to the test prescribed
+attached to the lower belt anchorages in the case of
+in 5.4.3 in which the loads are transmitted to these
+vehicle ofcategories MlandNI.The test loadshall be
+anchorages by means of a device reproducing the
+675+20 daNforcategoriesMzandN1and450*20 daN
+geometry of a lap belt.
+forcategories M~and NJ.
+5.3.6 Ifthe vehicle isdesigned toaccept other devices
+5.4.3 Test in Configuration of a Lap Belt
+which do not enable the straps to be directly attached
+to belt anchorages without intervening sheaves, etc, A test load of 2225 + 20 daN shall be applied to a
+or which require belt anchorages supplementary to traction device (see Fig. 3) attached to the two lower
+those mentioned in 4.2, the safety belt or an arran- beltanchorages inthe caseofvehicle ofcategories Ml
+gement of wires, sheaves, etc, representing the and Nl. The test load shall be 1 110 * 20 daN for
+equipment ofthe safety belt, shallbeattached bysuch categories Mz andNzand 740&20 daN for categories
+a device to the belt anchorages inthe vehicle and the Mgand N~.
+belt anchorages shall be subjected to the tests
+5.4.4 Test for Belt Anchorages Located Completely
+prescribed in 5.4 asappropriate.
+within the Seat Structure or Dispersed Between the
+5.3.7 Atest method other than those prescribed in5.3 Vehicle Structure and the Seat Structure
+may be used, but evidence must befurnished that itis
+Thetestspecified in5.4.1,5.4.2 and 5.4.3 above shall
+equivalent with the above.
+be performed, as appropriate, at the same time
+5.4Particular Test Specifications superimposing for each seat and for each group of
+seats, aforce asstated below:
+5.4.1 Test in Configuration of a Three Point Belt
+Theloadsindicated in5.4.1,5.4.2 and5.4.3shall
+Incorporating a Retractor Having Pulley or Strap
+besupplemented byaforce equalto20times the
+Guide at the Upper Belt Anchorage
+mass of the complete seat applied horizontally
+5.4.1.1 A special pulley orguide for the wire or strap and longitudinally through the centre ofgravity
+appropriate to transmit the load from the traction of the seat, in the case of vehicle of categories
+device or the pulley or strap guide supplied by the M, and N{.The test load shall be equal to 10
+manufacturer shallbefittedtotheupperbeltanchorage.
+times the weight of the complete seat for
+5.4.1.2 Atestloadof 1350+20 daNshallbeappliedto categories M2andNzand6.6timestheweight of
+a traction device (see Fig. 3) attached to the belt the complete seat for categories MJ and NJ.
+anchorages of the same belt, by means of a device
+5.4.5 Test in Configuration of aSpecial — Type Belt
+reproducing the geometry of the tipper torso strap of
+such asafety beh, inthe case ofvehicle of categories 5.4.5.1 Atestloadof 1350 *20 daNshallbeappliedto
+A41and N1.The test load shall be 675 + 20 daN for a traction device (see Fig. 4) attached to the belt
+categories MzandNzand450 l20daNforkf~andNJ. anchorages of such asafety belt bymeans of adevice
+reproducing the geometry of the upper torso strap or
+5.4.1.3 At the same time, a tractive force of
+straps.
+1350 +20 daN shall be applied to a traction device
+(see Fig.4) attached tothetwo lower belt anchorages, 5.4.5.2Atthesametime,atractiveforce 1350+20 daN
+shallbeappliedtoatraction device(seeFig.5)attached
+8
+
+Is 15139:2002
+38
+-i
+R 152
+‘T
+P-
+228
+t
+127
+1
+f
+CLOTH COVERED FOAM R 50
+THICKNESS 25
+\7
+P .—-— - .—
+I
+~510—
+-- FIG.3TRACTIONDEVICE
+P P
+I
+FIG. 4TRACTIONDEVICE
+9
+
+Is 15139:2002
+to Iower belt anchorages, in the case of vehicle of tothe load prescribed for MJorNqvehicle.
+categories Ml and N1.The test load andtractive force
+5.4.6.2Thetestloadshallbedirectedforward inrelation
+shallbe675*20 daNforcategories MzandNzand450
+tothe seatingposition corresponding tothe procedure
++20 &FJ for categories A4JandNB.
+prescribed in5.3.
+5.4.6 Test in the Case of Rearward-Facing Seats
+5.5Inspection After Testing
+5.4.6.1 Theanchorage points shallbetestedaccording
+After testing, any damage to the anchorages and
+to the forces prescribed in 5.4.1, 5.4.2 or 5,4.3 as
+appropriate. Ineachcase,thetestloadshallcorrespond structures supporting load during tests shall be
+checked, verified and noted.
+---38
+--i
+R 152
+t
+127
+/
+/
+_!Q!2-/
+P
+~s--————i
+FIG.5TRACTIONDEVICE
+10
+
+Is 15139:2002
+ANNEX A
+(Clause4.2)
+TECHNICAL SPECIFICATIONS REQUIRED TOBEPROVIDED BYVEHICLE
+MANUFACTURER ATTHETIMEOFTYPE OFEVALUATIONRELEVANTTOTHE
+REQUIREMENTS OFTHISSTANDARD
+1. Tmdename ormmkofthepower-&iven vehicle...................................................
+2, Vehicle~ ..........................................
+3. Manufacturer’s nameandaddress..................
+4. Ifapplicable, nameandaddressofthemanufacturer’s representative.......................
+5. Designation ofthetype ofbeltsandretractors authorised forfitting totheanchorages withwhich vehicle
+isequipped:
+Anchorage on(*)
+Seat
+Anchorage Position
+Structure
+Front Right-hand {Loweranchorage {Outboard
+Seat {Inboard
+{Upperanchorage
+Middle {LowerAnchorage {Right
+Seat {Left
+{Upperanchorage
+Left-hand {Loweranchorage {Outboard
+Seat {Inboard
+{Upperanchorage
+Rear
+(*) Insert inthe actual position the following letter(s):
+‘A’for athree-point belt,
+‘B’forlapbelts,
+‘S’ for special-type belts; inthis casethetype shallbe stated under ‘Remarks’,
+‘Ar’, ‘Br’or’Sr’forbeltswithretractors,
+‘Ae’, ‘Be’or’ Se’forbeltswith energy absorption device,
+‘Are’,’ Bre’or’Sre’forbeltswithretractorsandenergy absorptiondevicesonatleastoneanchorage.
+Rem* ......................................................................................................................
+....................................................................................................................
+6. Description of seats
+7. Description of the adjustment, displacement and locking systems either of the seat or of its parts
+................................................................................................................................
+8. Desctiptionofseatmchomge ..........................................................................................
+11
+/
+
+Is 15139:2002
+9. Description ofparticular type ofsafety-belt required inthecase of an anchorage located in the seat
+s&uctureorinco~orating anenergy.dissipating device...............................................................
+...........................................................................................................
+10. Documents to be furnished along with test request :
+10.1Drawings, diagrams andplans ofthe belt anchorages and ofthe vehicle structure.
+10.2Photographs of the belt anchorages and of the vehicle structure.
+10.3Drawings, diagrams and plans of the seats, their anchorages on the vehicle, of the adjustment and
+displacement systems ofthe seats andtheir parts, andtheir locking devices.
+10.4Photographs of the seats, their anchorages, the adjustment and displacement systems of the seats and
+their parts, andtheir locking devices.
+_...
+1-
+f-
+,
+12
+I
+
+Is 15139:2002
+ANNEX B
+(Foreword)
+COMMITTEECOMFOSITION
+Automotive Body, ChassisAccessories andGarage Equipment Sectional Committee, TED 6
+Organization Representative(s)
+AssociationStateRoadTransportUndertakingN, ewDelhi DRM.KOTSESHWMU(NChairnran)
+Automotive Research Association of India, Pune SHRJS.RAJO
+SHRJM.S.OGALE (Alternate)
+AndhraPradeshStateRoadTransportCorporation,Hyderabad SHJUp.ARJUNA
+SW M.V.NAGAVENDREARO(Akernate)
+AshokLeyhmdLtd,Chennai SsrruC.B.S.MSNON
+SHRJK.H.mwcraSHNA(N~Nkernate)
+SocietyofIndianAutomobileManufacture(SIAM),NewDelhi SrrruATANGUANCWLJ
+SHRISUMTSTHMMA(Alternate)
+BajajAutoLtd,Pune SrrruT.M.BALARAMAN
+SHRIV.M.MANEL(Alternate)
+BajajTempoLtd,Pune SrrRJD.P.SHAH
+SHP.SVV..Dssmmos(Ahernate)
+CentralInstituteofRoadTranspo~ Pune SHRIV.R.IALGAONKAR
+SmuP.S.MUNOL(JAlternate)
+Controllerate of Quality Assurance (Veh.), Ahmednagar SmuR.R RANALKAR
+LTCOLS.BAJAJ(Alternate)
+DaewooMotorsIndiaLtd,NewDelhi SmuDITW3THYAQ
+SrnuS.JINDA(LAlternate)
+VehicleResearchandDevelopmentEstablishmentAhmednagar %wuD.PANDGRANGAN
+SHJUS.RAMAKRISHNA (Alternate)
+-- EitherMotorsLtd,Pithampur SHRIS.VENKAT5ZSH
+H]ndustanMotorsLtd,DkttHooghly,WestBengal SmuU.K.KINI
+J.M.A.IndustriesLtd,NewDelhi SHJUKABIRBHANDmr
+StauKULDISPINGH(Alternate)
+MaharashtraStateRoadTransportUndertakings,Mumbai %rup. N.RAJGOPADHVA
+Mahindra & Mahindra Ltd, Nasik SHRJB.BHAuhnK
+SHRRJ.V.DESHMUM(Alternate)
+Maruti Udyog Ltd, Gurgaon SHNP.AGRAWAL
+SmuR.K.PARMJO(OAlternate)
+MinistryofHeavyIndustries&Department PublicEnterprisesof SHRJB.N.DAS
+HeavyIndustry,NewDelhl SHRIR.K.JAISWA(L.4//ernate)
+Ministry of Surface Transport, New Delhi SHJUD.G.%RKE
+1 Ind Auto Ltd, Mumbai SHRJA.PECORELLI
+SHJUA.M.DESHPAND(EAlternate)
+AutolivIFBIndiaLtd,Bangalore SHRIv.RAGHU
+SmuS.RANGARAJAN(Alternate)
+Research,Designs&Standards(organization,Lucknow DIRECTO(MRoms PowER)
+Ruby Coach Builders Pvt Ltd, Mumbai SmuMANOJD.KASIASHJ
+SMTMANJAJUM.KAPASH(JAlternate)
+Small Scale Industries km.ommrcc+massrom
+Swaraj Mazda Ltd, Ropar SHJUS.R.AGRAHAJU
+SmuLAKHSNDERSINGH(Alternate)
+TataEngineering&Locomotive CoLtd,Pune SHRIN.S,BABU
+SHJUSUJANCHAKRABO(ARltTerVnate)
+(Continued onpage 14)
+13
+,. /
+
+Is 15139:2002
+(Continuedfrompage 13)
+Organization Representative(s)
+Ministry of Defence, Vehicle Factory (OFB), Kolkata SHRID.K.BANOOTRA
+SHRIM.L.Suo(Alternate)
+Vankos & Co, Patna SmoV.N.Stri+mm
+SW SAIFUODINHUSSAIN(Alternate)
+VolvoIndiaPvtLtd,Bangalore SmuArmKNABEi.I
+SrzwS.V.SUDER.SON(Alternate)
+FiatIndiaLtd,ThaneDombivili(Thane) MANAGER (R&D)
+BIS Directorate General SsmrA.R.GULATID,irector&Head(Transport Engg)
+[Representing Director General (Ex-oficio) ]
+MemberSecretary
+SmuP.K.Smwmm
+Joint Director (Transport Engg), BIS
+14
+
+Bureau of Indian Standards
+BIS is a statutory institution established under the Bureau o~ Indian Standards Act, 1986 to promote
+harmonious development of the activities of stardardization, marking and quality certification of goods and
+attending to connected matters in the country.
+Copyright
+131S has the copyright of all its publications. No part of these publications may be reproduced in any form
+without the prior permission in writing of BIS. This does not preclude the free use, in the course of
+ilmpiementing the standard, of necessary details, such as symbols and sizes, type or grade designations.
+Enquiries relating to copyright be addressed to the Director (Publication), BIS.
+Review of Indian Standards
+Amendments are issued to standards asthe need arises on the basis of comments. Standards are also reviewed
+period icalIy; a standard along with amendments isreaffirmed when such review indicates that no changes are
+needed; if the review indicates that changes are needed, it is taken up for revision. Users of Indian Standards
+should ascertain that they are in possession of the latest amendments or edition by referring to the latest issue
+of’ BIS Handbook’ and ‘Standards: Monthly Additions’.
+This Indian Standard has been developed from Dot: No. TED 6(1 20).
+Amendments Issued Since Publication
+Amend No. Date of Issue Text Affected
+BUREAU OF INDIAN STANDARDS
+Headquarters:
+Manak Bhavan, 9 Bahadur Shah Zafar Marg, New Delhi 110002 Telegrams: Manaksanstha
+Telephones: 3230131,3233375,3239402 (Common to all offices)
+Regional Offices: Telephone
+Central : Manak Bhavan, 9 Bahadur Shah Zafar Marg 3237617,3233841
+NEW DELHI 110002
+Eastern : 1/14 C.I.T. Scheme VII M, V.I.P. Road, Kankurgachi 3378499,3378561
+KOLKATA 700054 { 3378626,3379120
+Northern : SCO 335-336, Sector 34-A, CHANDIGARH 160022 603843
+{602025
+Southern : C.I.T. Campus, IV Cross Road, CHENNAI 600113 2541216,2541442
+{ 2542519,2541315
+Western : Manakalaya, E9 MIDC, Marol, Andheri (East) 8329295,8327858
+MUMBAI 400093 { 8327891, 8327892
+Branches : AHMEDABAD. BANGALORE. BHOPAL. BHUBANESHWAR. COIh@ATORE. FARIDABAD.
+GHAZIABAD. GUWAHATI. HYDERABAD. JAIPUR. KANPUR. LUCKNOW. NAGPUR.
+NALAGARH. PATNA. PUNE. RAJKOT. THIRUVANANTHAPURAM. VISAKHAPATNAM.
+PrintedatSimco Printing Press, Delhi
+——
+/

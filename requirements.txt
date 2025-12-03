@@ -6,6 +6,7 @@ Pillow==10.1.0             # Required by pytesseract for image handling
 # Data manipulation
 numpy==1.26.0
 pandas==2.1.1
+openpyxl ==3.1.2          # Excel support for pandas
 
 # Text & embeddings
 sentence-transformers==2.2.2  # Create semantic embeddings (HuggingFace, open-source)

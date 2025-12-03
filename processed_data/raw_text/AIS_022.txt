@@ -32,6 +32,7 @@ MINISTRY OF ROAD TRANSPORT & HIGHWAYS
 (DEPARTMENT OF ROAD TRANSPORT & HIGHWAYS)
 GOVERNMENT OF INDIA
 October 2013
+
 AMENDMENT NO. 4
 TO
 AIS-022/2001
@@ -62,6 +63,7 @@ Substitute “----M3----.” for “----M3 and N3-----.”
 6.0 Page No.25, Annexure 8, and clause 1.0;
 Substitute “-----M3----.” for “----M3 and N3-----.”
 1/2
+
 7.0 Page No.25, Annexure 8, clause 1.0, c);
 Substitute following text for the existing text:
 “c) The conspicuity marking tape shall conform to the requirements of
@@ -85,6 +87,7 @@ MINISTRY OF SHIPPING, ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 April 2009
 2/2
+
 AMENDMENT NO. 3
 TO
 AIS-022/2001
@@ -122,6 +125,7 @@ ground, meeting the requirements of (e) and (f) below. However, a height
 of 2100 mm may be accepted in cases where technical conditions prevent
 the adherence to the maximum value of 1500 mm.
 1/3
+
 e) The marker shall begin at a location not further than 150 mm from the
 outer edges of vehicle defined by outer edges of the bumper.
 f) The marker shall cover atleast 80% of the width of the vehicle at
@@ -151,6 +155,7 @@ the adherence to the maximum value of 1500 mm.
 e) The marker shall begin at a location not further than 150 mm from the
 outer edges of vehicle defined by outer edges of the bumper.
 2/3
+
 f) The marker shall cover at least 80% of the width of the vehicle at the
 rear and may be in the form of continuous or non-continuous elements,
 if body structure doesn’t allow fixing marker continuously. ”
@@ -167,6 +172,7 @@ MINISTRY OF SHIPPING, ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 December 2007
 3/3
+
 AMENDMENT NO. 2
 TO
 AIS-022/2001
@@ -196,6 +202,7 @@ categories of vehicles ”
 6.0 Page No.1, clause 2., References:
 Add new paragraph as follows;
 1/3
+
 “ 3) IS:14221 - 1995 : Automotive Vehicles – Retro-reflective Sheets and Tapes –
 Specifications.”
 7.0 Page No.2, clause 4.0, Application for Approval:
@@ -229,6 +236,7 @@ elements, if body structure doesn’t allow fixing marker continuously, is
 affixed on either side of vehicle between 250 mm to 1500 mm from the
 ground, meeting the requirements of (e) and (f) below.
 2/3
+
 e) The marker shall begin at a location not further than 150 mm from the outer
 edges of vehicle defined by outer edges of the bumper.
 f) The marker shall cover atleast 80% of the width of the vehicle at the front and
@@ -248,6 +256,7 @@ MINISTRY OF SHIPPING, ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 March 2006
 3/3
+
 AMENDMENT NO. 1
 TO
 AIS-022/2001
@@ -270,6 +279,7 @@ SET-UP BY
 MINISTRY OF ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 January 2004
+
 AIS - 022/2001
 AUTOMOTIVE INDUSTRY STANDARD
 Automotive Vehicles –
@@ -286,12 +296,14 @@ SET-UP BY
 MINISTRY OF ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 May 2001
+
 AIS - 022/2001
 Status chart of the Standard to be used by the purchaser
 for updating the record
 Sr. Corr- Amend- Revision Date Remark Misc.
 No. igenda. ment
 General remarks :
+
 AIS - 022/2001
 Introduction
 The Automotive Industries Standards Committee (AISC) functions under the
@@ -313,6 +325,7 @@ effective warning and hence alignment with ECE R 27 is necessary as this
 specifies a larger triangle. This standard fulfils the above requirement.
 The Committee responsible for preparation of this standard is in
 Annexure- 8.
+
 AIS - 022/2001
 Automotive Vehicles – Advance Warning Triangles Specifications
 1. SCOPE AND APPLICABILITY
@@ -344,6 +357,7 @@ perpendicular to the front face of the triangle, passes through its centre;
 excited by daylight, exhibits the phenomenon of photo-luminescence
 ceasing rather shortly after excitation;
 1
+
 AIS - 022/2001
 3.7 Luminance factor the ratio of the luminance of the body considered to
 the luminance of the perfect diffuser under identical conditions of
@@ -382,6 +396,7 @@ requirements of this Standard, approval shall be granted.
 6.2 The trade name or mark on the protective cover shall be visible from the
 outside.
 2
+
 AIS - 022/2001
 6.3 The ‘S’ or ‘E’ mark shall be clearly legible and indelible.
 7.0 GENERAL SPECIFICATIONS
@@ -420,6 +435,7 @@ instructions referred to in Paragraph 4.3 above.
 8.1 Requirements as to Shape and Dimensions
 8.1.1 Shape and Dimensions of the Triangle (see Annex 2)
 3
+
 AIS - 022/2001
 8.1.1.1.The theoretical sides of the triangle shall be at least 500– 50 mm in length.
 8.1.1.2 The retro-reflecting units shall be arranged along the edge within a strip of
@@ -457,6 +473,7 @@ described in Annexure 4, paragraph 2.1.
 8.2.2.1 The fluorescent materials shall either be coloured in the mass or take the
 form of separate coatings applied to the surface of the triangle.
 4
+
 AIS - 022/2001
 8.2.2.2 When the fluorescent material is illuminated by the CIE standard
 illuminant C the trichromatic co-ordinates of the light reflected and
@@ -496,6 +513,7 @@ illumination of approximately 1 lux.
 8.3.1.4 The measurements referred to above shall be performed by the method
 described in Annexure 4 to this standard, paragraph 4.
 5
+
 AIS - 022/2001
 8.3.2 Fluorescent Materials
 8.3.2.1 The Luminance factor including the luminance by reflection and
@@ -531,6 +549,7 @@ procedures set forth in Annex 7 shall be complied with.
 conformity control methods applied in each production facility. The
 normal frequency of these verifications shall be once every two years.
 6
+
 AIS - 022/2001
 ANNEXURE 1
 (Ref. Para 4.2)
@@ -545,12 +564,15 @@ Type of protective cover , when provided
 Type of protection if provided by other means
 Location where ‘S’ or ‘E’ mark will be printed (as applicable)
 7
+
 AIS - 022/2001
 ANNEXURE 2
 (Ref. Para 8.1.1)
 8
+
 AIS - 022/2001
 9
+
 AIS - 022/2001
 ANNEXURE 3
 DETERMINATION OF THE ROUGHNESS OF THE ROAD SURFACE
@@ -599,6 +621,7 @@ mean sand depth H of the road surface where the advance-warning
 S
 triangle has been placed.
 10
+
 AIS - 022/2001
 ANNEXXURE 4
 TEST PROCEDURES
@@ -641,6 +664,7 @@ below on the sample which, as a result of a visual inspection seems to have
 the least favourable colorimetric characteristics; in other cases the sample
 with the highest CIL concerned shall be examined.
 11
+
 AIS - 022/2001
 1.6.3 Test of clearance to ground according to Paragraph 5 below.
 1.6.4 Mechanical solidity test according to Paragraph 6 below.
@@ -673,6 +697,7 @@ colour limits defined in Paragraph 8.2.1.2 of this standard.
 specifications shall be verified by determining the trichromatic co-
 ordinates of the most doubtful sample.
 12
+
 AIS - 022/2001
 2.2 Colour of the Fluorescent material
 2.2.1 The colour of the fluorescent material to be tested according to the
@@ -718,6 +743,7 @@ parallel to the said plane.
 4.2 The measurement shall be performed by the method described in Annexure
 6 to this standard.
 13
+
 AIS - 022/2001
 5. TEST OF CLEARANCE TO GROUND
 5.1 The advance-warning triangle shall be required to pass the following tests:
@@ -754,6 +780,7 @@ temperature use at the following conditions:
 Temperature -10(cid:176) C
 Duration of exposure 12 hours
 14
+
 AIS - 022/2001
 9. WATER TEST
 The triangle - collapsible advance-warning triangles are to be assembled is
@@ -796,6 +823,7 @@ not more than 5 cm, however, shall be allowed.
 11.5 The triangular part of the device shall not rotate through more than 10(cid:176)
 round a horizontal axis or a vertical axis from its initial position.
 15
+
 AIS - 022/2001
 12. TEST OF RESISTANCE OF THE RETRO-REFLECTING DEVICE
 12.1 Test of Resistance to penetration of water
@@ -839,6 +867,7 @@ luminance factor (see Paragraph 3 above shall be at least 30% and shall
 not have increased by more than 5% compared with the value ascertained
 according to Paragraph 1.8.2 above.
 16
+
 AIS - 022/2001
 13.3 The sample shall not exhibit any visible damage such as cracks, scaling or
 peeling of the fluorescent material.
@@ -847,6 +876,7 @@ successfully passed the above mentioned tests in a previous approval test,
 the test need not be repeated; a corresponding note shall be entered as
 “Remarks” in the final test report.
 17
+
 AIS - 022/2001
 ANNEXURE : 5
 WORST CASE CRITERIA
@@ -893,6 +923,7 @@ the warning triangle
 Changes other than those listed above are considered to be having no adverse
 effect on Warning Triangle.
 18
+
 AIS - 022/2001
 ANNEXURE 6
 METHOD OF MEASUREMENT OF THE CIL OF THE RETRO-
@@ -928,6 +959,7 @@ the area of its aperture; otherwise suitable provisions must be added, e.g.
 the application of a diffusing window at a certain distance in front of the
 sensitive surface.
 19
+
 AIS - 022/2001
 2.5.3 Experience has shown that non-linearity of photometer heads may be a
 problem with the very small quantities which are the rule in the
@@ -951,6 +983,7 @@ axis is perpendicular to the plane containing the observation axis and the
 illumination axis. The second axis is perpendicular both to the first axis and to the
 reference axis. All axes, angles, and directions of rotation are shown positive.
 20
+
 AIS - 022/2001
 Note:
 (a) The principal fixed axis is the illumination axis.
@@ -971,8 +1004,10 @@ Representation of a Goniometer mechanism embodying the CIE angular system
 for specifying and measuring retro-reflectors. All angles and directions of
 rotationare shown Positive.
 21
+
 AIS - 022/2001
 22
+
 AIS - 022/2001
 ANNEXURE 7
 MINIMUM REQUIREMENTS FOR CONFORMITY OF PRODUCTION
@@ -1010,6 +1045,7 @@ applied methods are equivalent to those laid down in this Standard.
 of test apparatus and its correlation with measurements made by a
 competent authority.
 23
+
 AIS - 022/2001
 2.2.4 In all cases the reference methods shall be those of this Standard,
 particularly for the purpose of administrative verification and sampling.
@@ -1033,6 +1069,7 @@ governing the acceptability of his products in order to meet the
 specifications laid down for verification of conformity of products in
 Paragraph 11.1 of this Standard .
 24
+
 AIS - 022/2001
 ANNEXURE-8
 (see Introduction)

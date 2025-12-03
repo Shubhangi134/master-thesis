@@ -1,0 +1,421 @@
+ISO
+INTERNATIONAL
+STANDARD
+Second edition
+Road vehicles — Functional safety —
+Vocabulary
+Part 1:
+Véhicules routiers — Sécurité fonctionnelle —
+Partie 1: Vocabulaire
+iTeh STANDARD PREVIEW
+(standards.iteh.ai)
+ISO 26262-1:2018
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+Reference number
+ISO 26262-1:2018(E)
+©
+ISO 2018
+
+iTeh STANDARD PREVIEW
+(standards.iteh.ai)
+ISO 26262-1:2018
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+COPYRIGHT PROTECTED DOCUMENT
+© ISO 2018
+All rights reserved. Unless otherwise specified, or required in the context of its implementation, no part of this publication may
+be reproduced or utilized otherwise in any form or by any means, electronic or mechanical, including photocopying, or posting
+on the internet or an intranet, without prior written permission. Permission can be requested from either ISO at the address
+below or ISO’s member body in the country of the requester.
+ISO copyright office
+CP 401 • Ch. de Blandonnet 8
+CH-1214 Vernier, Geneva
+Phone: +41 22 749 01 11
+Fax: +41 22 749 09 47
+Email: copyright@iso.org
+Website: www.iso.org
+Published in Switzerland
+ii © ISO 2018 – All rights reserved
+
+Contents
+Page
+Foreword iv
+Introduction vi
+........................................................................................................................................................................................................................................
+1 Scope 1
+................................................................................................................................................................................................................................
+2 Normative references 1
+.................................................................................................................................................................................................................................
+3 Terms and definitions 1
+......................................................................................................................................................................................
+4 Abbreviated terms 28
+.....................................................................................................................................................................................
+Bibliography 33
+...........................................................................................................................................................................................
+.............................................................................................................................................................................................................................
+iTeh STANDARD PREVIEW
+(standards.iteh.ai)
+ISO 26262-1:2018
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+© ISO 2018 – All rights reserved iii
+
+Foreword
+ISO (the International Organization for Standardization) is a worldwide federation of national standards
+bodies (ISO member bodies). The work of preparing International Standards is normally carried out
+through ISO technical committees. Each member body interested in a subject for which a technical
+committee has been established has the right to be represented on that committee. International
+organizations, governmental and non-governmental, in liaison with ISO, also take part in the work.
+ISO collaborates closely with the International Electrotechnical Commission (IEC) on all matters of
+electrotechnical standardization.
+The procedures used to develop this document and those intended for its further maintenance are
+described in the ISO/IEC Directives, Part 1. In particular, the different approval criteria needed for the
+different types of ISO documents should be noted. This document was drafted in accordance with the
+editorial rules of the ISO/IEC Directives, Part 2 (see www .iso .org/directives).
+Attention is drawn to the possibility that some of the elements of this document may be the subject of
+patent rights. ISO shall not be held responsible for identifying any or all such patent rights. Details of
+any patent rights identified during the development of the document will be in the Introduction and/or
+on the ISO list of patent declarations received (see www .iso .org/patents).
+Any trade name used in this document is information given for the convenience of users and does not
+constitute an endorsement.
+iTeh STANDARD PREVIEW
+For an explanation on the voluntary nature of standards, the meaning of ISO specific terms and
+(standards.iteh.ai)
+expressions related to conformity assessment, as well as information about ISO's adherence to the
+World Trade Organization (WTO) principles in the Technical Barriers to Trade (TBT) see the following
+URL: www .iso .org/iso/foreword .html. Road vehicles Subcommittee
+ISO 26262-1:2018
+Electrical and electronic components and general system aspects
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+This document was prepared by Technical Committee ISO/TC 22, , SC 32,
+38aedd5d0742/iso-26262-1-2018
+.
+This edition of ISO 26262 series of standards cancels and replaces the edition ISO 26262:2011 series of
+standards, which has been technically revised and includes the following main changes:
+— requirements for trucks, buses, trailers and semi-trailers;
+— extension of the vocabulary;
+— more detailed objectives;
+— objective oriented confirmation measures;
+— management of safety anomalies;
+— references to cyber security;
+— updated target values for hardware architecture metrics;
+— guidance on model based development and software safety analysis;
+— evaluation of hardware elements;
+— additional guidance on dependent failure analysis;
+— guidance on fault tolerance, safety-related special characteristics and software tools;
+— guidance for semiconductors;
+— requirements for motorcycles; and
+— general restructuring of all parts for improved clarity.
+iv © ISO 2018 – All rights reserved
+
+Any feedback or questions on this document should be directed to the user’s national standards body. A
+complete listing of these bodies can be found at www .iso .org/members .html.
+A list of all parts in the ISO 26262 series can be found on the ISO website.
+iTeh STANDARD PREVIEW
+(standards.iteh.ai)
+ISO 26262-1:2018
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+© ISO 2018 – All rights reserved v
+
+Introduction
+The ISO 26262 series of standards is the adaptation of IEC 61508 series of standards to address the
+sector specific needs of electrical and/or electronic (E/E) systems within road vehicles.
+This adaptation applies to all activities during the safety lifecycle of safety-related systems comprised
+of electrical, electronic and software components.
+Safety is one of the key issues in the development of road vehicles. Development and integration of
+automotive functionalities strengthen the need for functional safety and the need to provide evidence
+that functional safety objectives are satisfied.
+With the trend of increasing technological complexity, software content and mechatronic
+implementation, there are increasing risks from systematic failures and random hardware failures,
+these being considered within the scope of functional safety. ISO 26262 series of standards includes
+guidance to mitigate these risks by providing appropriate requirements and processes.
+To achieve functional safety, the ISO 26262 series of standards:
+a) provides a reference for the automotive safety lifecycle and supports the tailoring of the activities
+to be performed during the lifecycle phases, i.e., development, production, operation, service and
+decommissioning;
+iTeh STANDARD PREVIEW
+b) provides an automotive-specific risk-based approach to determine integrity levels [Automotive
+Safety Integrity Levels (ASILs)]; (standards.iteh.ai)
+c) uses ASILs to specify which of the requirements of ISO 26262 are applicable to avoid unreasonable
+residual risk; ISO 26262-1:2018
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+d) provides requirements for functional safety management, design, implementation, verification,
+38aedd5d0742/iso-26262-1-2018
+validation and confirmation measures; and
+e) provides requirements for relations between customers and suppliers.
+The ISO 26262 series of standards is concerned with functional safety of E/E systems that is achieved
+through safety measures including safety mechanisms. It also provides a framework within which
+safety-related systems based on other technologies (e.g. mechanical, hydraulic and pneumatic) can be
+considered.
+The achievement of functional safety is influenced by the development process (including such
+activities as requirements specification, design, implementation, integration, verification, validation
+and configuration), the production and service processes and the management processes.
+Safety is intertwined with common function-oriented and quality-oriented activities and work
+products. The ISO 26262 series of standards addresses the safety-related aspects of these activities and
+work products.
+Figure 1 shows the overall structure of the ISO 26262 series of standards. The ISO 26262 series of
+standards is based upon a V-model as a reference process model for the different phases of product
+development. Within the figure:
+— the shaded “V”s represent the interconnection among ISO 26262-3, ISO 26262-4, ISO 26262-5,
+ISO 26262-6 and ISO 26262-7;
+— for motorcycles:
+— ISO 26262-12:2018, Clause 8 supports ISO 26262-3;
+— ISO 26262-12:2018, Clauses 9 and 10 support ISO 26262-4;
+— the specific clauses are indicated in the following manner: “m-n”, where “m” represents the number
+of the particular part and “n” indicates the num ber of the clause within that part.
+vi © ISO 2018 – All rights reserved
+
+EXAMPLE “2-6” represents ISO 26262-2:2018, Clause 6.
+iTeh STANDARD PREVIEW
+(standards.iteh.ai)
+ISO 26262-1:2018
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+Figure 1 — Overview of the ISO 26262 series of standards
+© ISO 2018 – All rights reserved vii
+
+iTeh STANDARD PREVIEW
+(standards.iteh.ai)
+ISO 26262-1:2018
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+
+INTERNATIONAL STANDARD ISO 26262-1:2018(E)
+Road vehicles — Functional safety —
+Vocabulary
+Part 1:
+1 Scope
+This document is intended to be applied to safety-related systems that include one or more electrical
+and/or electronic (E/E) systems and that are installed in series production road vehicles, excluding
+mopeds. This document does not address unique E/E systems in special vehicles such as E/E systems
+designed for drivers with disabilities.
+NOTE Other dedicated application-specific safety standards exist and can complement the ISO 26262 series
+of standards or vice versa.
+Systems and their components released for production, or systems and their components already under
+development prior to the publication date of this document, are exempted from the scope of this edition.
+iTeh STANDARD PREVIEW
+This document addresses alterations to existing systems and their components released for production
+prior to the publication of this document by tailoring the safety lifecycle depending on the alteration.
+(standards.iteh.ai)
+This document addresses integration of existing systems not developed according to this document and
+systems developed according to this document by tailoring the safety lifecycle.
+ISO 26262-1:2018
+This document addresses possible hazards caused by malfunctioning behaviour of safety-related E/E
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+systems, including interaction of these systems. It does not address hazards related to electric shock,
+38aedd5d0742/iso-26262-1-2018
+fire, smoke, heat, radiation, toxicity, flammability, reactivity, corrosion, release of energy and similar
+hazards, unless directly caused by malfunctioning behaviour of safety-related E/E systems.
+This document describes a framework for functional safety to assist the development of safety-
+related E/E systems. This framework is intended to be used to integrate functional safety activities
+into a company-specific development framework. Some requirements have a clear technical focus to
+implement functional safety into a product; others address the development process and can therefore
+be seen as process requirements in order to demonstrate the capability of an organization with respect
+to functional safety.
+This document defines the vocabulary of terms used in the ISO 26262 series of standards.
+2 Normative references
+The following documents are referred to in the text in such a way that some or all of their content
+constitutes requirements of this document. For dated references, only the edition cited applies. For
+undated references, thReo laadt evseth eicdleitsi o—n oFfu tnhcet iroenfaelr seanfceetdy document (including any amendments) applies.
+ISO 26262 (all parts),
+3 Terms and definitions
+For the purposes of this document, the terms and definitions given in ISO 26262 (all parts) and the
+following apply.
+ISO and IEC maintain terminological databases for use in standardization at the following addresses:
+— ISO Online browsing platform: available at https: //www .iso .org/obp
+— IEC Electropedia: available at http: //www .elect ropedia .org/ 1
+
+3.1
+architecture
+item element
+representation of the structure of the (3.84) or (3.41) that allows identification of
+building blocks, their boundaries and interfaces, and includes the allocation of requirements to these
+b3u.2ilding blocks
+ASIL capability
+item element safety
+ASIL
+capability of the (3.84) or (3.41) to meet assumed (3.132) requirements assigned
+with a given (3.6)
+element
+Note 1 to entry: As a part of hardware safety requirements, achievement of the corresponding random hardware
+target values for fault metrics (see ISO 26262-5:2018, Clauses 8 and 9) allocated to the (3.41) is included,
+i3f .n3eeded.
+ASIL decomposition
+safety elements independence
+safety goal ASIL
+apportioninsga foeft yredundant (3.132) requirements to (3.41), withe sleumffeicnitesnt
+(3.78), conducing to the same (3.139), with the objective of reducing the (3.6) of the
+redundant (3.132) requirements that are allocated to AthSIeL corresponding (3.41)
+ASIL
+Note 1 to entry: ASIL decomposition is a basis for methods of (3.6) tailoring during the design process
+(defined as requirements decomposition with respect to (3.6) tailoring in ISO 26262-9).
+iTeh STANDARD PREVIEW
+Note 2 to entry: ASIL decomposAiStiIoLn does not apply to randsoamfe htyardware failure requirements per ISO 26262-9.
+confirmation measures (standasarfetdy gso.ailteh.ai)
+Note 3 to entry: Reducing the (3.6) of the redundant (3.132) requirements has some exclusions, e.g.
+3.4 (3.23) remain at the level of the (3.139).
+assessment ISO 26262-1:2018
+https://standards.iteh.ai/cataloigt/esmtandards/sist/c1ae7l2ebm85e-nfdt93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+examination of whether a characteristic of an (3.84) or (3.41) achieves the ISO 26262
+o3b.5jectives
+audit
+e3x.6amination of an implemented process with regard to the process objectives
+automotive safety integrity level
+ASIL
+item's element's
+safety measures unreasonable risk
+one of four levels to specify the (3.84) or (3.41) necessary ISO 26262 requirements and
+(3.141) to apply for avoiding an (3.176), with D representing the most
+stringent and AQ tMhe least stringent level
+N3.o7te 1 to entry: (3.117) is not an ASIL.
+availability
+capability of a product to provide a stated function if demanded, under given conditions over its defined
+l3if.8etime
+base failure rate
+BFR
+failure rate element safety
+(3.53) of a hardware (3.41) in a given application use case used as an input to
+(3.132) analyses
+
+3.9
+base vehicle
+T&B vehicle configuration body
+builder equipment
+Original Equipment Manufacturer (OEM) (3.175) prior to installation of
+Bo (d3y. 1b2u)ilder equipment
+systems
+Note 1 to entry: (3.12) may be installed on a base vehicle that consists of all driving
+relevant T r(u3c.1k63) (engine, driveline, chassis, steering, brakes, cabin and driver information).
+3EX.1A0MPLE (3.174) chassis with powertrain and cabin, rolling chassis with powertrain.
+baseline
+work products items elements
+version of the approved set of one or more (3.185), (3.84) or (3.41) that
+serves as a basis for change
+Note 1 to entry: See ISO 26262-8:2018, Clause 8.
+Note 2 to entry: A baseline is typically placed under configuration management.
+lifecycle
+Note 3 to entry: A baseline is used as a basis for further development through the change management process
+d3u.1r1ing the (3.86).
+body builder
+BB
+trucks buses trailers semi-trailers
+iTeh STANDARD PREVIEW
+base vehicle
+organization that adds (3.174), (3.14), (3.171) and (3.151) (T&B)
+(standards.iteh.ai)
+bodies, cargo carriers, or equipmternutc tko a bu s(3.9)
+Note 1 to entry: T&B bodies include (3.174) cabs, (3.14) bodies, walk-in vans, etc.
+ISO 26262-1:2018
+Note 2 to entry: Cargoht tcpasr:/r/sitearnsd ainrdcsl.uitdehe. aci/acragtaolo bgo/sxtaensd, afrldast/ sbisetd/cs1,a c7a2rb 8tr5a-fnds9p3o-4r9t 5r2a-cbkcs1,e e-tc.
+38aedd5d0742/iso-26262-1-2018
+Note 3 to entry: Equipment includes vocational devices and machinery, such as cement mixers, dump beds, snow
+b3l.a1d2es, lifts, etc.
+body builder equipment
+base vehicle
+m3.1ac3hine, body, or cargo carrier installed on the T&B (3.9)
+branch coverage
+percentage of branches of the control flow of a comsptautteemre pnrtocgovrearmag eexecuted during a test
+Note 1 to entry: 100 % branch coverage implies 100 % (3.160).
+Note 2 to entry: An if-statement always has two branches - condition true and condition false - independent of the
+e3x.1is4tence of an else-clause.
+bus
+motor vehicle which, because of its design and appointments, is intended for carrying persons and
+luggage, and which has more than nine seating places, includingt rtahiele drriving seat
+N3.o1t5e 1 to entry: A bus may have one or two decks and may also tow a (3.171).
+calibration data
+data that will be applied as software parameter values after the software build in the development process
+EXAMPLE Parameters (e.g. value for low idle speed, engine characteristic diagrams); vehicle specific
+parameters (adaptation values, e.g., limit stop for throttle valve); variant coding (e.g. country code, left-hand/
+right-hand steering).
+
+N3.o1t6e 1 to entry: Calibration data does not contain executable or interpretable code.
+candidate
+item element
+item element
+(3.84) or (3.41) whose definition and conditions of use are identical to, or have a very high
+degree of commonality with, an (3.84) or (3.41) that is alreadyp rroevleena sine du saen adr ginum oepnetration
+3N.o1t7e 1 to entry: This definition applies where candidate is used in the context of a (3.115).
+cascading failure
+failure element item
+element failure element elements
+(3.50i)t eomf an (3.41) of an (3.84) resulting from a root cause [inside or outside of the
+(3.41)] and then causing a (3.50) of another (3.41) or (3.41) of the same
+or different (3.84) dependent failures
+common cause failure
+Note 1 to entry: Cascading failures are (3.29) that could be one of the possible root causes of a
+(3.18). See Figure 2.
+iTeh STANDARD PREVIEW
+Figure 2 — Cascading failure
+(standards.iteh.ai)
+3.18
+ISO 26262-1:2018
+common cause failure
+https://standards.iteh.ai/catalog/standards/sist/c1a72b85-fd93-4952-bc1e-
+CCF
+38aedd5d0742/iso-26262-1-2018
+failure elements item
+elements
+(3.50) of two or more (3.41) of an (3.84) resulting directly from a single specific
+event or root cause which is either internadle opre nedxetnetr fnaaillu troe sall of these ca (s3c.a4d1i)ng failures
+Note 1 to entry: Common cause failures are (3.29) that are not (3.17). See
+Figure 3.
+Figure 3 — Common cause failure
+
+3.19
+common mode failure
+CMF
+CCF elements
+case of (3.18Fa) iilunr we hich multiple (3.41) fail in the same manner
+failure modes
+Note 1 to entry: (3.50) in the same manner does not necessarily mean that they need to fail exactly the
+same. How close the (3.51) need to be in order to be classified as common mode failure depends on
+the context. system
+fault
+EXAsMysPteLmE 1 A (3.163) hass atfew sot atteemperature sensors which are compared with each other. If the
+difference between the two temperature sensors is larger than or equal to 5 °C it is handled as a (3.54) and
+the (3.163) is switched into a (3.131). A common mode failure lets both temperature sensors fail
+in such a way that the difference baertcwhieteenct tuhree two sensors is smaller than 5 °C and therefore is not detected.
+failure
+EXAMPLE 2 In a CPU lockstep (3.1) where the outputs of both CPUs are compared cycle by cycle,
+both CPUs need to fail exactly the same way in order for the (3.50) to go undetected. In this context, a
+common mode failure lets both CfaPilUusr efail exactly the same way.
+EXAMPLE 3 An over voltage (3.50) due to lots of parts not meeting their specification for over voltage
+i3s. 2a 0common mode failure.
+complete vehicle
+base vehicle body builder equipment
+truck
+fully assembled T&B (3.9) with its (3.12)
+iTeh STANDARD PREVIEW
+E3X.2A1MPLE Refuse collector, dump (3.174).
+component (standards.iteh.ai)
+element
+hardware part software units
+non-system level (3.41) that is loIgSiOc a2l6l2y6 o2r-1 t:2e0c1h8nically separable and is comprised of more than
+one (h3tt.p7s1://)s toarnd oanrdes .oiterh m.ai/ocraeta log/standards/sist/c 1(a37.12b5895)-fd93-4952-bc1e-
+38aedd5d0742/iso-26262-1-2018
+EXAMPLE A microcontroller. system
+N3.o2te2 1 to entry: A component is a part of a (3.163).
+configuration data
+data that is assigned during element build and that controls the element build process
+EXAMPLE 1 Pre-processor variable settings which are used to derive compile time variants from the
+source code.
+EXAMPLE 2 XML files to control the build tools or toolchain.
+Note 1 to entry: Configuration data controls the software build. Configuration data is used to select code from
+existing code variants already defined in the code base. The functionality of selected code variant will be included
+in the executable code.
+item
+Note 2 to entry: Since configuration data is only used to select code variants, configuration data does not include
+c3o.2de3 that is executed or interpreted during the use of the (3.84).
+confirmation measure
+confirmation review audit assessment functional safety
+3.24 (3.24), (3.5) or (3.4) concerning (3.67)
+confirmation review
+work product
+functional safety
+confirmation that a (3.185) provides sufficient and convincing evidence of their
+contribution to the achievement of (3.67) considering the corresponding objectives
+and requirements of ISO 26262
+Note 1 to entry: A complete list of confirmation reviews is given in ISO 26262-2.

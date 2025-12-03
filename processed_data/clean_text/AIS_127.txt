@@ -1,4 +1,3 @@
-AIS-127
 AUTOMOTIVE INDUSTRY STANDARD
 Provisions Concerning the Approval of
 Adaptive Front- Lighting Systems (AFS)
@@ -16,13 +15,13 @@ MINISTRY OF ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 March 2016
 I
-AIS-127
+
 Status chart of the standard to be used by the purchaser for updating the record
 Sr. Corrigenda. Amendment Revision Date Remark Misc.
 No.
 General remarks :
 II
-AIS-127
+
 INTRODUCTION
 0.0 The Government of India felt the need for a permanent agency to expedite the
 publication of standards and development of test facilities in parallel when the
@@ -56,7 +55,7 @@ amendment of the Regulation - Date of entry into force: 15 July 2013)
 responsible for preparation of this standard are given in Annex L and Annex M
 respectively (To be included).
 III
-AIS-127
+
 Uniform provisions concerning the approval of adaptive
 Front- Lighting systems (AFS) for motor vehicles
 Sr. Contents Page
@@ -89,7 +88,7 @@ application for type approval
 Annex B Reserved 28/80
 Annex C Passing beam photometric requirements 29/80
 IV
-AIS-127
+
 Annex D Tests for stability of photometric performance of systems 36/80
 in operation
 Annex E Minimum requirements for conformity of production
@@ -109,7 +108,7 @@ Annex J Description forms 72/80
 Annex K Requirements for LED modules and adaptive front- 74/80
 lighting systems (AFS) including LED modules
 V
-AIS-127
+
 Provisions Concerning the Approval of Adaptive Front- Lighting
 Systems (AFS) for Motor Vehicles
 A. Administrative provisions
@@ -152,10 +151,8 @@ Components
 UN R-048 Uniform provisions concerning the approval of
 vehicles with regard to the installation of
 lighting and light-signalling devices
-1/80
-AIS-127
+
 CIE -Publication T h e Measurement of Luminous Flux
-84–1989
 1 DEFINITIONS
 For the purpose of this standard:
 1.1 In addition to the following definition, the definitions given in
@@ -191,8 +188,7 @@ road, and, identified by particular photometric provisions;
 movement of the kink of the cut-off;
 1.4.3 “Category 2 bending mode” means a bending mode without horizontal
 movement of the kink of the cut-off;
-2/80
-AIS-127
+
 1.5 “Lighting unit” means a light emitting part of the system, which may
 consist of optical, mechanical and electrical components, designed to
 provide or contribute to the beam of one or more front-lighting function(s)
@@ -233,8 +229,7 @@ essential respects as:
 1.16.2 The inclusion or elimination of components capable of altering optical
 characteristics/ photometric properties of the system;
 1.16.3 Suitability for right-hand or left-hand traffic or for both traffic systems;
-3/80
-AIS-127
+
 1.16.4 The front-lighting function(s), mode(s) and classes produced;
 1.16.5 The characteristic(s) of the signal(s), specified for the system;
 1.17 "Aiming" means the positioning of the beam or part thereof on an aiming
@@ -273,8 +268,7 @@ right-hand traffic or for either left-hand or right-hand traffic only;
 ground and the longitudinal median plane of the vehicle;
 2.1.3.2 The maximum angles above and below the normal position(s) which the
 device(s) for vertical adjustment can achieve;
-4/80
-AIS-127
+
 2.1.4 The category, as listed in AIS-034 (Part 1) (Rev.1) and
 AIS-034 (Part 2) (Rev. 1) and their series of amendments in force at the
 time of the application for type approval, of replaceable and/or non-
@@ -310,12 +304,9 @@ to Table 6 of Annex C of this Standard apply, if any;
 (e) Which set(s) of class W passing beam provisions according to Annex C of
 this Standard apply, if any;
 ___________________
-(1)
 To be indicated in a form conforming to the model of Annex A.
-(2)
 To be indicated in a form conforming to the model of Annex J.
-5/80
-AIS-127
+
 (f) Which lighting units (1) provide or contribute to one or more passing beam
 cut-off(s);
 (g) The indication(s) (2) according to the provisions of paragraph 6.4.6. of this
@@ -355,12 +346,9 @@ being part of an installation unit;
 the mounting devices, supply and operating devices, and signal generators
 if any;
 _____________________
-(1)
 To be indicated in a form conforming to the model of Annex J.
-(2)
 To be indicated in a form conforming to the model of Annex A.
-6/80
-AIS-127
+
 2.2.4 For the test of plastic material of which the lenses are made:
 2.2.4.1 Fourteen lenses;
 2.2.4.1.1 Ten of these lenses may be replaced by 10 samples of material at
@@ -398,8 +386,7 @@ installation unit, one marking as per paragraph 4.2.5. shall be sufficient.
 3.4 In the case of an AFS with LED module(s), the corresponding installation
 unit(s) shall bear the marking of the rated voltage and rated wattage and
 the light source module specific identification code.
-7/80
-AIS-127
+
 3.5 LED module(s) submitted along with the approval of the AFS:
 3.5.1 Shall bear the trade name or mark of the applicant. This marking shall be
 clearly legible and indelible;
@@ -442,8 +429,7 @@ conforming to a type approved under this Standard.
 4.1.6 The applicant shall indicate in a form corresponding to the respective
 model in the Annex A to this Standard to this Standard, the vehicle(s) for
 which the system is intended.
-8/80
-AIS-127
+
 4.1.7 If approval is sought for a system which is not intended to be included as
 part of the approval of a vehicle type according to UN Regulation No. 48
 till the time corresponding provisions are incorporated in AIS-008.
@@ -484,8 +470,7 @@ requirements of both traffic systems e.g. by means of an appropriate
 adjustment of the setting of the optical element or the light source, a
 horizontal arrow with a head on each end, the heads pointing respectively
 to the left and to the right;
-9/80
-AIS-127
+
 4.2.2.8 on an installation unit incorporating a lens of plastic material, the group of
 letters "PL" to be affixed near the symbols prescribed in paragraphs
 4.2.2.1. to 4.2.2.7. above;
@@ -527,8 +512,7 @@ the system have been found to comply with the requirements of several
 Standards, a single approval mark may be affixed. This approval mark
 may be located anywhere on the grouped, combined or reciprocally
 incorporated lamps, provided that:
-10/80
-AIS-127
+
 4.3.2.1.1 It is visible as per paragraph 4.2.5;
 4.3.2.1.2 No part of the grouped, combined or reciprocally incorporated lamps that
 transmit light can be removed without at the same time removing the
@@ -552,8 +536,7 @@ combined or reciprocally incorporated lamps with all the above mentioned
 additional symbols, and relating to a system with functions provided by
 more than one installation unit per side of the vehicle.
 4.3.2.6 Reserved
-11/80
-AIS-127
+
 B. TECHNICAL REQUIREMENTS FOR SYSTEMS OR
 PART(S) OF A SYSTEM
 Unless otherwise specified, photometric measurements shall be carried
@@ -588,8 +571,7 @@ sheet of IEC Publication No. 60061, as referred to in the relevant light
 source Standard.
 Note: Conditions of 5.3.2.1 are to be verified by using appropriate gauge
 or a standard reference filament lamp
-12/80
-AIS-127
+
 5.3.2.2 The design of the device shall be such that the filament lamp can be fixed
 in no other position but the correct one.
 Note: A headlamp is regarded as satisfying the requirements of this
@@ -631,8 +613,7 @@ values not exceeding 1,300 cd in the zone III b as defined in Annex C to
 this Standard and at least 3,400 cd in a point of "segment Emax", by such
 means as e.g. switching off, dimming, aiming downwards, and/or
 functional substitution;
-13/80
-AIS-127
+
 When performing the tests to verify compliance with these requirements,
 the Testing Agency responsible for approval tests shall refer to the
 instructions supplied by the applicant.
@@ -671,8 +652,7 @@ description. It shall be notified whether all modes are activated,
 performing and de-activated according to the applicant's description;
 obvious malfunctioning, if any, to be contested (e.g. angular excess or
 flicker).
-14/80
-AIS-127
+
 5.12 The AFS, if equipped with LED module(s), and the LED module(s)
 themselves shall comply with the relevant requirements specified in
 Annex K of this Standard. The compliance with the requirements shall be
@@ -714,8 +694,7 @@ description:
 whichever apply;
 6.1.4.3 If applicable, at any other signal(s) according to paragraph 1.10. and
 combinations of them, according to the applicant's specification.
-15/80
-AIS-127
+
 6.1.4.4 In case of a headlamp using a gas-discharge light source with the ballast
 not integrated with the light source, four seconds after ignition of a
 headlamp that has not been operated for 30 minutes or more"
@@ -759,8 +738,7 @@ of Annex H to this Standard.
 Annex C to this standard, when measured according to the procedure
 indicated in Annex I, relevant to the category (either category 1 or
 category 2) of the bending mode, for which approval is sought;
-16/80
-AIS-127
+
 6.2.5.2 E of the illumination does not lie outside of the rectangle extending
 max
 from the uppermost vertical position specified in Table 2 of Annex C to
@@ -803,8 +781,7 @@ requirement;
 6.2.8.2 Other modes:
 When signal inputs according to paragraph 6.1.4.3. of this Standard
 apply, the requirements of the paragraph 6.2. shall be fulfilled.
-17/80
-AIS-127
+
 6.3 PROVISIONS CONCERNING THE DRIVING BEAM
 The system shall, prior to the subsequent test procedures, be set to the
 neutral state.
@@ -845,8 +822,7 @@ effect), provided that:
 6.3.3.1 The system meets the requirements of the paragraphs 6.3.2.1.1.
 and 6.3.2.1.2. above with each lighting unit measured according to the
 relevant procedure indicated in Annex I.
-18/80
-AIS-127
+
 6.3.4 The system shall be so made that:
 6.3.4.1 The lighting unit(s) of the right side and of the left side provides each at
 least half of the minimum luminous intensity value of the driving beam as
@@ -888,8 +864,7 @@ aiming prescriptions;
 6.4.2 With the system or part(s) thereof initially fixed according to
 paragraph 6.4.1., the device or part(s) thereof must meet the relevant
 photometric requirements of paragraphs 6.2. and 6.3;
-19/80
-AIS-127
+
 6.4.3 Additional tests shall be made after the reflector/system or part(s) thereof
 has been moved vertically ±2 degrees or at least into the maximum
 position if less than 2 degrees, from its initial position by means of the
@@ -922,8 +897,7 @@ with a "data set" of Table 6 of Annex C of this Standard.
 7. COLOUR
 7.1 The colour of the light emitted shall be white in compliance with
 provisions given in AIS-010 (Part 5) (Rev.1) 2010
-20/80
-AIS-127
+
 C. FURTHER ADMINISTRATIVE PROVISIONS
 8. MODIFICATION OF THE SYSTEM TYPE AND EXTENSION OF
 APPROVAL
@@ -955,8 +929,7 @@ The normal frequency of these verifications shall be once every two
 years.
 9.5 Systems or part(s) thereof with apparent defects are disregarded.
 9.6 The reference mark is disregarded.
-21/80
-AIS-127
+
 10. PENALTIES FOR NON-CONFORMITY OF PRODUCTION
 Penalties for non-conformity of production shall be as prescribed in
 AIS-037.
@@ -990,8 +963,7 @@ deviation shall be:
 (equivalent 20 per cent) and 380 cd (equivalent 30 per cent);
 (c) Maximum values at segments E, F1, F2 and F3: 170 cd (equivalent
 20 per cent) and 255 cd (equivalent 30 per cent);
-22/80
-AIS-127
+
 (d) Minimum values at BL, P, S50+ S50RR+ S50LL and S100+
 S100LL+S100RR, and those required by footnote 4 of Table 1 in
 Annex C of this Standard (B50R, BL, BLL, BRR): half of the
@@ -1004,8 +976,7 @@ DESCRIBED IN 0.4 OF FOREWORD
 15.1 Acceptance of changes in UN regulations after the level described in para
 0.4 of introduction shall be as per AIS-000, as amended from time to time,
 as applicable, unless otherwise stated in this standard.
-23/80
-AIS-127
+
 ANNEX A
 (See 2.2.2 (A))
 INFORMATION AND SAMPLES TO BE SUBMITTED AT THE
@@ -1038,8 +1009,7 @@ ___________________________________________
 (1) Indicate the appropriate marking as foreseen according to this standard for each installation unit
 or assembly of installation units
 (2) Strike out what does not apply.
-24/80
-AIS-127
+
 (b) The adjustment of the "cut-off" has been determined at 10 m /
 25 m(1)
 The determination of the minimum sharpness of the "cut-off" has
@@ -1076,8 +1046,7 @@ _______________ ____
 (1) Strike out what does not apply.
 (2) Mark with an X where applicable.
 (3) To be extended if more modes are provided
-25/80
-AIS-127
+
 A-17.3 Where the lighting units, indicated below are energized(1) (2) (3)for the mode No.
 (a) If no bend lighting applies:
 Left side No.1  No.3  No.5  No.7  No. 9  No.11 
@@ -1106,8 +1075,7 @@ _____ ________________
 (1) Mark with an X where applicable.
 (2) To be extended if more modes are provided
 (3) To be continued if more units are provided
-26/80
-AIS-127
+
 (c)If bend lighting of category 2 applies:
 Left side N o .1  No.3  No.5  No.7  No. 9  No.11 
 Right side N o .2  No.4  No.6  No.8  No.10  No.12 
@@ -1139,12 +1107,10 @@ ________________________
 (1) Mark with an X where applicable.
 (2) To be extended if more modes are provided
 (3) To be continued if more units are provided
-27/80
-AIS-127
+
 ANNEX B
 RESERVED
-28/85
-AIS-127
+
 ANNEX C
 (See 2.2.2 (d))
 PASSING BEAM PHOTOMETRIC REQUIREMENTS*
@@ -1157,8 +1123,7 @@ right (R) or left (L) from V-V.
 Figure 1
 Angular positions of passing beam photometric requirements (indicated for
 left-hand traffic)
-29/85
-AIS-127
+
 Table 1
 Passing beam photometric requirements
 Position /deg Passing beam
@@ -1181,9 +1146,7 @@ r a 10 50 L L 1.72 D 0.86 5 100
 P
 11 75 L L 1.15 D 0.57 10 15 200 20 300
 12 50 V V D 0.86 5 110000 5 100 10 100 10 100
-13
 13 50 R R 3.43 D 0.86 3 550 (9) 3 550 13 200 (9) 6 800 6 800 26 400 (9)
-200
 14 25 RR R 16 D 1.72 1 180 845 1 180 3 400
 15 25 LL R 11 D 1.72 1 180 845 1 180 3 400
 16 Segment 20 and below it R 3.5 V D 2 17 600 (2)
@@ -1191,8 +1154,7 @@ P
 18 E (3) 16 30440 8 400 44 100 16 900 30709 (8) 29 530 70 500 (2)
 max
 900 100 300
-30/85
-AIS-127
+
 Part B (bending modes): Table 1 Part A applies, however with the lines Nos. 1, 2, 7, 13 and 18 being replaced by those listed hereunder
 1 B50R(4) R 3.43 U 0.57 50 (4) 530 530 790
 2 HV(4) 50 (4) 880 880
@@ -1220,8 +1182,7 @@ of the applicant.
 (9) The max. value may be multiplied by 1.4, if it is guaranteed according to the manufacturer's description that this value will not be exceeded in use, either by means of
 the system or, if the system's use is confined to vehicles, providing a corresponding stabilization/ limitation of the system's supply, as indicated in the communication
 form.
-31/85
-AIS-127
+
 Table 2
 Passing beam elements angular position/extend, additional requirements
 Angular position / extend in deg Class C passing beam Class V passing beam Class E passing beam Class W passing beam
@@ -1255,8 +1216,7 @@ vertical 1 U 4 U 4 U 2 U 1.5 U 1.5 U H-H H-H
 Zone III b horizontal 8 R 8 R 8 L 8 L 6 L 1.5 L 0.5 R 4 R
 for class W or class E Passing Beam
 vertical 1 U 4 U 4 U 2 U 1.5 U 1.5 U 0.34 U 0.34 U
-32/85
-AIS-127
+
 Table 4
 Additional provisions for class W passing beam, expressed in cd
 Definition and requirements for segments E, F1, F2, and F3 (not shown in Fig.1 above).
@@ -1284,8 +1244,7 @@ max max not above
 6.1. E1 530 70500 0.34 D
 6.2. E2 440 61700 0.45 D
 6.3. E3 350 52900 0.57 D
-33/85
-AIS-127
+
 Table 7
 Requirements concerning the adaptation of the driving-beam according to
 paragraph 6.3.7 of this standard
@@ -1346,8 +1305,7 @@ Preceding vehicle at 200 m in the 0.1°Up 16 000
 0.45°R
 case of Left-Hand Traffic and
 Right-Hand Traffic
-34/85
-AIS-127
+
 Part B Position /degrees* Min. Intensity**
 Test Point Horizontal Vertical (cd)
 50R 1.72 R D 0.86 5 100
@@ -1365,8 +1323,7 @@ signal generator.
 In the case where the passing beam, which meets the requirements of paragraph 6.2., is
 continuously operated in conjunction with the adaptation of the driving beam, the photometric
 requirements in Part B of the table 7 shall not be applied."
-35/80
-AIS-127
+
 ANNEX D
 (See 4.2.3)
 TESTS FOR STABILITY OF PHOTOMETRIC PERFORMANCE OF
@@ -1403,8 +1360,7 @@ subsequent tests, be set to the neutral state.
 The test sample shall be operated on passing beam without being dismounted from
 or readjusted in relation to its test fixture. The light source used shall be a light
 source of the category specified for that headlamp.
-36/80
-AIS-127
+
 D-1. Test for stability of photometric performance
 D-1.1 Clean test sample
 Each test sample shall be operated for 12 hours as described in paragraph D-
@@ -1443,8 +1399,7 @@ lamp, it shall be lit in flashing operation mode with an on/off time ratio of ap
 considered as being normal use of the light sources simultaneously.
 (3) All light sources of lighting functions even if no approval is sought according to this standard must be
 taken into account, except those covered by Note 2.
-37/80
-AIS-127
+
 (c) In the case where a test sample includes other grouped lighting function(s), all
 the individual functions shall be lit simultaneously for the time specified in (a)
 or (b) above for individual lighting functions, according to the manufacturer's
@@ -1484,8 +1439,7 @@ incorporated into the test sample and operating at voltages other than the
 nominal rated voltages of 6 V, 12 V or 24 V respectively, the voltage shall be
 adjusted as declared by the manufacturer for the correct photometric
 functioning of that lamp.
-38/80
-AIS-127
+
 D-1.1.2 Test results
 D-1.1.2.1 Visual inspection:
 Once the test sample has been stabilized to the ambient temperature, the test
@@ -1529,11 +1483,9 @@ with a conductivity of less than 1 mS/m.
 _____________(__1____ )__ ____ ____ ____ T______ h______ e____ ____ c_____ l___ a_____ s____ s____ ____ W__________ ____ p_____ a_____ s____ s____ i___ n_____ g______ ___ b___
 eam, if any, is disregarded for lighting units providing or contributing to any other passing beam class or
 lighting function
-(2)
 NaCMC represents the sodium salt of carboxymethylcellulose, customarily referred to as CMC. The NaCMC used in the dirt
 mixture shall have a degree of substitution (DS) of 0.6-0.7 and a viscosity of 200-300 cP for a 2 per cent solution at 20 °C.
-39/80
-AIS-127
+
 D-1.2.1.2 For a system or parts thereof with the outside lens in plastic material, the
 mixture of water and polluting agent to be applied to the test sample shall be
 composed of:
@@ -1575,8 +1527,7 @@ This test consists of verifying that the vertical drift of the cut-off line unde
 the influence of heat does not exceed a specified value for a system or part(s)
 of emitting a class C (basic) passing beam, or each specified passing beam
 mode.
-40/80
-AIS-127
+
 If the test sample consists of more than one lighting unit or more than one
 assembly of lighting units which provide a cut-off, each of these is
 understood to be a test sample for the purpose of this test and must be tested
@@ -1597,9 +1548,7 @@ passing beam, class E passing beam and class W passing beam, whatever
 applies.
 The position of the cut-off line in its horizontal part between VV and the
 vertical line passing through point B50R shall be verified 3 minutes (r ) and
-3
 60 minutes (r ) respectively after operation.
-60
 The measurement of the variation in the cut-off line position as described
 above shall be carried out by any method giving acceptable accuracy and
 reproducible results.
@@ -1618,8 +1567,7 @@ more than 2.0 mrad but not more than 3.0mrad
 Downward
 (2.0 mrad < Δr <3.0mrad)
 I
-41/80
-AIS-127
+
 A further sample of a headlamp shall be tested as described in paragraph
 2.1. after being subjected three consecutive times to the cycle as described
 below, in order to stabilize the position of mechanical parts of the headlamp
@@ -1629,8 +1577,7 @@ specified in paragraph 1.1.1.2.),
 After this period of one hour, the headlamp type shall be considered as
 acceptable if the absolute value Δr measured on this sample meets the
 requirements in paragraph 2.2.1. above.
-42/80
-AIS-127
+
 ANNEX E
 (See 9.2)
 MINIMUM REQUIREMENTS FOR CONFORMITY OF
@@ -1671,8 +1618,7 @@ more than 0.2 degree up and down, each independently and with respect to the
 first aiming.
 These provisions do not apply to lighting units as indicated under paragraph
 6.3.1.1. of this Standard.
-43/80
-AIS-127
+
 E-1.2.3 If the results of the tests described above do not meet the requirements, tests
 shall be repeated using another standard (étalon) light source and/or another
 supply and operating device.
@@ -1709,8 +1655,7 @@ are equivalent to those laid down in this Standard.
 E-2.2.3 The application of paragraphs E-2.2.1. and E-2.2.2. above requires regular
 calibration of test apparatus and its correlation with measurement made by a
 Testing Agency .
-44/80
-AIS-127
+
 E-2.2.4 In all cases the reference methods shall be those of this Standard, particular for
 the purpose of administrative verification and sampling.
 E-2.3 Nature of sampling
@@ -1742,8 +1687,7 @@ specification laid down for verification of conformity of products in paragraph
 The criteria governing acceptability shall be such that, with a confidence level
 of 95 per cent, the minimum probability of passing a spot check in accordance
 with Annex G (first sampling) would be 0.95.
-45/80
-AIS-127
+
 ANNEX F
 (See 2.2.5)
 REQUIREMENTS FOR HEADLAMPS INCORPORATING LENSES
@@ -1780,8 +1724,7 @@ RH for at least four hours.
 Note: The periods of one hour at 230C ± 50C shall include the periods of
 transition from one temperature to another which are needed in order to
 avoid thermal shock effects.
-46/80
-AIS-127
+
 F-2.1.2 Photometric measurements
 F-2.1.2.1 Method
 Photometric measurements shall be carried out on the samples before and
@@ -1821,8 +1764,7 @@ F-2.2.2.1 Test mixture
 The test mixture shall be composed of 61.5 per cent n-heptane, 12.5 per cent
 toluene, 7.5 per cent ethyl tetrachloride, 12.5 per cent trichloroethylene and
 6 per cent xylene (volume per cent).
-47/80
-AIS-127
+
 F-2.2.2.2 Application of the test mixture:
 Soak a piece of cotton cloth (as per ISO 105) until saturation with the
 mixture defined in F-2.2.2.1 above and, within 10 seconds, apply it for10
@@ -1854,8 +1796,7 @@ T5 – T4
 d = T2
 measured on the three samples according to the procedure described in
 Appendix F2 shall not exceed 0.020 (∆dm < 0.020).
-48/80
-AIS-127
+
 F-2.2.4. Resistance to light source radiations
 If necessary the following test shall be done:
 Flat samples of each light transmitting plastic component of the headlamp
@@ -1893,8 +1834,7 @@ T2 – T3
 measured on the three samples according to the procedure described in
 Appendix F-2. to this annex shall not exceed 0.010
 (∆tm < 0.010).
-49/80
-AIS-127
+
 F-2.4 Resistance to mechanical deterioration
 F-2.4.1. Mechanical Deterioration Method
 The outer face of the three new samples (lenses) shall be subjected to the
@@ -1935,8 +1875,7 @@ There shall be no appreciable impairment of the gridded area. Impairments
 at the intersections between squares or at the edges of the cuts shall be
 permitted, provided that the impaired area does not exceed 15 per cent of the
 gridded surface.
-50/80
-AIS-127
+
 F-2.6 Tests of the complete headlamp incorporating a lens of plastic material
 F-2.6.1 Resistance to mechanical deterioration of the lens surface
 F-2.6.1.1 Tests
@@ -1963,8 +1902,7 @@ measurement considered in F-2.6.1.2 are within the limits prescribed for
 conformity of production by this Standard.
 F-3.2 If the test results fail to satisfy the requirements, the tests shall be repeated
 on another sample of headlamps selected at random.
-51/80
-AIS-127
+
 ANNEX F
 APPENDIX F-1
 CHRONOLOGICAL ORDER OF APPROVAL TESTS
@@ -2001,8 +1939,7 @@ X
 2.2. Photometry (para. 2.6.1.2.)
 X X
 2.3. Adherence (para. 2.6.2.)
-52/80
-AIS-127
+
 ANNEX F
 APPENDIX F-2
 METHOD OF MEASUREMENT OF THE DIFFUSION AND
@@ -2011,15 +1948,12 @@ TRANSMISSION OF LIGHT
 The beam of a collimator K with a half divergence β/2 = 17.4 x 10-4 rad is limited by
 a diaphragm Dτ with an opening of 6 mm against which the sample stand is placed.
 A convergent achromatic lens L , corrected for spherical aberrations links the
-2
 diaphragm Dτ with the receiver R; the diameter of the lens L shall be such that it
-2
 does not diaphragm the light diffused by the sample in a cone with a half top angle
 of β/2 = 14 degrees.
 An annular diaphragm D , with angles α /2 = 1 deg and α /2 = 12 degrees is
 D max max
 placed in an image focal plane of the lens L .
-2
 The non-transparent central part of the diaphragm is necessary in order to eliminate
 the light arriving directly from the light source. It shall be possible to remove the
 central part of the diaphragm from the light beam in such a manner that it returns
@@ -2028,14 +1962,11 @@ The distance L Dτ and the focal length F of the lens L shall be so chosen that 
 2 2 2
 image of Dτ completely covers the receiver R.
 For L it is recommended to use a focal distance of about 80 mm.
-2
 When the initial incident flux is referred to 1 the absolute precision of each reading
 shall be better than 0.001.
 °
 1°12
 °
-4
-1
 K
 D = 0.0349 F D = 0.425 F
 Do 2 Dmax 2
@@ -2046,8 +1977,7 @@ D T
 D
 Figure 1
 Optical set up for measurement of variations in diffusion and transmission
-53/80
-AIS-127
+
 2. Measurements
 The following readings shall be taken:
 With central
@@ -2055,7 +1985,6 @@ Reading With sample part of Quantity represented
 D
 D
 T No No Incident flux in initial reading
-1
 Yes Flux transmitted by the new
 T No
 2 (before test) material in a field of 24 degrees
@@ -2068,8 +1997,7 @@ T Yes
 Yes Flux diffused by the tested
 T Yes
 5 (before test) material
-54/80
-AIS-127
+
 ANNEX F
 APPEND IX F-3
 SPRAY TESTI NG METHOD
@@ -2098,8 +2026,7 @@ described in Appendix F-2, is such that: d = (T - T )/ T = 0.0250 ± 0.0025.
 5 4 2
 Several reference samples may be used to check that the whole surface to be tested
 has deteriorated homogeneously.
-55/80
-AIS-127
+
 ANNEX F
 APPENDIX F-4
 ADHESIVE TAPE ADHERENCE TEST
@@ -2135,8 +2062,7 @@ Pull to unstick at a speed of 300 mm/s ± 30 mm/s and record the force required.
 The five values obtained shall be arranged in order and the median value taken as a
 result of the measurement. This value shall be expressed in Newton per centimetre
 of width of the tape.
-56/80
-AIS-127
+
 ANNEX G
 MINIMUM REQUIREMENTS FOR SAMPLING TESTING AGENCY
 G-1.0 General
@@ -2178,8 +2104,7 @@ shall be repeated using another standard (étalon) light source and/or another
 supply and operating device.
 G-1.2.4. Systems with apparent defects are disregarded
 G-1.2.5. The reference mark is disregarded.
-57/80
-AIS-127
+
 G-2.0 First sampling
 In the first sampling four headlamps are selected at random. The first sample
 of two is marked A, the second sample of two is marked B.
@@ -2220,8 +2145,7 @@ G-2.3. Non conformity established
 Conformity shall be contested and paragraph 10 applied if, following the
 sampling procedure shown in Figure 1 of this annex, the deviations of the
 measured values of the systems are:
-58/80
-AIS-127
+
 G-2.3.1. sample A
 A4: one system not more than 20 per cent
 one system more than 30 per cent
@@ -2254,8 +2178,7 @@ Go to sample D
 G-3.1.1.2. s ample D
 D1 in the case of C2
 both systems 0 per cent
-59/80
-AIS-127
+
 G-3.1.2. o r if the conditions of G-1.2.2 for sample C are fulfilled.
 G-3.2. T he conformity is contested
 G-3.2.1. F ollowing the sampling procedure shown in Figure G-1 of this annex the
@@ -2290,20 +2213,17 @@ Annex D after being subjected three consecutive times to the cycle described in
 D-2.2.2 of Annex D.
 The headlamp shall be considered as acceptable if r does not exceed 1.5
 mrad.
-60/80
-AIS-127
+
 If this value exceeds 1.5 mrad but is not more than 2.0 mrad, the second
 headlamp of sample A shall be subjected to the test after which the mean of the
 absolute values recorded on both samples shall not exceed 1.5 mrad.
 However, if this value of 1.5 mrad on sample A is not complied with, the two
 headlamps of sample B shall be subjected to the same procedure and the value
 of r for each of them shall not exceed 1.5 mrad.
-61/80
-AIS-127
+
 FIGURE G-1
 Note: "device" in this figure means "system"
-62/80
-AIS-127
+
 ANNEX H
 (See 6.2.1)
 PASSING BEAM "CUT-OFF" AND AIMING PROVISIONS
@@ -2330,8 +2250,7 @@ from below line B and adjusted to its nominal position one per cent (25 cm)
 below the H-H line
 Figure 1
 Note: The scales are different for vertical and horizontal lines.
-63/80
-AIS-127
+
 H-2.4 For horizontal adjustment: the "elbow–shoulder" part of the "cut-off" shall be
 moved:
 (a) Reserved
@@ -2368,8 +2287,7 @@ of 0.05° exclusively at a measurement distance of 25 m and with a detector
 having a diameter of approximately 30 mm
 The "cut-off" quality shall be considered acceptable if the requirements of
 paragraph 2.1. to 2.3. above comply with at least one set of measurements.
-64/80
-AIS-127
+
 H-2.7.1 Not more than one "cut-off" shall be visible (Note:This paragraph should
 be amended when an objective test method is available)
 H-2.7.2 Sharpness of "cut-off"
@@ -2408,8 +2326,7 @@ separately
 H-3. Vertical and horizontal adjustment
 If the "cut-off" complies with the quality requirements of paragraph 2. of
 this Annex, the beam adjustment may be performed instrumentally.
-65/80
-AIS-127
+
 Figure 1Measurement of "cut-off" quality
 Note: The scales are different for vertical and horizontal lines.
 H-3.1 Vertical adjustment
@@ -2425,8 +2342,7 @@ after the lamp has been aimed vertically. The maximum gradient "G"
 determined using the formula G = (log Eβ – log E(β + 0.1°)) where β is the
 horizontal position in degrees, shall not be less than 0.08.
 The inflection point found on the 0.2 D line shall be positioned on the line A.
-66/80
-AIS-127
+
 Figure 2
 Instrumental vertical and horizontal adjustment - Horizontal line scan method
 Figure 2
@@ -2442,8 +2358,7 @@ shall be placed on the V line.
 Figure 3
 Instrumental vertical and horizontal adjustment - Three line scan method
 Note: The scales are different for vertical and horizontal lines.
-67/80
-AIS-127
+
 ANNEX I
 (See 2.1.6)
 PHOTOMETRIC MEASUREMENT PROVISIONS
@@ -2470,8 +2385,7 @@ goniometer rotation axes, should be avoided. This applies especially to the
 vertical direction and to lighting units producing a "cut-off"
 An aiming screen shall be used and may be located at a shorter distance than
 that of the photoreceptor.
-68/80
-AIS-127
+
 I-1.8 The photometric requirements for each single measuring point (angular
 position) of a lighting function or mode as specified in this Standard apply to
 half of the sum of the respective measured values from all lighting units of the
@@ -2514,8 +2428,7 @@ the individual factor of the standard (étalon) filament lamp (F = Φ obj. / Φ
 The system or parts thereof shall be considered acceptable if the requirements
 of paragraph 6. of this Standard are met with at least one standard (étalon)
 filament lamp, which may be submitted with the system.
-69/80
-AIS-127
+
 I-2.2 In the case of a replaceable gas-discharge light source:
 The voltage applied at the terminals of the ballast(s) or at the terminals of the
 light source(s) in case the ballast is integrated with the light source, is 13.2 V
@@ -2558,8 +2471,7 @@ bending modes without additional horizontal re-aim.
 I-3.1.1.2 Compliance with the requirements of paragraphs 6.2.5.1.and 6.3. of this
 Standard, whichever applies, shall be checked:
 (a) In case of a category 2 bending mode: without additional horizontal re-aim;
-70/80
-AIS-127
+
 (b) In case of a category 1 or a driving beam bending mode: after having
 horizontally re-aimed the relevant installation unit (by means of the
 goniometer for example) in the corresponding opposite direction.
@@ -2568,8 +2480,7 @@ the vehicle other than specified in paragraph 3.1.1. above: it shall be observed
 whether the light distribution is substantially uniform and no undue glare
 occurs. If this can not be confirmed the compliance with the requirement laid
 down in Table 1 of Annex C to this Standard shall be checked.
-71/80
-AIS-127
+
 ANNEX J
 (See 2.2.2 (b))
 DESCRIPTION FORMS
@@ -2612,8 +2523,7 @@ reference to the system input)
 are fulfilled.
 (e) Signal status in case of failure (with reference to the system input).
 3 According to the applicants description; use separate sheet, if needed.
-72/80
-AIS-127
+
 Adaptive front-lighting system description form No. 2
 Cut-off status, adjustment devices and adjustment procedures relevant to the lighting units
 Cut-off status2 Adjustment device
@@ -2650,8 +2560,7 @@ shown in the drawing according to paragraph 2.2.1. of this Standard; use separat
 5 Information such as e.g.: the order of adjustment of lighting units or assemblies of lighting units, any
 additional provisions for the adjustment process.
 6 The adjustment of a "master" lighting unit may also adjust (an)other lighting unit(s).
-73/80
-AIS-127
+
 ANNEX K
 (See 5.12)
 REQUIREMENTS FOR LED MODULES AND
@@ -2690,8 +2599,7 @@ All samples shall be tested under the conditions as specified in paragraph
 2.5. of Annex I. of this Standard. If not specified differently in this annex
 LED modules shall be tested inside the AFS as submitted by the
 manufacturer.
-74/80
-AIS-127
+
 K-3.2.2 Ambient temperature
 For the measurement of electrical and photometric characteristics, the AFS
 shall be operated in a dry and still atmosphere at an ambient temperature
@@ -2736,8 +2644,7 @@ km = 683 lm/W is the maximum value of the luminous efficacy of radiation.
 This value shall be calculated using intervals of one nanometre. The UV-
 radiation shall be weighted according to the values as indicated in the Table
 UV below:
-75/80
-AIS-127
+
 Table UV
 Values according to "IRPA/INIRC Guidelines on limits of exposure to ultraviolet
 radiation". Wavelengths (in nanometre) chosen are representative; other values should be
@@ -2776,8 +2683,7 @@ their photometric values after one minute of operation.
 K-4.3.1.4 The illuminance values determined after one minute of operation and after
 occurrence of photometric stability shall comply with applicable photometric
 requirements.
-76/80
-AIS-127
+
 K-4.3.2 Colour
 The colour of the light emitted measured after one minute and measured
 after photometric stability has been obtained, as described in
@@ -2810,8 +2716,7 @@ The flux shall be measured after stability has occurred, as explained in
 paragraph 4.3.1.2. of this Annex.
 The average of the measurements of the three samples of each type of LED
 module shall be deemed to be its objective luminous flux.
-77/80
-AIS-127
+
 ANNEX L
 (See introduction)
 COMPOSITION OF AISC PANEL
@@ -2849,8 +2754,7 @@ Mr. Virendra Sachdev Lumax Industries Ltd. (ACMA)
 Mr. Gaurav Bhatia Rinder India Pvt. Ltd. (ACMA)
 Mr. Ramkrishna Maydeo Lumileds India Pvt. Ltd.
 Mr. Arvind Vaswani OSRAM India Limited
-78/80
-AIS-127
+
 Representative of Bureau of Indian Standards (BIS)
 Mr. M. K. Sinha All India Auto & Miniature Bulbs & Component Mfrs.
 Association
@@ -2860,8 +2764,7 @@ Mr. Mukeh Patodia/ Optima Auto Lamps (AIAMBCMA)
 Mr. Ronak Patodia
 Mr. P. N. Bhagwan Auto Bulbs (AIAMBCMA)
 * At the time of approval of this Automotive Industry Standard (AIS)
-79/80
-AIS-127
+
 ANNEX M
 (See Introduction)
 COMMITTEE COMPOSITION *
@@ -2898,4 +2801,3 @@ A. S. Bhale
 Member Secretary
 The Automotive Research Association of India, Pune
 * At the time of approval of this Automotive Industry Standard (AIS)
-80/80

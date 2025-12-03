@@ -1,0 +1,1312 @@
+INTERNATIONAL ISO
+STANDARD 7637-2
+Third edition
+2011-03-01
+Road vehicles — Electrical disturbances
+from conduction and coupling —
+Part 2:
+Electrical transient conduction along
+supply lines only
+Véhicules routiers — Perturbations électriques par conduction et par
+couplage —
+Partie 2: Perturbations électriques transitoires par conduction
+uniquement le long des lignes d'alimentation
+Reference number
+ISO 7637-2:2011(E)
+© ISO 2011
+
+ISO 7637-2:2011(E)
+PDF disclaimer
+This PDF file may contain embedded typefaces. In accordance with Adobe's licensing policy, this file may be printed or viewed but
+shall not be edited unless the typefaces which are embedded are licensed to and installed on the computer performing the editing. In
+downloading this file, parties accept therein the responsibility of not infringing Adobe's licensing policy. The ISO Central Secretariat
+accepts no liability in this area.
+Adobe is a trademark of Adobe Systems Incorporated.
+Details of the software products used to create this PDF file can be found in the General Info relative to the file; the PDF-creation
+parameters were optimized for printing. Every care has been taken to ensure that the file is suitable for use by ISO member bodies. In
+the unlikely event that a problem relating to it is found, please inform the Central Secretariat at the address given below.
+COPYRIGHT PROTECTED DOCUMENT
+© ISO 2011
+All rights reserved. Unless otherwise specified, no part of this publication may be reproduced or utilized in any form or by any means,
+electronic or mechanical, including photocopying and microfilm, without permission in writing from either ISO at the address below or
+ISO's member body in the country of the requester.
+ISO copyright office
+Case postale 56 • CH-1211 Geneva 20
+Tel. + 41 22 749 01 11
+Fax + 41 22 749 09 47
+E-mail copyright@iso.org
+Web www.iso.org
+Published in Switzerland
+ii © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Contents
+Page
+Foreword............................................................................................................................................................iv
+1 Scope......................................................................................................................................................1
+2 Normative references............................................................................................................................1
+3 Terms and definitions...........................................................................................................................1
+4 Test procedure.......................................................................................................................................1
+4.1 General...................................................................................................................................................1
+4.2 Test temperature and supply voltages................................................................................................2
+4.3 Voltage transient emissions test.........................................................................................................2
+4.4 Transient immunity test........................................................................................................................6
+5 Test instrument description and specifications................................................................................9
+5.1 Artificial network...................................................................................................................................9
+5.2 Shunt resistor R ..................................................................................................................................10
+s
+5.3 Switch S................................................................................................................................................10
+5.4 Power supply.......................................................................................................................................11
+5.5 Measurement instrumentation...........................................................................................................12
+5.6 Test pulse generator for immunity testing.......................................................................................12
+Annex A (informative) Example of test pulse severity levels associated with function performance
+status classification............................................................................................................................17
+Annex B (normative) Transient emissions evaluation — Voltage waveform.............................................19
+Annex C (normative) Test pulse generator verification procedure.............................................................23
+Annex D (informative) Determination of pulse generator energy capability..............................................26
+Annex E (informative) Origin of transients in the electric system of road vehicles..................................30
+Annex F (informative) Alternative transient testing technique using electromechanically switched
+inductive loads....................................................................................................................................33
+Bibliography......................................................................................................................................................43
+© ISO 2011 – All rights reserved iii
+
+ISO 7637-2:2011(E)
+Foreword
+ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies
+(ISO member bodies). The work of preparing International Standards is normally carried out through ISO
+technical committees. Each member body interested in a subject for which a technical committee has been
+established has the right to be represented on that committee. International organizations, governmental and
+non-governmental, in liaison with ISO, also take Part in the work. ISO collaborates closely with the
+International Electrotechnical Commission (IEC) on all matters of electrotechnical standardization.
+International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2.
+The main task of technical committees is to prepare International Standards. Draft International Standards
+adopted by the technical committees are circulated to the member bodies for voting. Publication as an
+International Standard requires approval by at least 75 % of the member bodies casting a vote.
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent
+rights. ISO shall not be held responsible for identifying any or all such patent rights.
+ISO 7637-2 was prepared by Technical Committee ISO/TC 22, Road vehicles, Subcommittee SC 3, Electrical
+and electronic equipment.
+This third edition cancels and replaces the second edition (ISO 7637-2:2004), which has been technically
+revised. It also incorporates the Amendment ISO 7637-2:2004/Amd.1:2008. It does not specify test pulses 4,
+5a, and 5b, which are now specified in ISO 16750-2 and ISO 21848.
+ISO 7637 consists of the following parts, under the general title Road vehicles — Electrical disturbances from
+conduction and coupling:
+⎯ Part 1: Definitions and general considerations
+⎯ Part 2: Electrical transient conduction along supply lines only
+⎯ Part 3: Electrical transient transmission by capacitive and inductive coupling via lines other than supply
+lines
+iv © ISO 2011 – All rights reserved
+
+INTERNATIONAL STANDARD ISO 7637-2:2011(E)
+Road vehicles — Electrical disturbances from conduction and
+coupling —
+Part 2:
+Electrical transient conduction along supply lines only
+1 Scope
+This part of ISO 7637 specifies test methods and procedures to ensure the compatibility to conducted
+electrical transients of equipment installed on passenger cars and commercial vehicles fitted with 12 V or 24 V
+electrical systems. It describes bench tests for both the injection and measurement of transients. It is
+applicable to all types of road vehicles independent of the propulsion system (e.g. spark ignition or diesel
+engine, electric motor).
+Function performance status classification for immunity to transients is given in Annex A.
+2 Normative references
+The following referenced documents are indispensable for the application of this document. For dated
+references, only the edition cited applies. For undated references, the latest edition of the referenced
+document (including any amendments) applies.
+ISO 7637-1, Road vehicles — Electrical disturbances from conduction and coupling — Part 1: Definitions and
+general considerations
+3 Terms and definitions
+For the purposes of this document, the terms and definitions given in ISO 7637-1 apply.
+4 Test procedure
+4.1 General
+Methods for measuring the transient emission on supply lines and test methods for the immunity of devices
+against such transients are given. These tests, called “bench tests”, are performed in the laboratory.
+The bench test methods, some of which require the use of the artificial network, will provide comparable
+results between laboratories.
+A bench test method for the evaluation of the immunity of a device against supply line transients may be
+performed by means of a test pulse generator. This may not cover all types of transients which can occur in a
+vehicle; therefore, the test pulses described in 5.6 are characteristic of typical pulses.
+In special cases, it may be necessary to apply additional test pulses. However, some test pulses may be
+omitted if a device, depending on its function or its connection, is not influenced by comparable transients in
+the vehicle. It is part of the vehicle manufacturer's responsibility to define the test pulses required for a specific
+device.
+© ISO 2011 – All rights reserved 1
+
+ISO 7637-2:2011(E)
+4.2 Test temperature and supply voltages
+The ambient temperature during the test shall be (23 ± 5) °C.
+The supply voltages shall be as shown in Table 1 unless other values are agreed upon by the users of this
+part of ISO 7637, in which case such values shall be documented in the test reports.
+U is the supply voltage defined in Table 1, which shall be measured at the output of the pulse generator.
+A
+Table 1 — Supply voltages
+Nominal 12 V system Nominal 24 V system
+Supply voltage
+V V
+U 13,5 ± 0,5 27 ± 1
+A
+4.3 Voltage transient emissions test
+4.3.1 General
+This clause defines a test procedure to evaluate automotive electrical and electronic components for
+conducted emissions of transients along battery fed or switched supply lines of a device under test (DUT). A
+DUT which is considered a potential source of conducted disturbances should be tested according to the
+procedure described in this clause.
+Care shall be taken to ensure that the surrounding electromagnetic environment does not interfere with the
+measurement set-up.
+The test method applies to DUT with or without internal mechanical or electronic switch driving inductive loads.
+Voltage transients from the disturbance source, the DUT, are measured using the artificial network to
+standardize the impedance loading on the DUT (see 5.1).
+All wiring connections between the artificial network, switch, and the DUT shall be spaced (50 ± 5) mm above
+the metal ground plane.
+The cable sizes shall be chosen in accordance with the real situation in the vehicle, i.e. the wiring shall be
+capable of handling the operating current of the DUT, and as agreed between vehicle manufacturer and
+supplier.
+Grounding of the DUT case to the ground plane shall reflect the vehicle installation and shall be defined in a
+test plan.
+If no requirements are specified in the test plan, then the DUT shall be placed on a non-conductive material
+(50 ± 5) mm above the ground plane.
+The supply voltage U and the disturbance voltage shall be measured (see 4.3.2 and 4.3.3 for measurement
+A
+guidance) using a voltage probe (see 5.5) and an oscilloscope or waveform acquisition equipment.
+For values, see Annex B.
+DUT operating conditions of particular interest in the measurements are the switch-off and the exercising of
+the various operating modes of the DUT. Exact operating conditions of the DUT shall be specified in the test
+plan.
+NOTE Measurements at turn-on can be of interest in some instances.
+2 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+The sampling rate and trigger level shall be selected to capture a waveform displaying the complete duration
+of the transient, and with sufficient resolution to display the highest positive and negative portions of the
+transient.
+Utilising the proper sampling rate and trigger level, the voltage amplitude shall be recorded by actuating the
+DUT according to the test plan. Other transient parameters, such as rise time, fall time, transient duration, etc.
+may also be recorded. Unless otherwise specified, ten waveform acquisitions are necessary. It is necessary to
+report only the waveforms with the highest positive and negative amplitude (with their associated parameters).
+The measured transient shall be evaluated in accordance with Annex B. All pertinent information and test
+results shall be reported. If required per test plan, include transient evaluation results with respect to the
+performance objective as specified in the test plan.
+The test applies to an inductive load (such as power window, power seat, relay, electric mirror, etc.) with a
+large inductance or a high load current, which connects to the vehicle power supply, or a DUT which switches
+such an inductive load.
+If an inductive load has a small inductance or a low load current and is driven by an internal regulated voltage
+(e.g. 5 V), which is isolated from the vehicle power supply, the test is not applicable unless specified in a test
+plan.
+4.3.2 Test set-up for slow pulses
+The test set-up is described in Figure 1 a).
+The disturbance source is connected via the artificial network to the shunt resistor R (see 5.2), the switch S
+s
+(see 5.3) and the power supply (see 5.4).
+The switch S represents the main switch (e.g. ignition switch, relay, etc.) which supplies the DUT and could be
+located at several metres from the DUT.
+In the case of a DUT having an internal mechanic and/or electronic switch driving inductive load, the test set-
+up described in Figure 1 a) is applicable with the DUT internal switch closed (DUT inductive loads powered
+when opening switch S).
+Depending on the DUT internal switch type (relay, electronic switches, IGBT, etc.) it may not be possible to
+ensure a controlled closure of the internal switch. The detail state of the internal switch(es) shall be recorded
+in the test report.
+Transients generated by the supply disconnection of the DUT are measured at the moment of opening the
+switch S (the switch S is operated in order to generate transient disturbance).
+© ISO 2011 – All rights reserved 3
+
+ISO 7637-2:2011(E)
+Dimensions in millimetres
+Drawing not to scale
+a) Transient emission test set-up to measure slow pulses (ms-range or slower)
+Figure 1 — Transient emission test set-up to measure pulses (continued)
+4.3.3 Test set-up for fast pulses
+The test set-up is described in Figure 1 b) for DUT without internal switch.
+The disturbance source is connected via the artificial network to the shunt resistor R (see 5.2), the switch S
+s
+(see 5.3) and the power supply (see 5.4).
+Transients generated by the supply disconnection of the DUT are measured at the moment of opening the
+switch S (the switch S is operated in order to generate transient disturbance).
+4 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Dimensions in millimetres
+Drawing not to scale
+b) Transient emission test set-up to measure fast pulses (ns to µs range)
+for DUT without internal switch
+Figure 1 — Transient emission test set-up to measure pulses (continued)
+The test set-up is described in Figure 1 c) for DUT with internal switch.
+The disturbance source is connected via the artificial network to the shunt resistor R (see 5.2) and the power
+s
+supply (see 5.4).
+In this case the internal switch shall be operated in order to generate transient disturbance (there is no need
+for the switch S).
+Transients generated by the supply disconnection of the DUT are measured at the moment of opening the
+internal switch (the switch is operated in order to generate transient disturbance), with the probe connected as
+close to the DUT terminals as possible.
+© ISO 2011 – All rights reserved 5
+
+ISO 7637-2:2011(E)
+Dimensions in millimetres
+Drawing not to scale
+c) Transient emission test set-up to measure fast pulses (ns to µs range)
+for DUT with internal switch
+Key
+1 oscilloscope or equivalent
+2 voltage probe
+3 artificial network
+4 DUT (source of transient)
+5 ground plane
+6 power supply
+7 ground connection; length <100 mm
+R shunt resistance, as specified in 5.2
+s
+S switch, as specified in 5.3
+U supply voltage
+A
+NOTE For A, B, and P, see Figure 3.
+a Optionally with internal switch driving inductive load.
+b With internal load and switch.
+Figure 1 — Transient emission test set-up to measure pulses
+4.4 Transient immunity test
+4.4.1 Location of the DUT
+The DUT shall be placed on a non-conductive low relative permittivity (ε r u 1,4) support with a thickness of
+(50 ± 5) mm.
+Grounding of the DUT case to the ground plane shall reflect the vehicle installation and shall be defined in a
+test plan.
+6 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+4.4.2 Location of the power supply lines
+For test pulses 3a and 3b, the leads between the terminals of the test pulse generator and the DUT shall be
+laid out in a straight parallel line on a low relative permittivity (ε r u 1,4) support with a thickness of (50 ± 5) mm
+and shall have a length of (500 ± 100) mm.
+4.4.3 Location of the load simulator
+Preferably, the load simulator shall be placed directly on the ground plane. If the load simulator has a metallic
+case, this case shall be bonded to the ground plane.
+Alternatively, the load simulator may be located adjacent to the ground plane (with the case of the load
+simulator bonded to the ground plane).
+4.4.4 Test set-up
+Prior to test with the DUT, the test pulse generator is set up [see Figure 2 a)] to provide the specific pulse
+polarity, amplitude, duration and resistance without DUT (see 5.6). The peak voltage U shall be adjusted to
+s
+be the required test level with the tolerances of +10 % and 0 %.
+a) Pulse adjustment
+Key
+1 oscilloscope or equivalent
+2 voltage probe
+3 test pulse generator
+4 DUT disconnected
+5 ground plane
+6 DC power ground connection; maximum length for test pulse 3 is 100 mm
+7 load simulator (connected to ground plane if required)
+8 interconnect cable routed away from DUT power leads under test to avoid coupling
+9 load simulator ground (if required)
+Figure 2 — Transient immunity test set-up (continued)
+© ISO 2011 – All rights reserved 7
+
+ISO 7637-2:2011(E)
+Next, the DUT is connected to the generator [see Figure 2 b)] while the oscilloscope is disconnected.
+Depending on the real conditions, the function of the DUT may be evaluated during and/or after the
+application of the test pulses.
+For correct generation of the required test pulses it may be necessary to switch the power supply on and off.
+The switching can be performed by the test pulse generator if the power supply is integral to it.
+b) Pulse injection
+Key
+1 oscilloscope or equivalent
+2 voltage probe disconnected
+3 test pulse generator
+4 DUT
+5 ground plane
+6 DC power ground connection; maximum length for test pulse 3 is 100 mm
+7 load simulator (connected to ground plane if required)
+8 interconnect cable routed away from DUT power leads under test to avoid coupling
+9 load simulator ground (if required)
+Figure 2 — Transient immunity test set-up
+8 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+5 Test instrument description and specifications
+5.1 Artificial network
+The artificial network is used as a reference standard in the laboratory in place of the impedance of the vehicle
+wiring harness in order to determine the behaviour of equipment and electrical and electronic devices. An
+example of a schematic diagram is given in Figure 3.
+Key
+A power supply terminal
+B common terminal
+C capacitor
+L inductor
+P terminal for the DUT
+R resistor
+Figure 3 — Example of a schematic diagram of artificial network
+The artificial network shall be able to withstand a continuous load corresponding to the requirements of the
+DUT.
+The resulting values of impedance ⏐ Z ⏐, measured between the terminals P and B while terminals A and B
+PB
+are short-circuited, are given in Figure 4 as a function of frequency assuming ideal electric components. In
+reality, the impedance of an artificial network shall not deviate more than 10 % from the curve given in
+Figure 4.
+The main characteristics of the components are as follows:
+⎯ inductor: L = 5 µH (air-core winding);
+⎯ internal resistance between terminals P and A: <5 mΩ;
+⎯ capacitor: C = 0,1 µF for working voltages of 200 V AC and 1 500 V DC;
+⎯ resistor: R = 50 Ω.
+© ISO 2011 – All rights reserved 9
+
+ISO 7637-2:2011(E)
+Key
+⏐ Z ⏐ impedance (Ω)
+PB
+f frequency (Hz)
+Figure 4 — Impedance ⏐ Z ⏐ as a function of frequency from 100 kHz to 100 MHz
+PB
+(AB short-circuited)
+The artificial network shall be placed on the ground plane. The common terminal on the power source end of
+the artificial network shall be connected to the ground plane as shown in Figures 1 a), 1 b) and 1 c).
+5.2 Shunt resistor R
+s
+The shunt resistor R [see Figures 1 a), 1 b) and 1 c)] simulates the impedance of other vehicle devices which
+s
+are connected in parallel to the DUT and are not disconnected from it by the ignition switch. R is selected to
+s
+correspond to the mean impedance on the wiring harness between the disconnected ignition switch terminal
+and ground, with the switch off, and shall be specified by the vehicle manufacturer. In the absence of any
+specification, a value of R = 40 Ω shall be used. If a wire-wound resistor is used, the winding shall be bifilar
+s
+(i.e. with a minimum reactive component).
+NOTE To simulate the worst case condition, R can be disconnected.
+s
+5.3 Switch S
+The switching device S shall be located as shown in Figures 1 a), and 1 b). If the wiring between switch and
+load is long in the vehicle application (several meters), then using the slow set-up is adequate. If this is not the
+case, using the fast set-up is more appropriate. In either case, only the fast set-up is appropriate to measure
+the fast transients that may be generated by an opening relay.
+The switch on the DUT side of the artificial network shall be actuated for the measurement of fast transients
+(t ≈ ns to µs range).
+d
+The switch on the power supply side of the artificial network shall be actuated for the measurement of slow
+transients (t ≈ ms range).
+d
+10 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+As the switch S significantly influences the disturbance transient characteristics, the recommended switching
+devices are outlined as follows.
+a) For the measurement of high voltage transients (with amplitudes over 400 V), the switching device should
+be a standard production switch that is used in the vehicle with the DUT. If such a device is not available,
+an automotive relay with the following characteristics shall be used:
+⎯ contact rating: I = 30 A, continuous, resistive load;
+⎯ high purity silver contact material;
+⎯ no suppression across relay contact;
+⎯ single/double position contact electrically insulated from the coil circuit;
+⎯ coil with transient suppression (to minimize the effect on measured transient emissions).
+NOTE This switching relay tends to degrade with use and needs to be replaced.
+b) An unequivocal assessment of the disturbance is only possible if a switch with reproducible properties is
+used. For this purpose, an electronic switch is proposed. It is probable that amplitudes of disturbance are
+higher than those normally encountered with conventional switches (arcing). This shall be taken into
+account when evaluating test results. The electronic switch is very appropriate for controlling the function
+of suppressors used. For the measurement of lower voltage transients (with amplitudes less than 400 V)
+such as those produced by sources with transient suppressions, the switching device is recommended to
+be an electronic switch with the following characteristics:
+⎯ voltage rating: U = 400 V minimum at 25 A;
+max.
+⎯ current rating: I max. = 25 A minimum continuously, 100 A for Δt u 1 s;
+⎯ voltage drop: ΔU u 2 V at 25 A;
+⎯ supply voltages: see Table 1;
+⎯ switching time: Δt = 300 ns ± 20 % at 13,5 V with reference load R = 0,6 Ω, L = 50 µH (at 1 kHz);
+s
+⎯ trigger: internal and external;
+⎯ voltage probe: 1:100.
+The switch shall withstand a short-circuit condition.
+Some electronic switches may include an artificial network according to 5.1 and Figures 3 and 4. In this case it
+shall be possible to bypass it and use an external artificial network.
+The switch selected for the test shall be defined in a test plan and documented in the test report.
+5.4 Power supply
+The continuous supply source shall have an internal resistance R less than 0,01 Ω DC and an internal
+i
+impedance Z = R for frequencies less than 400 Hz. The output voltage shall not deviate more than 1 V from
+i i
+minimum to maximum load (including inrush current) and shall recover 63 % of its maximum excursion within
+100 µs. The superimposed ripple voltage, U, shall not exceed 0,2 V peak-to-peak. If a standard power supply
+r
+(with sufficient current capacity) is used to simulate the battery, it is important that the low internal impedance
+of the battery is also simulated.
+When a battery is used, a charging source may be needed to achieve the supply voltage U (see Table 1).
+A
+CAUTION — If a test is performed while the battery is being charged, care should be taken to minimize
+the accumulation of hydrogen gas in order to avoid the risk of explosion.
+© ISO 2011 – All rights reserved 11
+
+ISO 7637-2:2011(E)
+5.5 Measurement instrumentation
+A digitizing oscilloscope, or equivalent waveform acquisition equipment with voltage probes, shall be used as
+measuring equipment along with the following parameters:
+⎯ bandwidth: DC to at least 400 MHz;
+⎯ sampling rate: at least 2 Gigasamples per second (single sampling mode).
+Probe characteristics:
+⎯ attenuation: 10/1 (100/1, if needed);
+⎯ maximum input voltage: 500 V (1 000 V, if needed);
+⎯ bandwidth: DC to at least 400 MHz;
+⎯ input impedance: Z W 1 MΩ at DC.
+5.6 Test pulse generator for immunity testing
+The test pulse generator shall be capable of producing the open circuit test pulses described in 5.6.1 to 5.6.4
+at the maximum value of |U |. U shall be adjustable within the limits given in Tables 2 to 6.
+s s
+The timing (t) tolerances and internal resistance (R) tolerance shall be ±20 % unless otherwise specified.
+i
+A verification procedure for the generator performance and tolerances is described in Annex C.
+Example values for the evaluation of immunity of devices can be chosen from Tables A.1, A. 2 and A.3.
+5.6.1 Test pulse 1
+This test is a simulation of transients due to supply disconnection from inductive loads; it applies to a DUT if,
+as used in the vehicle, it remains connected directly in parallel with an inductive load (see Figure E.1 in
+Annex E).
+The pulse shape is given in Figure 5.
+The parameters are given in Table 2.
+Figure 5 — Test pulse 1
+12 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Table 2 — Parameters for test pulse 1
+Parameters Nominal 12 V system Nominal 24 V system
+U −75 V to −150 V −300 V to −600 V
+s
+R 10 Ω 50 Ω
+i
+t 2 ms 1 ms
+d
+t (1 0 ) µs (3 0 ) µs
+r −0,5 −1,5
+t 1a W0,5 s
+t 200 ms
+2
+t b <100 µs
+3
+a t shall be chosen such that it is the minimum time for the DUT to be correctly
+1
+initialized before the application of the next pulse and shall be W0,5 s.
+b t is the smallest possible time necessary between the disconnection of the
+3
+supply source and the application of the pulse.
+5.6.2 Test pulses 2a and 2b
+Pulse 2a simulates transients due to sudden interruption of currents in a device connected in parallel with the
+DUT due to the inductance of the wiring harness (see Figure E.2 a) in Annex E).
+Pulse 2b simulates transients from DC motors acting as generators after the ignition is switched off
+(see Figure E.2 b) in Annex E).
+The pulse shapes and parameters for these test pulses are given in Figures 6 and 7, and Tables 3 and 4,
+respectively.
+Figure 6 — Test pulse 2a
+© ISO 2011 – All rights reserved 13
+
+ISO 7637-2:2011(E)
+Table 3 — Parameters for test pulse 2a
+Parameters Nominal 12 V and 24 V system
+U +37 V to +112 V
+s
+R 2 Ω
+i
+t 0,05 ms
+d
+t (1 0 ) µs
+r −0,5
+t a 0,2 s to 5 s
+1
+a The repetition time t can be short depending on the switching. The use of a
+1
+short repetition time reduces the test time.
+Figure 7 — Test pulse 2b
+Table 4 — Parameters for test pulse 2b
+Parameters Nominal 12 V system Nominal 24 V system
+U 10 V 20 V
+s
+R 0 Ω to 0,05 Ω
+i
+t 0,2 s to 2 s
+d
+t 1 ms ± 0,5 ms
+12
+t 1 ms ± 0,5 ms
+r
+t 1 ms ± 0,5 ms
+6
+14 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+5.6.3 Test pulses 3a and 3b
+These test pulses are a simulation of transients, which occur as a result of the switching processes. The
+characteristics of these transients are influenced by distributed capacitance and inductance of the wiring
+harness (see Figure E.3 in Annex E).
+The pulse shapes and parameters for these test pulses are given in Figures 8 and 9, and Tables 5 and 6,
+respectively.
+Figure 8 — Test pulse 3a
+Table 5 — Parameters for test pulse 3a
+Parameters Nominal 12 V system Nominal 24 V system
+U −112 V to −220 V −150 V to −300 V
+s
+R 50 Ω
+i
+t 150 ns ± 45 ns
+d
+t 5 ns ± 1,5 ns
+r
+t 100 µs
+1
+t 10 ms
+4
+t 90 ms
+5
+© ISO 2011 – All rights reserved 15
+
+ISO 7637-2:2011(E)
+Figure 9 — Test pulse 3b
+Table 6 — Parameters for test pulse 3b
+Parameters Nominal 12 V system Nominal 24 V system
+U +75 V to +150 V +150 V to +300 V
+s
+R 50 Ω
+i
+t 150 ns ± 45 ns
+d
+t 5 ns ± 1,5 ns
+r
+t 100 µs
+1
+t 10 ms
+4
+t 90 ms
+5
+5.6.4 Note on test pulses 4, 5a, and 5b
+The test pulses 4, 5a, and 5b have been removed from this edition of this part of ISO 7637, since they are
+specified in ISO 16750-2 and ISO 21848.
+16 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Annex A
+(informative)
+Example of test pulse severity levels associated with function
+performance status classification
+A.1 General
+This annex gives examples of test pulse severity levels which should be used in line with the principle of
+function performance status classification (FPSC) described in ISO 7637-1.
+A.2 Classification of test pulse severity level
+A.2.1
+The suggested minimum and maximum severity levels are given in column III and IV in Tables A.1 and A.2.
+A selected level and test time for testing at or in between these values may be chosen according to the
+agreement between vehicle manufacturer and supplier. In cases where no specific values are defined, it is
+recommended to use levels selected from columns III through IV in Tables A.1 and A.2.
+A.2.2 12 V electrical system
+The recommended levels are given in Table A.1.
+Table A.1 — Examples of test pulse severity levels for nominal 12 V system
+Test pulse severity level,
+U cd Min. number Burst cycle/
+Test pulsea Selected s of pulses pulse repetition time
+test levelb V
+or test time
+IV III I / II min. max.
+1 −150 −112 −75 500 pulses 0,5 s e
+2a +112 +55 +37 500 pulses 0,2 s 5 s
+2b +10 +10 +10 10 pulses 0,5 s 5 s
+3a −220 −165 −112 1 h 90 ms 100 ms
+3b +150 +112 +75 1 h 90 ms 100 ms
+a Test pulses as in 5.6.
+b Values agreed between vehicle manufacturer and equipment supplier.
+c The amplitudes are the values of U as defined for each test pulse in 5.6.
+s
+d The former levels I and II are revised because they did not ensure sufficient immunity in subsequent road vehicles' design.
+e The maximum pulse repetition time shall be chosen such that it is the minimum time for the DUT to be correctly initialized before
+the application of the next pulse and shall be W0,5 s.
+© ISO 2011 – All rights reserved 17
+
+ISO 7637-2:2011(E)
+A.2.3 24 V electrical systems
+The recommended values are given in Table A.2.
+Table A.2 — Suggested test pulse severity levels for nominal 24 V system
+Test pulse severity level,
+U cd Min. number Burst cycle/
+Test pulsea Selected s of pulses pulse repetition time
+test levelb V
+or test time
+IV III I / II min. max.
+1 −600 −450 −300 500 pulses 0,5 s e
+2a +112 +55 +37 500 pulses 0,2 s 5 s
+2b +20 +20 +20 10 pulses 0,5 s 5 s
+3a −300 −220 −150 1 h 90 ms 100 ms
+3b +300 +220 +150 1 h 90 ms 100 ms
+a Test pulses as in 5.6.
+b Values agreed between vehicle manufacturer and equipment supplier.
+c The amplitudes are the values of U as defined for each test pulse in 5.6.
+s
+d The former levels I and II are revised because they did not ensure sufficient immunity in subsequent road vehicles' design.
+e The maximum pulse repetition time shall be chosen such that it is the minimum time for the DUT to be correctly initialized before
+the application of the next pulse and shall be W0,5 s.
+A.3 Example of FPSC application using test pulse severity levels
+An example of severity levels is given in Table A.3. This table can be different for each kind of pulse, and for
+12 V and 24 V electrical systems (levels from Tables A.1 and A.2).
+Table A.3 — Examples of test pulse severity levels
+Category 1 Category 2 Category 3
+L Level IV Level IV Level IV
+4i
+L Level I / II / III Level IV Level IV
+3i
+L Level I / II / III Level I / II / III Level IV
+2i
+L Level I / II / III Level I / II / III Level I / II / III
+1i
+18 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Annex B
+(normative)
+Transient emissions evaluation — Voltage waveform
+B.1 General
+The purpose of this annex is to provide a method of evaluation to characterize transient emissions from
+disturbance sources as tested in accordance with the test conditions specified in 4.2.
+B.2 Essential elements of transient emissions waveform characteristics
+The following waveform parameters are to be taken into consideration for the evaluation of waveform
+characteristics (see ISO 7637-1 for definitions).
+Abbreviations have been assigned to the waveform parameters as given in Table B.1.
+Table B.1 — Terms and abbreviations
+Definition
+Parameter Abbreviation
+ISO 7637-1, Clause 3
+Peak amplitude 3.12 U (U , U )
+s s1 s2
+Pulse duration 3.13.1 t
+d
+Pulse rise time 3.13.2 t
+r
+Pulse fall time 3.13.3 t
+f
+Pulse repetition time 3.14.4 t
+1
+Burst duration 3.14.1 t
+4
+Time between bursts 3.14.2 t
+5
+Burst cycle time 3.14.3 t + t
+4 5
+B.3 Classification of transient emissions
+B.3.1 General
+The suggested minimum and maximum limits for transient emissions are given in columns I to IV of
+Tables B.2 and B.3, respectively, in B.3.7. The acceptable limit at or in between these values may be chosen
+according to the agreement between vehicle manufacturer and supplier. The transient emissions may have to
+meet either part of or all the parameters outlined in Table B.1, depending on this agreement. In cases where
+no specific values are defined, it is recommended that levels selected from columns I to IV of Tables B.2 and
+B.3, respectively, in B.3.7, be used.
+Depending on the test set-up that is used in Figure 1 a) or 1 b) or 1 c), either slower pulses or fast transients
+will be observed. All types of test set-up shall therefore be used.
+The voltage waveforms illustrated in Figures B.1 and B.2 are typical waveforms on the bench top according to
+the test conditions described in 4.3 of this part of ISO 7637. The application of the voltage emissions limit (U )
+s
+is as follows.
+© ISO 2011 – All rights reserved 19
+
+ISO 7637-2:2011(E)
+B.3.2 Transient with both positive (U ) and negative pulses (U )
+s2 s1
+Both positive and negative voltage limits shall apply.
+B.3.3 Transient with positive pulses (U )
+s2
+A positive voltage limit shall apply.
+B.3.4 Transient with negative pulses (U )
+s1
+A negative voltage limit shall apply.
+B.3.5 Transient with single or multiple bursts with positive (U ) or negative pulses (U )
+s2 s1
+The positive and/or negative voltage limit(s) shall apply.
+B.3.6 Typical transient waveforms
+The essential parameters of single transient and bursts waveforms are illustrated in Figure B.1 and Figure B.2,
+respectively.
+Key
+1 0,1 (U − U )
+s1 A
+2 0,9 (U − U )
+s1 A
+3 0,9 (U + U )
+s2 A
+4 0,1 (U + U )
+s2 A
+Figure B.1 — Single transient waveform
+20 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Figure B.2 — Burst transient waveform
+B.3.7 Transient waveform classification table
+First determine the transient amplitude and waveform measure with the test set-up according to Figure 1 a) for
+the maximum amplitude of the slower pulses (ms-range). After that, use the test set-up according to
+Figure 1 b) or 1 c) and determine the maximum amplitude for the fast transients (ns to ms range).
+The classification of the transient amplitudes may be performed by applying the values in Tables B.2 and B.3,
+respectively.
+Table B.2 — Suggested limits for the classification of nominal 12 V equipment
+Suggested limit for U for severity levels I to V
+Pulse s
+amplitude (U s) I / II III IV Va
+Positive slow pulses
++25 V +37 V +75 V
+(ms range or slower)
+Negative slow pulses
+−50 V −75 V −100 V
+(ms range or slower)
+Positive fast pulses
++50 V +75 V +100 V
+(µs to ns range)
+Negative fast pulses
+−75 V −112 V −150 V
+(µs to ns range)
+a Values to be determined by vehicle manufacturer and equipment supplier.
+© ISO 2011 – All rights reserved 21
+
+ISO 7637-2:2011(E)
+Table B.3 — Suggested limits for the classification of nominal 24 V equipment
+Suggested limit for U for severity levels I to V
+Pulse s
+amplitude (U s) I / II III IV Va
+Positive slow pulses
++25 V +37 V +75 V
+(ms range or slower)
+Negative slow pulses
+−100 V −150 V −200 V
+(ms range or slower)
+Positive fast pulses
++100 V +150 V +200 V
+(µs to ns range)
+Negative fast pulses
+−100 V −150 V −200 V
+(µs to ns range)
+a Values to be determined by vehicle manufacturer and equipment supplier.
+22 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Annex C
+(normative)
+Test pulse generator verification procedure
+C.1 General
+The purpose of this annex is to provide a method for the verification of the output characteristics of the test
+pulse generator.
+See 5.5 for measurement instrumentation requirements.
+The verification measurements described in C.2 shall be performed under two different loading conditions to
+determine the behaviour of the test pulse generator:
+⎯ under no load condition;
+⎯ under matched load conditions.
+C.2 Pulse verification
+The generator must be verified to ensure compliance to the parameters listed below for both open circuit and
+loaded conditions. The energy content may influence significantly the test results. Within the test report the
+energy of the actual used pulses shall be listed (see Annex D for examples of methods for determining pulse
+energy).
+The U for this verification procedure is 0 volts.
+A
+Care shall be taken for the selection of the resistors. They shall have sufficient power dissipation for both
+pulse and DC supply rating. Additionally they shall be non-inductive. The tolerance of the matching resistor
+shall be ±1%.
+The source impedance shall be selected to be equal to the load resistance defined for each test pulse.
+C.2.1 Test pulse 1
+C.2.1.1 Test pulse 1 (Nominal 12 V system)
+Table C.1 — Test pulse 1 (Nominal 12 V system)
+Test pulse 1 U t t
+s r d
+No load −100 V ± 10 V (1 0 ) µs 2 000 µs ± 400 µs
+−0,5
+10 Ω load −50 V ± 10 V — 1 500 µs ± 300 µs
+© ISO 2011 – All rights reserved 23
+
+ISO 7637-2:2011(E)
+C.2.1.2 Test pulse 1 (Nominal 24 V system)
+Table C.2 — Test pulse 1 (Nominal 24 V system)
+Test pulse 1 U t t
+s r d
+No load −600 V ± 60 V (3 0 ) µs 1 000 µs ± 200 µs
+−1,5
+50 Ω load −300 V ± 60 V — 1 000 µs ± 200 µs
+C.2.2 Test pulse 2
+C.2.2.1 Test pulse 2a (Nominal 12 V and nominal 24 V system)
+Table C.3 — Test pulse 2a (Nominal 12 V and nominal 24 V system)
+Test pulse 2a U t t
+s r d
+No load +75 V ± 7,5 V (1 0 ) µs 50 µs ± 10 µs
+−0,5
+2 Ω load +37,5 V ± 7,5 V — 12 µs ± 2,4 µs
+C.2.2.2 Test pulse 2b (Nominal 12 V and nominal 24 V system)
+Table C.4 — Test pulse 2b (Nominal 12 V and nominal 24 V system)
+Test pulse 2b U t t t
+s r d 12
++10 V ± 1 V
+(12 V system)
+No load 1 ms ± 0,5 ms 2 s ± 0,4 s 1 ms ± 0,5 ms
++20 V ± 2 V
+(24 V system)
+For this verification procedure, U shall be set as defined in Table 1.
+A
+The wave shape shall be verified under no load condition in general.
+Additionally, measurements under load condition shall be carried out by taking the maximum power (the maximum output current I of
+N
+the DC supply into consideration). The minimum usable test impedance is calculated as follows:
+R = U / I .
+L A N
+C.2.3 Test pulse 3
+C.2.3.1 Test pulse 3a
+Table C.5 — Test pulse 3a (Nominal 12 V and nominal 24 V system)
+Test pulse 3a U t t
+s r d
+No load −200 V ± 20 V 5 ns ± 1,5 ns 150 ns ± 45 ns
+50 Ω load −100 V ± 20 V 5 ns ± 1,5 ns 150 ns ± 45 ns
+24 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+C.2.3.2 Test pulse 3b
+Table C.6 — Test pulse 3b (Nominal 12 V and nominal 24 V system)
+Test pulse 3b U t t
+s r d
+No load +200 V ± 20 V 5 ns ± 1,5 ns 150 ns ± 45 ns
+50 Ω load +100 V ± 20 V 5 ns ± 1,5 ns 150 ns ± 45 ns
+For verification of test pulses 3a/3b coaxial measuring devices shall be used. The spectrum of the pulses
+covers the frequency range up to 200 MHz. Within this range it is difficult to use high impedance voltage
+probes. The attached ground cable of the probe may cause significant ringing and may result in false
+measurements. Coaxial measuring devices therefore are strictly recommended.
+© ISO 2011 – All rights reserved 25
+
+ISO 7637-2:2011(E)
+Annex D
+(informative)
+Determination of pulse generator energy capability
+D.1 Calculation method for determination of energy capability specification
+This method is to calculate the energy of the pulse as delivered by the generator to the matching resistor
+(resistive load R ) utilising the measured pulse parameters t and U .
+L d s
+The transient generator used for this part of ISO 7637 should generate double exponential transients, which
+are a result of capacitive discharges into a pulse shaping network. This type of generator is used for the
+pulses 1 (12 V), 1 (24 V), 2a, 3a and pulse 3b.
+Pulse 2b has to be realized by programmable DC power sources.
+Key
+1 power supply
+2 capacitor, C
+s
+3 pulse shaping network with internal resistance, R
+i
+4 pulse output
+5 matching load resistor, R
+L
+Figure D.1 — Example of a simplified circuit diagram of a transient generator
+Figure D.2 — Double exponential pulse shape generated by a transient generator
+26 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+The influence of the rise time is not taken into account (t (cid:19) t ), which is allowed for all pulses specified in this
+r d
+part of ISO 7637.
+Voltage function:
+⎛2,3×t⎞
+U(t)=U O×R L ×e −⎜⎜ ⎝ td ⎟⎟ ⎠
+R + R
+i L
+where
+U is the open circuit output voltage;
+O
+R is the source resistance of the generator;
+i
+R is the load resistance for the generator;
+L
+t is the pulse width 10 % to 10 % of U ;
+d s
+U(t) is a function of the voltage wave shape.
+Current function:
+⎛2,3×t⎞ ⎛2,3×t⎞
+I(t)= 1 ×U O×R L ×e−⎜ ⎝ td ⎟ ⎠ = U O ×e−⎜ ⎝ td ⎟ ⎠
+R R +R R +R
+L i L i L
+where
+U is the open circuit output voltage;
+O
+R is the source resistance of the generator;
+i
+R is the load resistance for the generator;
+L
+td is the pulse width 10 % to 10 % of U s;
+I(t) is a function of the current wave shape.
+Function of the pulse power:
+2
+⎛ ⎛2,3×t⎞⎞ ⎛4,6×t⎞
+(U )2 ×R ⎜ −⎜ ⎟⎟ (U )2 ×R −⎜ ⎟
+P(t)=U(t)×I(t)= O L ×⎜e ⎝ td ⎠ ⎟ = O L ×e ⎝ td ⎠
+(R +R )2 ⎜ ⎟ (R +R )2
+i L ⎜ ⎟ i L
+⎝ ⎠
+where
+U is the open circuit output voltage;
+O
+R is the source resistance of the generator;
+i
+R is the load resistance for the generator;
+L
+td is the pulse width 10 % to 10 % of U s;
+U(t) is a function of the voltage wave shape;
+I(t) is a function of the current wave shape;
+P(t) is a function of the pulse power.
+© ISO 2011 – All rights reserved 27
+
+ISO 7637-2:2011(E)
+Integral of P(t) shows the energy content of a single pulse loaded with R :
+L
+−⎛ ⎜4,6×t⎞
+∞ (U )2 ×R ∞ ⎟
+W e = 0∫ P(t)dt = (RO L)2L × 0∫ e ⎝ t d ⎠ dt
++R
+i
+where
+U is the open circuit output voltage;
+O
+R is the source resistance of the generator;
+i
+R is the load resistance for the generator;
+L
+td is the pulse width 10 % to 10 % of U s;
+W is the energy content of a single pulse.
+e
+This results in a short formula:
+(U )2 ×R t
+W = s L d
+e (R +R )2 4,6
+i L
+(U )2
+t
+W = s d for R = R the voltage U = 2U · U is the peak voltage across R
+e (R ) 4,6 i L O s s L
+L
+where
+U is the open circuit output voltage;
+O
+U is the peak voltage;
+s
+R is the source resistance of the generator;
+i
+R is the load resistance for the generator;
+L
+td is the pulse width 10 % to 10 % of U s;
+W is the energy content of a single pulse.
+e
+28 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+D.2 Measurement method to determine generator's energy capability
+This method is to utilize the capability of the digital oscilloscope to determine the energy of the pulse as
+delivered by the generator to the matching resistor (resistive load R ) once the pulse parameters t and U are
+L d s
+measured.
+EXAMPLE 1 Settings: CH 1 Voltage pulse across R using a voltage probe.
+L
+CH 1 Choose the measurement function for energy. This measurement will typically be
+in the units of (V*V*s). Divide this value by the value of R in Ω. This result is the
+L
+energy delivered into R .
+L
+EXAMPLE 2 Settings: CH 1 Voltage pulse across R using a voltage probe.
+L
+MATH1 Choose the waveform math function and multiply CH1*CH1.
+Choose the measurement function for area. This measurement will be in the
+units of (V*V*s). Divide this value by the value of R in Ω. This result is the
+L
+energy delivered into R .
+L
+EXAMPLE 3 Settings: CH 1 Voltage pulse at R using a voltage probe.
+L
+CH 2 Current pulse through R using a current probe.
+L
+CH A Multiplication of CH 1 and CH 2.
+Measurement function: area (CH A).
+This result is the energy delivered into R .
+L
+© ISO 2011 – All rights reserved 29
+
+ISO 7637-2:2011(E)
+Annex E
+(informative)
+Origin of transients in the electric system of road vehicles
+E.1 Introduction
+The test pulses used in this part of ISO 7637 are based on pulses measured in vehicle electric systems under
+certain conditions and created by basic configurations in the electric circuits. The following schematic
+diagrams show the origin of pulses 1 to 3b. For the evaluation of emitted pulses, see Annex B of this part of
+ISO 7637.
+NOTE Different voltage and impedance values for 12 V and 24 V systems result due to differences in harness
+structure and switching elements.
+E.2 Characteristic pulses
+E.2.1 Pulse 1
+The schematic circuit diagram that can produce pulse 1 is shown in Figure E.1.
+Key
+1 ignition switch
+2 inductive load
+3 load R (see 5.2)
+s
+4 DUT
+5 power supply
+Figure E.1 — Circuit diagram for pulse 1
+Pulse 1 occurs due to supply disconnection from inductive loads. This includes blowing or pulling out fuses. It
+influences devices which remain connected directly in parallel with this inductance. The pulse shape is
+represented in Figure 5.
+Due to the nature of this pulse (DUT power disconnection), events such as reset and/or re-initialization may
+be accepted in some test plans.
+30 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+E.2.2 Pulse 2
+The schematic circuit diagrams that can produce pulses 2a and 2b are shown in Figure E.2 a) and
+Figure E.2 b), respectively.
+a) Pulse 2a
+b) Pulse 2b
+Key
+1 ignition switch
+2 wiring harness (inductive)
+3 DUT
+4 DC motor with internal inductance
+5 motor switch
+6 load
+7 load switch
+8 power supply
+Figure E.2 — Circuit diagrams for pulses 2a and 2b
+Pulse 2a occurs when the load switch (7) is opened while the ignition switch (1) is closed. This pulse can also
+occur during blowing or pulling out fuses as well as by bouncing switches.
+Pulse 2b occurs when the motor is running and the ignition switch (1) is opened.
+The pulse shapes are represented in Figures 6 and 7.
+© ISO 2011 – All rights reserved 31
+
+ISO 7637-2:2011(E)
+E.2.3 Pulse 3
+The schematic circuit diagram of pulse 3 is shown in Figure E.3.
+Key
+1 wiring harness with distributed inductance and capacitance
+2 switch
+3 DUT
+4 inductive load
+5 power supply
+Figure E.3 — Circuit diagram for test pulse 3
+Pulse 3 occurs as the result of switching processes. This includes blowing or pulling out fuses. The
+characteristics of this pulse are influenced by distributed capacitance and inductance of the wiring harness.
+The pulse shapes are represented by combinations of pulses in Figures 8 and 9.
+32 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Annex F
+(informative)
+Alternative transient testing technique using electromechanically
+switched inductive loads
+F.1 General
+Voltage transient events are often the result of contact arching that occurs during mechanical or
+electromechanical switching of an inductive load. The arching phenomena produce complex voltage
+waveforms, whose characteristics (i.e. voltage, pulse duration) are significantly affected by the resistive and
+reactive loads that share the same circuit as the inductive load.
+Characteristics for selected test pulses depicted in this part of ISO 7637 (e.g. pulse 1) represent transient
+waveforms on DUT power circuits having impedances less than 100 Ω which is largely due to the input filter
+capacitances associated with these circuits. However, many microprocessor-based electronic devices have
+power and input circuits with higher impedances. These higher impedances, when placed across the switched
+inductive load can result in significantly different voltage transient characteristics. Also, actual transient voltage
+characteristics are not repetitive by nature and can vary significantly between consecutive transient events.
+This pseudo-random behaviour can often cause malfunction of DUT software execution.
+To simulate these complex waveforms, this annex presents an alternative approach for testing, making use of
+an electromechanically switched inductive load. The waveforms depicted in this annex represent typical
+transients produced by a transient generator circuit also defined in this annex. The waveforms serve as
+guidance for what to expect from the transient generator. All waveforms shown are measured under open
+circuit conditions unless otherwise stated.
+The choice of components used for the transient generator may result in minor differences (e.g. waveform
+amplitude, timing) between the waveforms illustrated in this annex and the actual transient waveforms
+produced. However, those differences should not significantly alter the resulting DUT performance during
+testing.
+F.2 Transient waveform description
+F.2.1 General
+There are three main types of transient waveforms, which have been assigned the designations of A, B and C.
+F.2.2 Waveforms A1, A2
+Waveforms A1 and A2 simulate voltage transients produced during deactivation of power via mechanical
+(or electromechanical) switching to an inductive load connected in parallel to the DUT (see Figure F.1). The
+impedance Z represents other electrical loads that share the same circuit.
+© ISO 2011 – All rights reserved 33
+
+ISO 7637-2:2011(E)
+Key
+1 vehicle battery
+2 inductive load
+3 DUT
+4 switch
+5 switched inductive load
+6 shunt resistor according to 5.2
+Figure F.1 — Circuit configuration for waveforms A1 and A2
+Waveform A1 is produced when switching higher-current (>1 A) inductive loads. The waveform is composed
+of a long duration component produced by the initial arc discharge across the switch contacts. Note that the
+timing for the long duration component is directly proportional to the product of the load inductance and the
+steady state current. The second, shorter duration component is produced by the inductive “fly-back” voltage
+produced by the remaining stored energy in the inductor after the arc discharge is extinguished.
+Waveform A1's open circuit voltage (Z not present) is illustrated in Figure F.2 using the transient generator
+circuit detailed in F.4. Peak negative open circuit voltage levels may range between −280 V to −500 V. Peak
+positive open circuit voltage levels are typically between 80 V to 100 V.
+34 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+a) Example of A1 composite waveform
+b) Example of A1 short duration waveform component
+Key
+1 long duration pulse component
+2 short duration pulse component
+Examples not to scale.
+Figure F.2 — Waveform A1
+© ISO 2011 – All rights reserved 35
+
+ISO 7637-2:2011(E)
+Waveform A2 (see Figure F.3) is produced when switching predominately low current (<0,4 A) inductive loads,
+but can also occur, though less frequently, for higher current (>1 A) inductive loads. The waveform is
+produced during a secondary arc discharge (i.e. “showering arc”) across the switch contacts. The total
+disturbance time may vary significantly from 20 ms to 400 ms. Duration of individual pulses may vary between
+100 ns to 10 ms depending on the parasitic parameters of the inductive load (e.g. inter-winding capacitance).
+Peak negative voltage levels are between −280 V to −500 V. Peak positive voltages levels for this pulse may
+be between +100 V to +200 V. Note that the positive transient voltages are the result of the inductance
+between the battery and the switch.
+a) Example of A2 composite waveform
+b) Example of waveform A2 detail
+Examples not to scale.
+Figure F.3 — Waveform A2
+36 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Waveform timing and amplitude for Waveforms A1 and A2 are significantly affected by the external circuit
+loading. Figures F.4 and F.5 illustrate the effect of different loading conditions on A1 and A2 respectively. Note
+that when the capacitance selected is significant (~2 µF), waveform A1 resembles pulse 1 in accordance with
+this part of ISO 7637.
+Key
+1 open circuit
+2 220 Ω; 0,1 µF
+3 220 Ω; 2,2 µF
+Figure F.4 — External loading effect on waveform A1
+Key
+1 open circuit
+2 1 100 Ω
+Example not to scale.
+Figure F.5 — Example of external loading effect on waveform A2
+© ISO 2011 – All rights reserved 37
+
+ISO 7637-2:2011(E)
+F.2.3 Waveforms B1, B2
+Waveforms B1 and B2 simulate the voltage transient produced during deactivation via low-side mechanical or
+electromechanical switching of an inductive load which is connected to an input of the DUT (see Figure F.6).
+Key
+1 vehicle battery
+2 inductive load
+3 DUT
+4 switch
+5 switched inductive load
+Figure F.6 — Configuration for waveforms B1 and B2
+Waveforms B1 and B2 are similar to waveforms A1 and A2 respectively except the polarities are reversed.
+This is due to the switching configuration of the inductive load.
+F.2.4 Waveform C
+Waveform C simulates the voltage transient produced on direct battery connections during switching of
+predominately low current (<0,4 A) inductive loads (see Figure F.7). The waveform is produced during a
+secondary arc (“showering arc”) discharge across the switch contacts. Figure F.8 illustrates the typical
+waveform.
+Key
+1 vehicle battery
+2 inductive load
+3 DUT
+4 switch
+5 switched inductive load
+6 shunt resistor according to 5.2
+Figure F.7 — Configuration for waveform C
+38 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Waveform C can be significantly affected by any external circuit loading (Z) sharing the same circuit as the
+inductive load. If the circuit loading is selected such that shower arcing does not occur, waveform C will not
+exist.
+Example not to scale.
+Figure F.8 — Example of waveform C characteristics
+F.3 Application of transient waveforms
+The recommended application of the test waveforms, described in F.2, to DUT circuits is presented in
+Table F.1. Note that in addition to the locations where these transient waveforms are to be applied, there are
+two operating modes of application. In Mode 1, test waveforms are applied at a fixed repetition rate. In Mode 2,
+test waveforms are applied in a pseudo-random manner. The purpose for Mode 2 is to verify that pseudo-
+random transient disturbances do not cause disruption of DUT software execution, which is less likely to occur
+when exposing the DUT to repetitive pulses.
+The pulses are applied using the transient waveform generator circuit detailed in F.4. For each waveform, one
+or both modes may be used except for waveforms B1 and B2, due to a limitation of the generator circuit.
+F.4 Transient waveform generator circuit
+Transient waveforms A1, A2, B1, B2, and C are generated using the circuits illustrated in Figures F.9 and F.10.
+The circuits contain a few key components that can affect the waveform characteristics depicted in F.2.
+However, the differences between the waveforms depicted in this annex and actual transient waveforms
+produced will be minor.
+The circuit facilitates generation of transient pulses in either Mode 1 or Mode 2. Mode 1 consists of repetitive
+pulses with a pulse repetition rate (PRR) of, e.g., 0,1 Hz, 10 % duty cycle. The sub-circuit illustrated in
+Figure F.11 a) facilitates Mode 1 pulses. Mode 2 consists of pseudo-random pulses that are generated by the
+sub-circuit illustrated in F.11 b). Note that Mode 2 cannot be used when applying either pulse B1 or B2.
+© ISO 2011 – All rights reserved 39
+
+ISO 7637-2:2011(E)
+Table F.1 — Test waveform application
+Test pulse Pulse application Modea
+DUT power supply circuits that are connected to the vehicle battery via mechanical
+switches or electromagnetic relays.
+A1, A2 1, 2
+DUT input circuits that are connected directly or indirectly (e.g. pull-up resistor) to the
+vehicle battery via mechanical switches or electromechanical relays.
+B1, B2 DUT input circuits connected to low-side switched inductive loads. 1
+Component power supply circuits that are directly connected to the vehicle battery (i.e.
+no switches).
+Component power supply circuits when connected to the vehicle battery via mechanical
+C 1, 2
+switches (e.g. ignition switch) and electromagnetic relays.
+Input circuits when connected directly or indirectly (e.g. pull-up resistor) to the vehicle
+battery via mechanical switches (e.g. ignition switch) and electromagnetic relays.
+a Mode 1: Waveforms are applied at a repetition rate of e.g 0,1 Hz, 10 % duty cycle (see F.4).
+Mode 2: Waveforms are applied using a pseudo-random repetition rate (see F.4).
+Key
+1 vehicle battery (12 V DC)
+2 inductor: 5 µH (50 A)a
+3 relay sub-circuit [see Figures F.11 a) and F.11 b) for detail]
+4 inductor: 100 mH (2 A) (DC resistance <1 Ω)
+5 resistor: 6 Ω ±5 %
+6 resistor: 100 Ω ±5 %
+7 switch: SPST (2 A)
+switch closed for pulse A1
+switch open for pulses A2 and C
+NOTE 1 The switch (7) is open during application of waveforms A2 and C. The switch is closed during application of
+waveform A1.
+NOTE 2 Pairs of points A1, A2 and C are the DUT connection points for pulses A1, A2 and C, respectively.
+a Current rating on 5 µH inductor based on expected current draw of DUT plus 2 A from the 100 mH inductive load.
+b DUT connection for pulse C.
+c DUT connection for pulses A1 and A2.
+Figure F.9 — Generator circuit for pulses A1, A2 and C
+40 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Key
+1 vehicle battery (12 V DC)
+2 inductor: 5 µH (50 A)a
+3 relay sub-circuit [see Figure F.11 a) and F.11 b) for detail]
+4 inductor: 100 mH (2 A) (DC resistance <1 Ω)
+5 resistor: 6 Ω ±5 %
+6 resistor: 100 Ω ±5 %
+7 switch: SPST (2 A)
+switch closed for pulse B1
+switch open for pulse B2
+NOTE 1 The switch (7) is open during application of waveform B2. The switch is closed during application of
+waveform B1.
+NOTE 2 Pairs of points B1 and B2 are the DUT connection points for pulses B1 and B2, respectively.
+a Current rating on 5 µH inductor based on expected current draw of DUT plus 2 A from the 100 mH inductive load.
+b DUT connection for pulses B1 and B2.
+Figure F.10 — Generator circuit for pulses B1 and B2
+© ISO 2011 – All rights reserved 41
+
+ISO 7637-2:2011(E)
+a) Mode 1
+b) Mode 2
+Key
+1 vehicle battery connection
+3a function generator (e.g. 0,1 Hz square wave)
+3b resistor: 51 Ω 0,25 W
+3c 12 volt AC relay (double pole)a
+3d NPN transistor: TIP 41
+3e Zener diode: 39 V, 5 W (1N5366A)
+3f test switch: SPST switch
+a Use of 12 volt AC relay is critical in order to achieve pseudo-random switching behaviour for Mode 2 operation.
+Switching shall be performed using a single contact.
+Figure F.11 — Relay sub-circuit
+42 © ISO 2011 – All rights reserved
+
+ISO 7637-2:2011(E)
+Bibliography
+[1] ISO 8854, Road vehicles — Alternators with regulators — Test methods and general requirements
+[2] ISO 16750-2, Road vehicle — Environmental conditions and testing for electrical and electronic
+equipment — Part 2: Electrical loads
+[3] ISO 21848, Road vehicles — Electrical and electronic equipment for a supply voltage of 42 V —
+Electrical loads
+© ISO 2011 – All rights reserved 43
+
+ISO 7637-2:2011(E)
+ICS 43.040.10
+Price based on 43 pages
+© ISO 2011 – All rights reserved

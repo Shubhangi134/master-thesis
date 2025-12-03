@@ -15,6 +15,7 @@ SET-UP BY
 MINISTRY OF ROAD TRANSPORT and HIGHWAYS
 GOVERNMENT OF INDIA
 April 2024
+
 AIS -189
 INTRODUCTION
 The Government of India felt the need for a permanent agency to expedite the publication of
@@ -42,6 +43,7 @@ is derived from UNR 155, date of entry into force 22 January 2021.
 The AISC panel and the Automotive Industry Standards Committee (AISC) responsible for
 preparation of this standard are given in Annexure-E and Annexure-F respectively.
 II
+
 AIS -189
 CONTENTS
 Clause No. Details Page No.
@@ -65,6 +67,7 @@ Annexure E Composition of AISC panel on Cyber Security 25/27
 Management System (CSMS)
 Annexure F AISC Committee composition 27/27
 III
+
 AIS -189
 Approval of Vehicles with regards to Cyber Security and Management System (CSMS)
 1.0 SCOPE
@@ -109,6 +112,7 @@ no longer be produced. The phase ends when there are no longer any operational
 vehicles of a specific vehicle type.
 2.8 "Mitigation" means a measure that is reducing risk.
 1 /27
+
 AIS -189
 2.9 "Risk" means the potential that a given threat will exploit vulnerabilities of a
 vehicle and thereby cause harm to the organization or to an individual.
@@ -157,6 +161,7 @@ RESERVED
 5.1 Test Agency shall grant, as appropriate, type approval with regard to cyber
 security, only to such vehicle types that satisfy the requirements of this Standard.
 2 /27
+
 AIS -189
 5.1.1 The Test Agency shall verify by means of document checks that the vehicle
 manufacturer has taken the necessary measures relevant for the vehicle type to:
@@ -204,6 +209,7 @@ manufacturer has put in place satisfactory arrangements and procedures to
 manage properly the cyber security aspects as covered by this Standard.
 5.3.1 The Test Agency shall ensure, that they have:
 3 /27
+
 AIS -189
 (a) Competent personnel with appropriate cyber security skills and specific
 automotive risk assessments knowledge.1
@@ -252,6 +258,7 @@ to comply with the requirements of this Standard. The test agency shall issue a
 new certificate in cases where changes have been brought to the attention of the
 test agency and the changes have been positively reassessed.
 4 /27
+
 AIS -189
 6.11 The expiry or withdrawal of the manufacturer’s Certificate of Compliance for
 CSMS shall be considered, with regard to the vehicle types to which the CSMS
@@ -298,6 +305,7 @@ the vehicle manufacturer shall be mitigated within a reasonable timeframe.
 7.2.2.4 The vehicle manufacturer shall demonstrate that the processes used within their
 CSMS will ensure that the monitoring referred to in clause 7.2.2.2 (g) shall be
 5 /27
+
 AIS -189
 continual. This shall:
 (a) Include vehicles after first registration in the monitoring;
@@ -347,6 +355,7 @@ the storage and execution of aftermarket software, services, applications or dat
 sufficient testing to verify the effectiveness of the security measures
 implemented.
 6 /27
+
 AIS -189
 7.3.7 The vehicle manufacturer shall implement measures for the vehicle type to:
 (a) Detect and prevent cyber-attacks against vehicles of the vehicle type;
@@ -385,6 +394,7 @@ shall assign a certificate number for such an extension and issue it to vehicle
 manufacturer by means of a communication form conforming to the model in
 Annexure B to this Standard.
 7 /27
+
 AIS -189
 ANNEXURE A
 INFORMATION DOCUMENT
@@ -417,6 +427,7 @@ of those tests: ..................
 A-9.8 Description of the consideration of the supply chain with respect to cyber security:
 ..................
 8 /27
+
 AIS -189
 ANNEXURE A – APPENDIX – 1
 Model of Manufacturer’s Declaration of Compliance for CSMS
@@ -434,6 +445,7 @@ Function of the signatory: ..................
 ..................
 (Stamp and signature of the manufacturer’s representative)
 9 /27
+
 AIS -189
 ANNEXURE B
 COMMUNICATION
@@ -465,6 +477,7 @@ Reason for extension: ..................
 request is attached:
 1 Strike out what does not apply.
 10 /27
+
 AIS -189
 ANNEXURE C
 MODEL OF CERTIFICATE OF COMPLIANCE FOR CSMS
@@ -485,6 +498,7 @@ On [.................. Date]
 [.................. Signature]
 Attachments: description of the Cyber Security Management System by the manufacturer
 11 /27
+
 AIS -189
 ANNEXURE D
 LIST OF THREATS AND CORRESPONDING MITIGATIONS
@@ -533,6 +547,7 @@ server (conducted by for example USB
 sticks or other media connecting to the
 server)
 12 /27
+
 AIS -189
 2. Services from back-end 2.1 Attack on back-end server stops it
 server being disrupted, functioning, for example it prevents it
@@ -593,6 +608,7 @@ hijacking/replay against a communication gateway allows
 attacks the attacker to downgrade software of an
 ECU or firmware of the gateway
 13 /27
+
 AIS -189
 7. Information can be 7.1 Interception of information / interfering
 readily disclosed. For radiations / monitoring communications
@@ -655,6 +671,7 @@ legitimate updates server or network to prevent rollout of
 critical software updates and/or unlock of
 customer specific feature
 14 /27
+
 AIS -189
 4.3.4 Threats to 15. Legitimate actors are 15.1 Innocent victim (e.g. owner, operator or
 vehicles regarding able to take actions maintenance engineer) being tricked into
@@ -715,6 +732,7 @@ systems (e.g. hacking/ tampering/
 blocking of messages such as ODR
 Tracker data, or number of runs)
 15 /27
+
 AIS -189
 20.4 Data manipulation to falsify vehicle’s
 driving data (e.g. mileage, driving speed,
@@ -770,6 +788,7 @@ certificates, developer passwords, …)
 can permit access to ECUs or permit
 attackers to gain higher privileges
 16 /27
+
 AIS -189
 29. Network design 29.1 Superfluous internet ports left open,
 introduces providing access to network systems
@@ -825,6 +844,7 @@ data/code
 overwrite of vehicle held data/code
 5.4 / Communication channels permit
 17 /27
+
 AIS -189
 21.1 erasure of vehicle held data/code
 5.5 Communication channels permit
@@ -873,6 +893,7 @@ vehicle messages (e.g. CAM, DENM)
 those normally sent from OEM or
 component/system/function supplier)
 18 /27
+
 AIS -189
 2. Mitigations for "Update process"
 Mitigations to the threats which are related to "Update process" are listed in Table B2.
@@ -919,6 +940,7 @@ including logging of actions and access
 related to the management of the
 security functions
 19 /27
+
 AIS -189
 4. Mitigations for "External connectivity and connections"
 Mitigations to the threats which are related to "external connectivity and connections" are listed in Table
@@ -970,6 +992,7 @@ address book information, location personal or system critical data.
 information, vehicle’s electronic ID, Examples of Security Controls can be
 etc. found in OWASP
 20 /27
+
 AIS -189
 19.3 Extraction of cryptographic keys M11 Security controls shall be implemented
 for storing cryptographic keys e.g.
@@ -1016,6 +1039,7 @@ charging parameters, such as charging
 voltage, charging power, battery
 temperature, etc.
 21 /27
+
 AIS -189
 6. Mitigations for "Potential vulnerabilities that could be exploited if not sufficiently protected or
 hardened"
@@ -1066,6 +1090,7 @@ followed
 malicious acts, such as sending
 arbitrary CAN bus messages
 22 /27
+
 AIS -189
 7. Mitigations for "Data loss / data breach from vehicle"
 Mitigations to the threats which are related to "Data loss / data breach from vehicle" are listed in Table
@@ -1116,6 +1141,7 @@ providing services they rely on are recovery measures in case of system
 outage. Example Security Controls can
 be found in OWASP
 23 /27
+
 AIS -189
 3.2 Loss of information in the cloud. M4 Security Controls are applied to
 Sensitive data may be lost due to minimise risks associated with cloud
@@ -1160,6 +1186,7 @@ be lost due to IT components wear and
 tear, causing potential cascading issues
 (in case of key alteration, for example)
 24 /27
+
 AIS -189
 ANNEXURE E
 (See Introduction)
@@ -1209,6 +1236,7 @@ Dr. Chandrama Thorat ACMA (Faurecia India Private Limited)
 Mr. Saurabh Pathak ACMA (Minda Group)
 Mr. Ashutosh Telang ACMA (Minda Group)
 25 /27
+
 AIS -189
 Ms. Devayani Jayant Kulkarni ACMA (Robert Bosch Engineering and Business
 Solutions Private Limited)
@@ -1218,6 +1246,7 @@ Mr. Sreenikethana ACMA (Vitesco Technologies India Pvt. Ltd)
 Venkatachalapathy
 * At the time of approval of this Automotive Industry Standard (AIS)
 26 /27
+
 AIS -189
 ANNEXURE F
 (See Introduction)

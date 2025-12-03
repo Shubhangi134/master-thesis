@@ -26,6 +26,7 @@ MINISTRY OF ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 10 April 2015
 1/1
+
 AMENDMENT NO. 1
 TO
 AIS-021/2004
@@ -75,6 +76,7 @@ passing through V2 declined forward 4° below the horizontal. The left and right
 edges of the area "S" are vertical and generated from the intersection lines of the
 three planes declined 4° as defined in paragraph 3.1.3. above.
 12
+
 3.1.3.2.2. In the case of a windscreen extending beyond 1500 mm forward of the point V2,
 the distance between the area "S" and the point V2 may be extended accordingly.
 2.0 Page No. 21/22,Annexure IT
@@ -107,6 +109,7 @@ MINISTRY OF ROAD TRANSPORT & HIGHWAYS
 (DEPARTMENT OF ROAD TRANSPORT & HIGHWAYS)
 GOVERNMENT OF INDIA
 October 2011
+
 AIS-021
 AUTOMOTIVE INDUSTRY STANDARD
 Field of Vision of
@@ -124,6 +127,7 @@ MINISTRY OF SHIPPING, ROAD TRANSPORT & HIGHWAYS
 (DEPARTMENT OF ROAD TRANSPORT & HIGHWAYS)
 GOVERNMENT OF INDIA
 December 2004
+
 AIS - 021
 Status chart of the Standard to be used by the purchaser
 for updating the record
@@ -131,6 +135,7 @@ Sr. Corr- Amend- Revision Date Remark Misc.
 No. igenda. ment
 General remarks:
 I
+
 AIS-021
 INTRODUCTION
 The Government of India felt the need for a permanent agency to expedite the
@@ -165,6 +170,7 @@ motor vehicle drivers ”
 The Automotive Industry Standards Committee responsible for preparation of this
 standard is given in Annexure - I
 I
+
 AIS- 021
 Field of Vision of Motor Vehicle Drivers for M1 Category
 1.0 SCOPE
@@ -202,6 +208,7 @@ coordinates of the three dimensional reference grid and to a design
 ground plane shall be specified by the vehicle manufacturer. These
 marks may be the control points used for body-assembly purpose;
 1/22
+
 AIS - 021
 24 Actual seat back angle
 Actual seat back angle means the angle measured between a vertical
@@ -243,6 +250,7 @@ the surface, is not less than 70%.
 “P points” means the points about which the driver’s head rotates
 when he views objects on a horizontal plane at eye level.
 2/22
+
 AIS-021
 212 E points
 “E points” means points representing the centers of the driver’s eyes
@@ -285,6 +293,7 @@ vertical plane of the vehicle.
 3121 The angle of obstruction of each “A” pillar shall be measured by
 superimposing in a plane the following horizontal sections:
 3/22
+
 AIS - 021
 Section 1: Starting from the Pm point situated at the location defined
 in point 3.3.1.1, draw a plane forming an angle of 2° upwards in
@@ -334,6 +343,7 @@ panel inside the steering wheel will be tolerated if a plane through
 V2, perpendicular to the plane X-Z and tangential to the highest part
 of the steering-wheel rim, is declined at least 1° below the horizontal.
 4/22
+
 AIS-021
 32 Position of the V points
 321 The positions of the V points in relation to the R points, as
@@ -376,6 +386,7 @@ Table IV indicates the further corrections to be made to the X andZ
 coordinates of each P point and each "V" point when the design
 seat-back angle isnot 25°. (Annexure II, Figure 1)
 5/22
+
 AIS-021
 TABLE IV
 Seat- Horizontal Vertical Seat-back | Horizontal | Vertical
@@ -423,6 +434,7 @@ three-dimensional reference grid and shown in Table I under
 32.1.1and Table IV under 3.4. The windscreen datum points shall
 then be found from the corrected V-points as prescribed in 3.1.1
 6/22
+
 AIS-021
 The relationship between the P points, the R point, and the centre-
 line of the driver’s seating position, as indicated by XYZ coordinates
@@ -440,6 +452,7 @@ measured as specified in 3.1.2.1.1.
 obstruction of the A-pillar on the passenger side shall then be
 measured as specified in point 3.1.2.1.2
 7/22
+
 AIS - 021
 ANNEXURE :1
 PROCEDURE FOR DETERMINING THE “H” POINT AND THE
@@ -484,6 +497,7 @@ measured between a vertical line through the “R” point and the torso
 line in a position which corresponds to the design position of the
 seat-back established by the vehicle manufacturer
 8/22
+
 AIS - 021
 28 “Centreplane of occupant” (C/LO) means the median plane of the
 3DH machine positioned in each designated seating position; it is
@@ -530,6 +544,7 @@ angle shall be determined twice mo(r theree times in all). If the
 results of two of these three operations satisfy the requirements the
 conditions of item 3.2.2 above shall apply.
 9/22
+
 AIS - 021
 325 If the results of at least two of all the three operations described in
 3.2.4 above do not satisfy the requirements of item 3.2.2 above, or
@@ -573,6 +588,7 @@ ground and perpendicular to the longitudinal centreplane of the seat.
 4.6 Adjust the feet and leg positions of the 3 DH machine as follows
 4.6.1 Designated seating position; driver and outside front passenger.
 10/22
+
 AIS - 021
 4.6.1.1 Both feet and leg assemblies shall be moved forward in such a way
 that the feet take up natural positions on the floor, between the
@@ -629,6 +645,7 @@ shall be determined for each row of seats.
 4.13.1 In the case of the front row, the driver’s seat
 4132 In the case of the rear row or rows an outer seat.
 11/22
+
 AIS-021
 APPENDIX:I
 DESCRIPTION OF THE THREE DIMENSIONAL
@@ -668,6 +685,7 @@ Thigh bar
 Xnee angle
 quadrant
 Foot angle quadrant
+
 AIS - 021
 APPENDIX: II
 THREE -DIMENSIONAL REFERENCE SYSTEM
@@ -689,6 +707,7 @@ plane)
 Supporting surface
 Three-dimensional raferance aystam
 13/22
+
 AIS - 021
 ANNEXURE :1I
 METHOD FOR DETERMINING THE RELATIONSHIPS BETWEEN
@@ -737,6 +756,7 @@ Test methods to determine these requirements may include the use of
 theodolites, light sources or shadow devices, or any other method
 which can be shown to give equivalent results.
 14/22
+
 AIS-021
 @ 2) " )\
 -2 a = 68 mm
@@ -749,6 +769,7 @@ d = 665 mm
 Figure 1
 Determination of V Points
 15/22
+
 AIS - 021
 v1
 Pm
@@ -764,6 +785,7 @@ Note :
 Figure 2 is for Left Hand Drive Vehicles. For Right Hand Drive Vehicles
 the mirror image shall be considered.
 16/22
+
 AIS-021
 Angle of obstruction
 of the A—pillar on the
@@ -774,16 +796,19 @@ passonger side
 parallel to—
 Figure 3
 17/22
+
 AIS - 021
 \‘ P
 Figure 4
 Dimensional Diagram Showing Relative Positions of E Points and P Points
 18/22
+
 AIS-021
 Figure 5
 Evaluation of Obstructions
 in the 180° Forward Direct Field of Vision of the Driver
 19/22
+
 AIS -021
 Vertical median
 th}dIMI plane
@@ -810,6 +835,7 @@ N
 Figure 6
 Three-Dimensional Reference Grid
 20/22
+
 ]w
 Bo
 ySo
@@ -842,6 +868,7 @@ A
 Figure 7
 Level Work Space
 21/22
+
 AIS - 021
 ANNEXURE : 111
 (See Introduction)

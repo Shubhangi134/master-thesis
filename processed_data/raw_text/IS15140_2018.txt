@@ -18,6 +18,7 @@ MANAK BHAVAN, 9 BAHADUR SHAH ZAFAR MARG
 NEW DELHI-110002
 www.bis.org.in www.standardsbis.in
 March 2018 Price Group 11
+
 Passive Safety Crash Protection Systems Sectional Committee, TED 29
 FOREWORD
 This Indian Standard (First Revision) was adopted by the Bureau of Indian Standards, after the draft finalized by
@@ -44,6 +45,7 @@ For the purpose of deciding whether a particular requirement of this standard is
 observed or calculated, expressing the result of a test or analysis, shall be rounded off in accordance with IS 2 : 1960
 ‘Rules for rounding off numerical values (revised)’. The number of significant places retained in the rounded off
 value should be the same as that of the specified value in this standard.
+
 IS 15140 : 2018
 Indian Standard
 AUTOMOTIVE VEHICLES — SAFETY BELT AND
@@ -114,6 +116,7 @@ may be retracting type or non-retracting type (static).
 procedure
 ISO 6487 : 2015 Road vehicles — Measurement 3.1.3 Harness Belt — An S-type belt arrangement
 1
+
 IS 15140 : 2018
 FIG. 1 TWO POINT TYPE SEAT BELT ASSEMBLY
 FIG. 2 THREE POINT TYPE SEAT BELT ASSEMBLY
@@ -134,6 +137,7 @@ other part of the safety belt.
 anchor point may be connected by any of the following
 four ways: 3.5 Attachments — Parts of the belt assembly
 2
+
 IS 15140 : 2018
 FIG. 3 HARNESS TYPE SEAT BELT ASSEMBLY
 including the necessary securing components, which the safety belt. It has a length adjusting capability which
@@ -175,6 +179,7 @@ safety belt assembly is to be secured.
 A retractor which during normal driving conditions does 3.9 Vehicle Type as Regards Safety Belts and
 not restrict the freedom of movement by the wearer of Restraint Systems — The category of motor vehicles
 3
+
 IS 15140 : 2018
 which do not differ in parameters such as dimensions, 3.18 Locking System of the Seat — A device ensuring
 geometry and materials of the components of the that the seat and its parts are maintained in any position
@@ -250,6 +255,7 @@ angularly or longitudinally without a fixed intermediate
 compartment.
 position to facilitate passenger access.
 4
+
 IS 15140 : 2018
 3.25 Rearward - Facing — Facing in the direction 4.2.1.2 All parts of the belt assembly affected by
 opposite to the normal direction of travel of the vehicle. corrosion shall be protected against it. After the
@@ -313,6 +319,7 @@ ii) All other vehicles of M and N Category 2 Point or 3 Point belt with or witho
 iii) L7 3 point belt with or without retractors. 2 point or 3 point belt with or without
 retractors.
 5
+
 IS 15140 : 2018
 capable of being released by the wearer with a single 4.2.3.3 When tested in accordance with 5.2.6, the force
 simple movement of one hand in one direction, in required to operate any manually adjusting device shall
@@ -392,6 +399,7 @@ strength as prescribed in 5.2.1. They shall not break or accordance with 5.3.4. 
 become detached under the tension set up by the of an upper torso restraint, the retracting force
 prescribed load. of the strap shall be between 1 N and 7 N when
 6
+
 IS 15140 : 2018
 measured. If the strap passes through a guide signal or power source and the failure of
 or pulley, the retracting force shall be measured the signal or power source is indicated to
@@ -498,6 +506,7 @@ complete a further 5 000 cycles of withdrawal
 sensitivity is dependent on an external
 and retraction.
 7
+
 IS 15140 : 2018
 If the assembly incorporates a tension- conformity with 5.4.2.2, the breaking load of the strap,
 reducing device, the above tests shall be determined as prescribed in 5.4.1, shall be not less than
@@ -575,6 +584,7 @@ less when the webbing is tested by the method specified
 in 5.4.3. This test shall not be applicable for straps of
 In the case of two straps samples conditioned in retractor belts.
 8
+
 IS 15140 : 2018
 4.3.6 Energy Absorptivity 4.4.2.5 The belts shall be subjected to the corrosion
 test prescribed in 5.1 after which the Buckle shall be
@@ -660,6 +670,7 @@ the chest with the steering assembly, if the
 to the conditioning specified in 5.2.7.
 latter meets the requirements of IS 11939 and
 9
+
 IS 15140 : 2018
 provided the contact does not occur at a speed for 2 h. Immediately after being removed from the
 higher than 24 km/h. For this assessment the chamber, the mating parts of the buckle shall then be
@@ -719,6 +730,7 @@ having a temperature of 20 ± 5 °C and a relative
 5.2.3 Two samples of the complete belt assembly shall humidity of 65 ± 5 percent. The test shall be carried
 be placed in a low-temperature chamber at –10 ± 1°C
 10
+
 IS 15140 : 2018
 Table 4 Samples for the Type Approval Tests
 ( Clause 5)
@@ -776,6 +788,7 @@ Energy Absorptive
 xxiii) ...... Retention of Strap ×
 Sample
 11
+
 IS 15140 : 2018
 FIG. 4 BUCKLE STRENGTH TEST
 out immediately after conditioning at a temperature being 300 ± 20 mm. The 50 N load shall be applied
@@ -817,6 +830,7 @@ which it normally occurs when the retractor is installed
 frequency of 0.5 cycles per second, the total amplitude
 in a vehicle.
 12
+
 IS 15140 : 2018
 FIG. 5 TYPICAL APPARATUS TO TEST DURABILITY OF RETRACTOR MECHANISM
 5.3.2.3 When retractors are being tested for sensitivity shall consist of about 1 kg of dry quartz of particle size
@@ -871,6 +885,7 @@ designed as to avoid breakage of the strap at or near
 the point of contact with the clamps. The speed of
 5.3.3.2 The dust used in the test prescribed in 5.3.3.1 traverse shall be about 100 mm/min. The free length of
 13
+
 IS 15140 : 2018
 FIG. 6 TYPICAL APPARATUS FOR TESTING THE DUST RESISTANCE OF RETRACTORS
 FIG. 7 RETRACTION FORCE MEASUREMENT
@@ -890,6 +905,7 @@ or within 10 mm of either of the clamps, the test shall The strap shall be condi
 be invalid and a new test shall be carried out on another ISO 139, using the standard atmosphere or
 specimen. alternative standard atmosphere.If the test is not
 14
+
 IS 15140 : 2018
 FIG. 8 TYPICAL SETUP FOR GRIPPING THE STRAP IN TENSILE TESTING MACHINE
 carried out immediately after conditioning, the 5.4.2.5 Heat conditioning
@@ -935,6 +951,7 @@ be measured within 5 min after removal of the strap
 the test apparatus will approximately maintain the
 from the low temperature chamber
 15
+
 IS 15140 : 2018
 relative position of the strap and contact area. The changes direction once in passing through a
 samples shall be conditioned as per 5.4.2.2. The ambient rigid part. During this test, the angles which
@@ -975,6 +992,7 @@ b) Type 2 — This is for cases where the strap calculated.
 FIG. 9 TYPE 1 — PROCEDURE TEST EXAMPLE OF TEST ARRANGEMENTS CORRESPONDING TO
 THE TYPE OF ADJUSTING DEVICE
 16
+
 IS 15140 : 2018
 FIG. 10 TYPE 2 — PROCEDURE TEST
 FIG. 11 ABRASIONS AND MICRO SLIP TEST
@@ -994,6 +1012,7 @@ dividing the work load area (ABD) produced by the 5.4.5.1 The test shall be carr
 tension load curve from the time of initial load to that new samples of strap, of sufficient length conditioned
 of final load by the gauge length at the time of initial in conformity with the provisions of 5.4.2.
 17
+
 IS 15140 : 2018
 FIG. 12 ENERGY ABSORPTIVITY GRAPH
 5.4.5.2 The tests shall be conducted according supported by roller bearings. The load is applied
@@ -1017,6 +1036,7 @@ conditions as per 5.4.2.2.
 FIG. 13 STATIC STRENGTH/DISPLACEMENT OF SEAT BELT ASSEMBLY/RESTRAINT
 SYSTEM SETUP FOR TWO POINT TYPE
 18
+
 IS 15140 : 2018
 apparatus with its loop length about 5.5.2.2 In the case of a safety belt or restraint system
 forming part of an assembly for which approval is
@@ -1074,6 +1094,7 @@ securing shall be the same as those of the vehicle design. with the positioning 
 FIG. 14 STATIC STRENGTH/DISPLACEMENT OF SEAT BELT ASSEMBLY/RESTRAINT
 SYSTEM SETUP FOR THREE POINT TYPE
 19
+
 IS 15140 : 2018
 positions of the seat shall be stated in the report. If the be total mass of the trolley, the vehicle
 seat back is adjustable, it shall be locked as specified structure and the inert masses differ from
@@ -1151,6 +1172,7 @@ increased by increments of 200 kg, in which systems, it shall also be ascertaine
 case an additional inert mass of 28 kg shall whether the parts of the vehicle structure which are
 be added per increment. In no case shall attached to the trolley have undergone any visible or
 20
+
 IS 15140 : 2018
 permanent deformation. If there is any such deformation normal for opening the buckle. For lever type buckles
 found, this shall be taken into account in any calculation a hole of 2.5 mm dia may be drilled through the buckle
@@ -1218,6 +1240,7 @@ metal surface. For lift cover buckles, the buckle opening use of the Standard Ma
 force shall be applied by a spring balance or other manufacturers or producers may be obtained from the
 measuring device in a manner and direction which are Bureau of Indian Standards
 21
+
 IS 15140 : 2018
 ANNEX A
 (Clause 4.1.1)
@@ -1290,6 +1313,7 @@ R
 2) The table may be extended as necessary for vehicles with more than two rows of seats or if there are more than three seats across the
 width of the vehicle.
 22
+
 IS 15140 : 2018
 ANNEX B
 (Clause 5.1.1)
@@ -1334,6 +1358,7 @@ B-2.4 Each sample shall be so placed to prevent salt
 onto the test samples.
 solution from one sample dripping on to any other samples.
 23
+
 IS 15140 : 2018
 ANNEX C
 (Clause 5.3.2.4)
@@ -1379,6 +1404,7 @@ The seat shall be of rigid construction and present a
 the upper edge of the buckle and hole for the attachment
 smooth surface, except in the case of tests on restraint
 24
+
 IS 15140 : 2018
 of the strap support is not more than 250 mm. Otherwise, normally mounted which shall be securely fixed on the
 the points A and B shall be used. The structure carrying test trolley.
@@ -1420,6 +1446,7 @@ to a rigid frame or to a part of the vehicle on which it is
 All dimensions in millimetres.
 FIG. 16 TROLLEY, SEAT, ANCHORAGE
 25
+
 IS 15140 : 2018
 All dimensions in millimetres.
 FIG. 17 STOPPING DEVICE
@@ -1435,6 +1462,7 @@ a) At 100 percent elongation: 108 daN/cm2 (Method B) 45 percent
 b) At 300 percent elongation: 235 daN/cm2
 D-4.4.7 Density at 25°C: 1.05–1.10
 26
+
 IS 15140 : 2018
 D-4.4.8 Ageing in air [(IS 3400 (Part 4)/IS 3400 D-4.4.10.3 Immersion in distilled water: One week at 70°C
 (Part 9)]
@@ -1467,6 +1495,7 @@ c) Volume:swelling < 20 percent 3) Shoulder height;
 NOTE — The line in shade area applies only for acceleration test devices
 FIG. 20 DESCRIPTION OF THE CURVE OF TROLLEY DECELERATION OR ACCELERATION AS FUNCTION OF TIME
 27
+
 IS 15140 : 2018
 FIG. 21 MANIKIN — SIDE VIEW OF HEAD,NECK AND TORSO
 b) Table 7 Mass of head, neck, torso, thigh and a) A hip tube (2),
@@ -1508,11 +1537,13 @@ friction plates (24) and a tensioner (25).
 The torso structure consists of the following
 components: D-5.1.2.8 Polyurethane
 28
+
 IS 15140 : 2018
 FIG. 22 MANIKIN — FRONT VIEW OF HEAD,NECK AND TORSO
 FIG. 23 MANIKIN — SIDE VIEW OF FIG. 24 MANIKIN — FRONT VIEW OF
 HIP,THIGHS AND LOWER LEG HIP,THIGHS AND LOWER LEG
 29
+
 IS 15140 : 2018
 All dimensions in millimetres.
 FIG. 25 MANIKIN — FRONT VIEW OF HEAD,NECK AND TORSO
@@ -1525,6 +1556,7 @@ a vertical axis.
 All dimensions in millimetres.
 FIG. 26 MANIKIN IN SEATED POSITION
 30
+
 IS 15140 : 2018
 a) Type: PU 123 CH compound D-5.4.3 Hip Joints
 b) Hardness: 50 to 60 shore A
@@ -1572,6 +1604,7 @@ iv) Lower leg and foot 9.0 ± 0.5
 e) Lock the tensioner in this position.
 Total mass including correction weights 75.5 ± 1.0
 31
+
 IS 15140 : 2018
 Table 8 References, Names, Materials and Principal Dimensions of the Components of the Manikin
 (Clause D-5.1.1)
@@ -1619,6 +1652,7 @@ Plates and nuts
 33 Overall cotton and polyamide straps —
 34 Hip correction masses (six) steel Each mass 1 kg
 32
+
 Bureau of Indian Standards
 BIS is a statutory institution established under the Bureau of Indian Standards Act, 1986 to promote
 harmonious development of the activities of standardization, marking and quality certification of goods
@@ -1657,6 +1691,7 @@ DEHRADUN. DURGAPUR. FARIDABAD. GHAZIABAD. GUWAHATI.
 HYDERABAD. JAIPUR. JAMMU. JAMSHEDPUR. KOCHI. LUCKNOW. NAGPUR.
 PARWANOO. PATNA. PUNE. RAIPUR. RAJKOT. VISAKHAPATNAM.
 Published by BIS, New Delhi
+
 AMENDMENT NO. 1 FEbruAry 2022
 TO
 IS 15140 : 2018 AuTOMOTIVE VEHICLES —
@@ -1681,6 +1716,7 @@ first 50 +1 km/h’ for ‘The distance to achieve the first km/h’.
 (Page 26, Annex-D, clause D-4.4.3) — Substitute ‘Minimum Elongation:
 Ao ≥ 400 percent’ for ‘Minimum Elongation: Ao 400 percent.
 1
+
 (Page 26, Annex D, clause D-4.4.4) — Substitute the following for the
 existing:
 ‘D-4.4.4 Modulus

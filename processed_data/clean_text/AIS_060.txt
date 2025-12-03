@@ -1,4 +1,3 @@
-AIS-060
 AUTOMOTIVE INDUSTRY STANDARDS
 General Guidelines on
 Control Cables for Automobiles
@@ -15,14 +14,14 @@ MINISTRY OF ROAD TRANSPORT & HIGHWAYS
 GOVERNMENT OF INDIA
 July 2010
 I
-AIS-060
+
 Status chart of the Standard to be used by the purchaser
 for updating the record
 Sr. Corr- Amend- Revision Date Remark Misc.
 No. igenda ment
 General remarks:
 II
-AIS-060
+
 INTRODUCTION
 The Government of India felt the need for a permanent agency to expedite the
 publication of standards and development of test facilities in parallel when the
@@ -45,7 +44,7 @@ ii) JASO T 001- 97: Control Cables for Motorcycles
 The Automotive Industry Standards Committee (AISC) responsible for preparation
 of this standard is given in Annexure: 31
 III
-AIS-060
+
 General Guidelines on Control Cables for Automobiles
 1. SCOPE
 This standard covers the requirements of control cables (hereinafter
@@ -72,8 +71,7 @@ Reference Fig. 3
 Reference Fig. 4
 2.2 Types of Main Components
 Types of cable main components shall be as indicated in Table 2.
-1/51
-AIS-060
+
 TABLE 2
 Sr. Component Name Type Remarks Applicable Annexure
 No.
@@ -123,8 +121,7 @@ Type D3 Clamp type Annexure 19
 Type D4 Forced insertion type Annexure 20
 6. Adjust Bolt Type A For stacking Annexure 21
 7. Adjust Nut Type A For stacking box nut Annexure 22
-2/51
-AIS-060
+
 Sr. Component Name Type Remarks Applicable
 No. Annexure
 8. Round joint Type A Type A1 For rotary stacking Annexure 23
@@ -173,8 +170,7 @@ per agreement between the purchaser
 and the manufacturer.
 Synthetic resin, black
 Plastic Tube Synthetic resin -----
-3/51
-AIS-060
+
 Sr. Component Name Type Material Surface Treatment
 No.
 3. Cable End Type A1 The material shall conform to ---
@@ -232,8 +228,7 @@ or MFZn5-C
 Type B
 Note: In case of material and construction not available as per Table 3, the material and construction shall be as per
 the agreement between the cable supplier and the customer.
-4/51
-AIS-060
+
 4. SHAPES AND DIMENSIONS OF MAIN COMPONENTS
 The shapes and dimensions of the cable main components shall be as
 indicated in Annexures 1 ~ 30.
@@ -268,8 +263,7 @@ JIS B 0211 (Limits of Sizes and Tolerances for Metric Fine Screw
 Threads). Plated screw thread accuracy shall meet JIS B 1180 (Hexagon
 Head Bolts) and JIS B 1181 (Hexagon Nuts).
 (4) Assembled product dimension tolerance shall conform to Table 5.
-5/51
-AIS-060
+
 TABLE 5-1
 When Without Dust Cover
 Unit: mm
@@ -303,8 +297,7 @@ a) Accelerator cable
 b) Parking brake cable
 c) Bonnet release cable
 d) Ventilation cable
-6/51
-AIS-060
+
 e) Fuel lid opening cables.
 f) Choke cable
 g) Clutch cable
@@ -343,8 +336,7 @@ The test procedure shall be as follows:
 (3) Performance measurement after durability test
 (4) Performance measurement may also be conducted during the durability
 test.
-7/51
-AIS-060
+
 6.1.2.1 Setting of Cable for Durability Test
 The cable shall be sent in the same way as specified in figure 5 & 6.
 Fig. 5
@@ -356,8 +348,7 @@ Test set up for Durability Test at the End of Cable
 Pull input side of the inner cable of assembly at the operating speed
 shown in Table 6. Apply the specified load to the output side, and then
 measure the load efficiency and stroke loss.
-8/51
-AIS-060
+
 TABLE 6
 Specifications for Performance Measurement
 Sr. Type of cable Type Load Operating speed
@@ -403,8 +394,7 @@ minute 10,00,000 the test
 Tail gate cable, Fuel cycles/ to cable throughout
 lid cable, Door latch minute 20,000 the test
 cable.
-9/51
-AIS-060
+
 6.1.2.4 Performance Measurement after Durability Test
 This test shall be conducted by the same method as specified in
 clause 6.1.2.2. Performance Measurement before Durability Test.
@@ -423,8 +413,7 @@ f) Temp rise rate = 4 ºC / min
 cable = 30 Cycles / minute h) -40 º C for 4h, ambient temp
 for 16 h, 120 ºC for 4 h
 i) Temp rise rate 4 ºC / min
-10/51
-AIS-060
+
 6.1.3 Performance Evaluation (Operational Efficiency Test)
 Operating efficiency shall be expressed by load efficiency η. As indicated in
 s
@@ -432,15 +421,13 @@ Reference Fig. 7, outer casing 1000 mm long shall be installed at 400 mm
 fixed distance and 180o bending angle, with inner cable 1500 mm long
 inserted before hand. One end of the cable shall be secured and the other end
 gradually pulled, and fixed side load W, deflection δ , tension side load F,
-1
 deflection δ , and apparent permanent elongation δ after removal of tension
 2 0
 side load F shall be measured. In case of load efficiency test, fixed side load
 W may be constant load.
 δ 1(mm)
 Reference Fig. 7
-11/51
-AIS-060
+
 (1) Load Efficiency
 Load efficiency shall be expressed by following equation. (Refer to Reference Fig. 8).
 Reference Fig.8
@@ -456,7 +443,6 @@ Area GFCD
 w0 - w
 Area GEBD
 W and W values shall be as agreed between parties concerned.
-0
 (b) When making fixed side load W to constant load.
 W
 η (%) = ------ x 100
@@ -466,17 +452,13 @@ Value of constant load W shall be as agreed between parties concerned.
 (2) Stroke Efficiency
 Stroke efficiency shall be expressed by the following equation.
 (Refer to Reference Fig. 9).
-12/51
-AIS-060
+
 Reference Fig. 9
 δ
-1
 η (%) = ---------- x 100
 s
 δ δ
-2 - 0
 Apparent permanent elongation δ value shall also be indicated. Values
-0
 of W and K shall be as agreed between parties concerned.
 6.1.4 Strength Test
 The test shall be performed for the following test items:
@@ -498,37 +480,28 @@ Clamp both ends of the test piece in the testing machine by proper method,
 apply a load of 2% of the breaking load specified in attached Annexure 1 to
 test piece, give gauge marking on it less than 250 mm apart and measure
 the distance between gauge marking (L ). Then pull the test piece at a
-1
 speed of less than 50 mm/min, apply a load of 60% of the specified
 breaking load and measure the distance between gauge markings (L ).
-2
 Return the applied load to 2% of the breaking load and measure the
 distance between gauge markings (L ).
-3
-13/51
-AIS-060
+
 Then total elongation percentage, permanent elongation percentage and
 elastic elongation percentage shall be expressed in the following formulae”
 L -L
 2 1
 C = -------- X 100
-1
 L
-1
 L -L
 3 1
 C = --------- X 100
 o
 L
-1
 C = (C -Co)
 2 1
 Where C : Permanent Elongation percentage of inner cable (%)
 o
 C : Total Elongation percentage of inner cable (%)
-1
 C : Elastic Elongation percentage of inner cable (%)
-2
 6.1.4.3 Outer Casing Compression Load Test
 Set 300 mm long test piece of outer casing on the test apparatus as shown
 in Fig. 10. Apply the compression load to the test piece at a speed of less
@@ -538,8 +511,7 @@ Size of Guide Wire
 Unit: mm
 Outside diameter of outer casing Φ5 Φ6 Φ7 Φ8 Φ9
 Diameter of guide wire Φ1.8 Φ2.1 Φ2.6 Φ3.5 Φ4.0
-14/51
-AIS-060
+
 6.1.4.4 Cable End, Casing Cap and Round Joint Pull-Off Test
 Both the ends of a test piece shall be clamped on the testing machine in such
 a manner as to allow the pull load to be measured and in an appropriate way,
@@ -573,8 +545,7 @@ Appearance shall conform to requirements in 5.1.
 7.1.3 Dimension Inspection
 Dimensions of components and assemblies shall conform to the
 requirements in 5.2.
-15/51
-AIS-060
+
 ANNEXURE 1
 (See Table 2 (1))
 INNER CABLE (STRANDED CABLE)
@@ -585,15 +556,12 @@ Load Load
 (kgf Symbol Standard Elasticity Perm- (kgf Symbol Standard Elasticity Permanent
 Min.) strand anent Min.) strand
 1.2 + 0.12 150 1 x 12 0.30 120 7x7 0.14
-0
 1.5 + 0.15 240 1 x 7 0.50 180 7x7 0.17
 0 (1x12) (0.38)
 1 x 19 0.30
 2.0 + 0.20 420 1 x 19 0.40 0.8 310 7x7 0.22
-0
 0.2 0.9 0.2
 2.5 + 0.20 630 1 x 19 0.50 480 7x7 0.28
-0
 3.0 + 0.24 850 1 x 19 0.60 700 7x7 0.35
 0 7x19 0.20
 (12+7x7) (0.30)
@@ -601,7 +569,6 @@ Min.) strand anent Min.) strand
 0 0.9 (19+7x7) (0.30)
 (0.34) 1.1
 4.0 + 0.32 1500 1 x 37 0.57 1200 7x7 0.45
-0
 Remarks
 1. Stranded method may be common S or common Z twist as prescribed in JIS G 3525 (Wire Rope) with
 the exception that inner cable shall be of non-repelling twist prescribed in JIS G 3535 (Wire Ropes for
@@ -611,13 +578,11 @@ Aeronautical Use).
 4. Dimension and formation of the inner cable in case rolled wire is to be wound in the cable shall be
 agreed between the parties concerned.
 5. Dimensions enclosed by parentheses should not be used whenever possible.
-16/51
-AIS-060
+
 ANNEXURE 2
 (See Table 2 (1))
 INNER CABLE SECTION AND FORMATION
-17/51
-AIS-060
+
 ANNEXURE 3
 (See Table 2 (1))
 INNER CABLE (COATED)
@@ -642,8 +607,7 @@ Nominal Tolerance
 1.2
 1.4 ± 0.05 As prescribed in JIS G 3521
 1.6
-18/51
-AIS-060
+
 ANNEXURE 5
 (See Table 2 (2))
 OUTER CASING
@@ -683,8 +647,7 @@ Remarks
 2. Outer casing end surfaces shall be provided with inner chamfer.
 3. Standard strand diameter is defined as round wire diameter prior to forming into flat
 wire.
-19/51
-AIS-060
+
 ANNEXURE 6
 (See Table 2 (2))
 OUTER CASING (WITH LINER)
@@ -712,8 +675,7 @@ respectively. The working temperature shall be between 800C to 1000C.
 clause 5.
 3. For the winding direction of outer casing, both S winding and Z winding may be
 available.
-20/51
-AIS-060
+
 ANNEXURE 7
 (See Table 2 (3))
 CABLE END TYPE A
@@ -736,8 +698,7 @@ Remarks
 2. Dimensions enclosed by parentheses shall not be used as far possible.
 3. In case of establishing pull off load exceeding the value in the Table, the value shall be as
 agreed between the persons concerned.
-21/51
-AIS-060
+
 ANNEXURE 8
 (See Table 2 (3))
 CABLE END TYPE B
@@ -748,12 +709,10 @@ Type Inner cable D L H d L D
 load Size Tolerance Size Tolerance Size Tolerance Min.)
 (kgf Min.)
 25 6
-7
 6.1 30 5 7
 Type 3.0 x 420 6 7 14
 B1 3.5 x 550 30 5 8
 8.1 + 0.2 ± 1.5 8 ± 0.2
-0
 (35) (5) (8) (20) (16)
 4.0 x 720 8.1 30 8 8 8 16
 Type 3.0x 420 6.1 25 6 6 --- 14
@@ -764,8 +723,7 @@ Remarks
 2. In case of heavy load, pull off load exceeding the value specified in the above Table may
 be established upon agreement between the parties concerned and limited to Type B1.
 3. Dimensions enclosed by parentheses shall not be used so far as possible.
-22/51
-AIS-060
+
 ANNEXURE 9
 (See Table 2 (3))
 CABLE END TYPE C
@@ -798,8 +756,7 @@ Remarks
 1. In case of heavy load, pull off load exceeding the value specified in above Table may be specified
 upon agreement between parties concerned. In such case, L may be lengthened if found necessary.
 2. Dimensions enclosed by parentheses shall not be used as far as possible.
-23/51
-AIS-060
+
 ANNEXURE 10
 (See Table 2 (3))
 CABLE ENDS TYPE D
@@ -830,8 +787,7 @@ cable.
 4. In case of heavy load, pull off load exceeding the value specified in above
 Table may be specified upon agreement between the parties concerned. In
 such case L may be lengthened if found necessary.
-24/51
-AIS-060
+
 ANNEXURE 11
 (See Table 2 (3))
 CABLE END TYPE E
@@ -854,8 +810,7 @@ accordance with 6g or 8g of JIS B 0209
 5. All dimensions shall be the ones of cable end with surface treatment
 6. The values of Pull-off load in the parentheses shall apply where the material of inner cable is
 SUS304WR or SUS302ER
-25/51
-AIS-060
+
 ANNEXURE 12
 (See Table 2 (4))
 CONNECTOR TYPE A
@@ -878,8 +833,7 @@ A2 4.0 max. 4.5 7
 3.5 5 16 10 2.3 30 15
 4.0 7 12 2.6 40 25
 4.5 9
-26/51
-AIS-060
+
 ANNEXURE 13
 (See Table 2 (4))
 CONNECTOR TYPE B
@@ -895,8 +849,7 @@ diameter
 diameter
 + 0.5 ~ 10
 Remark : Screw threads shall conform to JIS B 0205.
-27/51
-AIS-060
+
 ANNEXURE 14
 (See Table 2 (5))
 CASING CAP TYPE A
@@ -929,8 +882,7 @@ nce nce Min.)
 6 3.0 + 0.3 8 ± 0.1 10 23 --- ± 0.1 --- --- --- --- 10
 8 4.0 - 0.2 --- 13.5 17 28 9.5 7.5 14
 Remark: Caulking shall, as general rule, be hexagon caulking.
-28/51
-AIS-060
+
 ANNEXURE 16
 (See Table 2 (5))
 CASING CAP TYPE C
@@ -965,8 +917,7 @@ Remarks
 2. ** marked chamfer part may be abbreviated.
 3. Screw threads shall conform to JIS B 0205 or JIS B 0207.
 4. Caulking shall, as general rule, be hexagon caulking.
-29/51
-AIS-060
+
 ANNEXURE 17
 (See Table 2 (5))
 CASING CAP TYPE D1
@@ -991,10 +942,8 @@ Min.)
 5.5 (*) 14 4.5 2.0
 Remarks
 1. Dimension D in the Table indicates the case of die cast part or machined part (with * mark).
-1
 2. Caulking shall, as general rule, be hexagon caulking.
-30/51
-AIS-060
+
 ANNEXURE 18
 (See Table 2 (5))
 CASING CAP TYPE D2
@@ -1030,8 +979,7 @@ diameter Min.)
 Remark
 1. Dimension D1 in the Table indicates the case of die cast part or machined part (with * mark).
 2. Caulking shall, as general rule, be hexagon caulking.
-31/51
-AIS-060
+
 ANNEXURE 19
 (See Table 2 (5))
 CASING CAP TYPE D3
@@ -1065,8 +1013,7 @@ Min.)
 8 4.0 + 0.3 16.5 ± 0.1 10 20 7.5 + 0.3 10 35 5 3 ± 0.2 25
 - 0.2 0
 Remark : Caulking shall, as general rule, be hexagon caulking.
-32/51
-AIS-060
+
 ANNEXURE 21
 (See Table 2 (6))
 ADJUST BOLT
@@ -1099,30 +1046,23 @@ diameter
 8 8 1.25 12 9.5 + 0.3 12 15 3 6 6
 10 10 1.25 14 11.5 0 14 11 2 4 5
 Remark : Screw threads shall conform to JIS B 0205 or JIS B 0207.
-33/51
-AIS-060
+
 ANNEXURE 23
 (See Table 2 (8))
 ROUND JOINT TYPE A 1
 Unit : mm
 End shape θ(0) R l l
 1 2
-90
 Type I & II 110 30 45 40
-130
-34/51
-AIS-060
+
 ANNEXURE 24
 (See Table 2 (8))
 ROUND JOINT TYPE A 2
 Unit : mm
 End shape θ (0) l l
 1 2
-90
 Type I & II 110 40 40
-130
-35/51
-AIS-060
+
 ANNEXURE 25
 (See Table 2 (8))
 ROUND JOINT TYPE B 1
@@ -1135,8 +1075,7 @@ outer casing
 6 Type I & II 40 40
 100 100 or
 120 30 more
-36/51
-AIS-060
+
 ANNEXURE 26
 (See Table 2 (8))
 ROUND JOINT TYPE B 2
@@ -1156,8 +1095,7 @@ Type I --- 70 25
 --- 85 40 120
 7 Type II 7.2 9.1 4.2 7.5 63 70 25 M10x1.25 or
 85 40 more
-37/51
-AIS-060
+
 ANNEXURE 27
 (See Table 2 (8))
 ROUND JOINT TYPE B 3
@@ -1171,8 +1109,7 @@ outer casing
 7 50 45 120 or
 110 more
 130 40
-38/51
-AIS-060
+
 ANNEXURE 28
 (See Table 2 (9))
 CASING PROTECTOR
@@ -1194,8 +1131,7 @@ Remarks
 shifting
 easily from the designated position on outer casing.
 2. Casing protector with dimension L exceeding 500 shall be by agreement between the persons concerned.
-39/51
-AIS-060
+
 ANNEXURE 29
 (See Table 2 (10))
 DUST COVER TYPE A
@@ -1208,7 +1144,6 @@ Uncoated Coated Size Tolerance Size Tolerance
 1.5 --- 1.5 5.5
 1.6
 --- 1.8 2.0 5.5
-0
 2.0 2.1
 0 - 0.5
 2.5 2.6 2.5 5.5
@@ -1220,8 +1155,7 @@ Uncoated Coated Size Tolerance Size Tolerance
 --- 4.3 4.3 9.0
 --- 4.8 4.8
 Remark : Standard wall thickness at tube center portion shall be 1.0
-40/51
-AIS-060
+
 ANNEXURE 30
 (See Table 2 (10))
 DUST COVER TYPE B
@@ -1242,8 +1176,7 @@ Uncoated Coated Size Tolerance Size Tolerance
 --- 4.3 4.0 9.0
 4.8 4.5
 Remark : Standard wall thickness at tube center portion shall be 1.0.
-41/51
-AIS-060
+
 EXPLANATORY NOTE ON CONTROL CABLES FOR AUTOMOBILES
 Supplementary explanations shall be given in regard to the contents of this
 standard. (The following item numbers are identical to those in the text).
@@ -1275,8 +1208,7 @@ the connecting method with inner cable is by caulking or casting in, and
 selection made from materials such as BsBM of JIS H 3422 (Free Cutting
 Brass Rods), S15C ~ 35C of JIS G 4051 (Carbon Steel for Machine
 Structural Use) and ZDC of JIS H 5301 (Zinc Alloy Die Castings).
-42/51
-AIS-060
+
 4. SHAPES AND DIMENSIONS OF MAIN COMPONENTS
 4.1 Inner Cable (Annexure 1, 2, 3 and 4)
 (1) Tolerance
@@ -1310,8 +1242,7 @@ during the soldering of the cable end, the solder had been drawn up into
 the cable by capillary action and hardened.
 (3) When joining the inner cable (coated cable) to cable end, the standard
 method is to peel off the coating as indicated below before joining.
-43/51
-AIS-060
+
 (a) Type A cable end (Annexure 7)
 Joining method with inner cable is mainly by soldering but those made by die
 casting (inner cable cast in) are increasing. On the pull off load, die cast
@@ -1334,8 +1265,7 @@ Connectors will be utilized in combination with cable ends Type A, C or D.
 Commonly called clevis. Those that have been standardized are assembled in
 with the cables. Some are provided with side hole and slit to enable installing
 to cable during vehicle assembly as shown below.
-44/51
-AIS-060
+
 4.5 Casing Cap
 (1) Type A casing cap (Annexure 14)
 Type A casing cap will be used by fitting into companion hole like
@@ -1364,11 +1294,9 @@ On the tightening of the assembling portion, the inner diameter d that
 o
 directly cover the inner cable was prescribed to be equal to or slightly smaller
 than the inner cable diameter and the inner diameter d that covers the casing
-1
 cap or adjust nut at the outer casing side was prescribed to 0.5 mm smaller
 than the outer diameter of fitting part.
-45/51
-AIS-060
+
 5. QUALITY
 5.1 Dimensions and Tolerance
 (1) On proper use of "medium class" and "rough class" in JIS B 0105,
@@ -1383,7 +1311,6 @@ use of dust covers at inner cable exposed part, there is difficulty in
 bringing the exposed parts to one place for measurement. In regard to
 this, it was decided to determine the dimension as inner cable overall
 length (with cable end) L indicated in Main Text Table 5-2. On
-1
 designating the inner cable nominal length, this may be done to comply
 with the individual demand items.
 6. TEST METHODS
@@ -1408,8 +1335,7 @@ become the amplitude but there will be no transition in the central
 value. It could be considered that some relation may exist between
 the amplitude size and the operating smoothness or feeling but
 this could not be clarified quantitatively.
-46/51
-AIS-060
+
 The load efficiency differs depending on the curved state of the
 outer casing. It is known that the following experimental equation
 obtained based on the contacting angle of the outer casing and
@@ -1430,7 +1356,6 @@ In general the equation will be as follows in case on n number of
 multiple curves.
 n n
 Σθ = nπ - Σθ
-1
 When the outer casing curved part is properly supported along a
 round plate, it has been found that the load efficiency will be
 somewhat improved. This could be considered as being due to the
@@ -1447,8 +1372,7 @@ Operating play resulting from apparent permanent elongation
 contraction) is not included.
 On the inner cable elongation, measurements can be made with
 relative ease, and moreover, the inner cable can be utilized alone.
-47/51
-AIS-060
+
 Taking these into consideration, the reference values and test
 method have been indicated in Main Text Annexures 1 and 8.
 On the outer casing contraction, casing is difficult to measure by
@@ -1480,8 +1404,7 @@ efficiency. Aside from this, if the buckling becomes large enough to make it
 difficult to return to original shape, it could result in improper operation.
 According to the results of various observations, it was found that buckling
 had adverse effect on load efficiency and control feeling.
-48/51
-AIS-060
+
 The general tendency for buckling to develop has been found to start by
 buckling in installed surface outer direction, followed by inside surface, and
 when both occur, the operating efficiency drops.
@@ -1519,8 +1442,7 @@ outer casing and installation parts have been considered.
 In regard to feeling, it would be difficult to indicate this by numerical value
 at the present stage. Aside from special examples, this is still in the research
 stage and is a problem that should be investigated further.
-49/51
-AIS-060
+
 In relation to the buckling and feeling mentioned above, bending rigidity of
 the outer casing becomes a factor. As a simple test method for this, the free
 bending of a given length outer casing is supported as a cantilever beam is
@@ -1542,8 +1464,7 @@ inner cable and cable ends under corrosion or frictional conditions, apparent
 accumulative elongation of the inner cable, accumulative elongation of outer
 casing, changes in frictional resistance and lubricating function, and
 performance and longevity of the various seals.
-50/51
-AIS-060
+
 ANNEXURE 31
 (See Introduction)
 COMMITTEE COMPOSITION
@@ -1576,4 +1497,3 @@ Member Secretary
 Mrs. Rashmi Urdhwareshe
 Deputy Director
 The Automotive Research Association of India, Pune
-51/51

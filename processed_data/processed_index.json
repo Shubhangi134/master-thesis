@@ -1,0 +1,373 @@
+{
+  "352babe7335750a3257cb3104c538f39a84e1f0c531034d1c1c1f77a593a5a1c": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_012_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_012_meta.json",
+    "filenames": [
+      "AIS_012.pdf"
+    ],
+    "pages": 209,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS-012"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 220
+    }
+  },
+  "29e3c25e226ef435c4ef316c792412d55b794df44b5f05d661857c4138232407": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_015_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_015_meta.json",
+    "filenames": [
+      "AIS_015.pdf"
+    ],
+    "pages": 28,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS-015/2000"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 42
+    }
+  },
+  "990eb0c9c422332ddd6da865a3611b9f2eaf67a1b4e5e8691fecf18411159088": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_016_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_016_meta.json",
+    "filenames": [
+      "AIS_016.pdf"
+    ],
+    "pages": 31,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS-016/2000"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 33
+    }
+  },
+  "c3af1855b94249192ddbe27db688efa9d17485714ec1c8480ac26b9b87720bbe": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_021_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_021_meta.json",
+    "filenames": [
+      "AIS_021.pdf"
+    ],
+    "pages": 28,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS-021",
+          "AIS - 021"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 27
+    }
+  },
+  "0717c3ca822b087403f1950a5a60a91c2aa4b38fc79737ac2a2aa3e3c7f1ac1f": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_022_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_022_meta.json",
+    "filenames": [
+      "AIS_022.pdf"
+    ],
+    "pages": 38,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS - 022/2001"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 38
+    }
+  },
+  "b369a7ba3fb3247aa2425e46e05d7d00318689a079da09d04f016095623d4d65": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_038_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_038_meta.json",
+    "filenames": [
+      "AIS_038.pdf"
+    ],
+    "pages": 20,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS-038"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 18
+    }
+  },
+  "fc24970689a012b61de8121e6d47fd4593a14391ce911e7d23575d25e302465f": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_060_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_060_meta.json",
+    "filenames": [
+      "AIS_060.pdf"
+    ],
+    "pages": 54,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS-060"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 79
+    }
+  },
+  "c37c088ba836d0ea17bc6635e88c1a1703bc4526ca14b85052c1310421ea4dce": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_127_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_127_meta.json",
+    "filenames": [
+      "AIS_127.pdf"
+    ],
+    "pages": 85,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS-127"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 97
+    }
+  },
+  "b29b52a3560d5bbc30ce5223924da9e04d1ff14d128b1bfbc657c3112df01094": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\AIS_189_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\AIS_189_meta.json",
+    "filenames": [
+      "AIS_189.pdf"
+    ],
+    "pages": 30,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "AIS -189"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 27
+    }
+  },
+  "4b131b6ef7600129caf7bf9b4cdd1bd7c0ab6e4624038d10fdc2ad2a053d675b": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\astm_D4814_20A_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\astm_D4814_20A_meta.json",
+    "filenames": [
+      "astm_D4814_20A.pdf"
+    ],
+    "pages": 29,
+    "region": "USA",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "REDACTED"
+        ],
+        "footers": [
+          "REDACTED"
+        ]
+      },
+      "page_number_lines_removed": 38
+    }
+  },
+  "16abf3302fb55425f81b5ab6355f8edf08f7809fe28b14ea3b40f8881c795a2e": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\Automotive_SPICE_PAM_v40_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\Automotive_SPICE_PAM_v40_meta.json",
+    "filenames": [
+      "Automotive_SPICE_PAM_v40.pdf"
+    ],
+    "pages": 153,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [],
+        "footers": [
+          "PPUUBBLLIICC"
+        ]
+      },
+      "page_number_lines_removed": 5
+    }
+  },
+  "9d177984a188d4ff4143fd24ba80b3318a09965aa3ba3b174238ac1309ed3212": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\is15139_2002_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\is15139_2002_meta.json",
+    "filenames": [
+      "is15139_2002.pdf"
+    ],
+    "pages": 20,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "Is 15139:2002"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 19
+    }
+  },
+  "ed0e281a31e47a6b532f8da6487b6bf9ff16f036acbc97363864c7c687e5c341": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\IS15140_2018_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\IS15140_2018_meta.json",
+    "filenames": [
+      "IS15140_2018.pdf"
+    ],
+    "pages": 37,
+    "region": "India",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "IS 15140 : 2018"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 37
+    }
+  },
+  "214a179e8cca53b7e253c1d23b9c80369c39c5164b268b90e02ceefc311b28a3": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\IS_IEC_61508_1998_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\IS_IEC_61508_1998_meta.json",
+    "filenames": [
+      "IS_IEC_61508_1998.pdf"
+    ],
+    "pages": 62,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "IS/IEC 61508-1 : 1998"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 45
+    }
+  },
+  "5591b4a6fa6223cd7625163afdb543b6540b9c3f42c76b05cab97ff855e6c9cb": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\ISO_16750_1_2023_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\ISO_16750_1_2023_meta.json",
+    "filenames": [
+      "ISO_16750_1_2023.pdf"
+    ],
+    "pages": 12,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "ISO 16750-1:2023(E)"
+        ],
+        "footers": [
+          "© ISO 2023 – All rights reserved"
+        ]
+      },
+      "page_number_lines_removed": 6
+    }
+  },
+  "0e62ddd30ca8869cbf74c89dccc65bb59e8897adc38309bf6477003c3fa111cd": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\ISO_17409_2020_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\ISO_17409_2020_meta.json",
+    "filenames": [
+      "ISO_17409_2020.pdf"
+    ],
+    "pages": 13,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "ISO 17409:2020(E)"
+        ],
+        "footers": [
+          "© ISO 2020 – All rights reserved"
+        ]
+      },
+      "page_number_lines_removed": 12
+    }
+  },
+  "fed1383ee16e7db0ba768a7138da04e4765ea5b47ec9fea8ced198ad9603b418": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\ISO_26262_12_2018_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\ISO_26262_12_2018_meta.json",
+    "filenames": [
+      "ISO_26262_12_2018.pdf"
+    ],
+    "pages": 15,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "ISO 26262-12:2018(E)"
+        ],
+        "footers": [
+          "© ISO 2018 – All rights reserved"
+        ]
+      },
+      "page_number_lines_removed": 9
+    }
+  },
+  "ed4d1d8b728d9018d5966e62aa01722d61744d056ff08ef4d7018b09f2ad25f4": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\ISO_26262_1_2018_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\ISO_26262_1_2018_meta.json",
+    "filenames": [
+      "ISO_26262_1_2018.pdf"
+    ],
+    "pages": 13,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "ISO 26262-1:2018(E)"
+        ],
+        "footers": [
+          "© ISO 2018 – All rights reserved"
+        ]
+      },
+      "page_number_lines_removed": 6
+    }
+  },
+  "82dfe5e66a7d41d96fba75094e80ffae48ff38cca7925ed4fa1c383b8446d2c7": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\ISO_7637_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\ISO_7637_meta.json",
+    "filenames": [
+      "ISO_7637.pdf"
+    ],
+    "pages": 48,
+    "region": "International",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "ISO 7637-2:2011(E)"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 18
+    }
+  },
+  "e5fb905ccbadbc4d107745474896d88c1f3e23d5f9cc5bb8b684286afb9b33c5": {
+    "chunks_path": "C:\\UPB\\master-thesis\\processed_data\\chunks\\SAE_J3016_202104_chunks.json",
+    "meta_path": "C:\\UPB\\master-thesis\\processed_data\\metadata\\SAE_J3016_202104_meta.json",
+    "filenames": [
+      "SAE_J3016_202104.pdf"
+    ],
+    "pages": 41,
+    "region": "USA",
+    "diagnostics": {
+      "header_footer_removed": {
+        "headers": [
+          "Downloaded from SAE International by SAE International [Sales Team], Tuesday, May 04, 2021"
+        ],
+        "footers": []
+      },
+      "page_number_lines_removed": 0
+    }
+  }
+}
