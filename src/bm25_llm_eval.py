@@ -8,23 +8,19 @@ from collections import Counter
 import pandas as pd
 
 try:
-    import openai
-except Exception as e:
-    raise RuntimeError("Please install openai: pip install openai") from e
+    from openai import AzureOpenAI, OpenAI
+except Exception:
+    AzureOpenAI = None
+    OpenAI = None
 
 # ---------- CONFIG (edit if you want) ----------
 QA_XLSX = "Questions_Answer.xlsx"
 OUT_JSONL = "bm25_llm_results.jsonl"
 TOP_K = 5
-MODEL = "gpt-4"           # change if needed
+MODEL = "gpt-4.1"           # fallback model name for non-Azure
 TEMPERATURE = 0.0
 MAX_TOKENS = 512
-# If True: call LLM for every query regardless of run_query.confident (useful for analysis).
-# If False: only call LLM when run_query returns confident=True (production-safe).
 CALL_ALL_DEFAULT = False
-# ------------------------------------------------
-
-# Attempt to import run_query from common filenames if not directly available
 RUN_QUERY_IMPORTS = [
     "bm25_query",
     "bm25_query_tool",
@@ -65,13 +61,42 @@ if run_query is None:
     print("adjust the import at the top of this script.")
     sys.exit(1)
 
-# OpenAI setup: read API key from env
-openai_api_key = os.getenv("OPENAI_API_KEY")
-if not openai_api_key:
-    print("ERROR: OPENAI_API_KEY environment variable not set.")
-    print("Export your key: export OPENAI_API_KEY='sk-...' (Linux/macOS) or set in PowerShell.")
-    sys.exit(1)
-openai.api_key = openai_api_key
+ENDPOINT = os.getenv("ENDPOINT")  # Azure endpoint if present
+DEPLOYMENT = os.getenv("DEPLOYMENT")  # Azure deployment name
+API_KEY = os.getenv("API_KEY") or os.getenv("OPENAI_API_KEY")  # either Azure or OpenAI key
+API_VERSION = os.getenv("API_VERSION")  # Azure API version
+MODEL_NAME_ENV = os.getenv("MODEL_NAME")  # optional override for model name
+
+IS_AZURE = bool(ENDPOINT)
+
+# Validate credentials
+if IS_AZURE:
+    if not (ENDPOINT and DEPLOYMENT and API_KEY and API_VERSION):
+        print("ERROR: For Azure you must set ENDPOINT, DEPLOYMENT, API_KEY and API_VERSION environment variables.")
+        sys.exit(1)
+else:
+    if not API_KEY:
+        print("ERROR: OPENAI API key not found. Set either API_KEY or OPENAI_API_KEY (or set ENDPOINT for Azure).")
+        sys.exit(1)
+
+# If MODEL_NAME env var is provided, use it for non-Azure (or as a fallback)
+if MODEL_NAME_ENV:
+    MODEL = MODEL_NAME_ENV
+
+# Create client(s)
+client = None
+if IS_AZURE:
+    if AzureOpenAI is None:
+        raise RuntimeError("AzureOpenAI client not available. Please install openai>=1.x that exposes AzureOpenAI / OpenAI classes.")
+    client = AzureOpenAI(
+        api_version=API_VERSION,
+        azure_endpoint=ENDPOINT,
+        api_key=API_KEY,
+    )
+else:
+    if OpenAI is None:
+        raise RuntimeError("OpenAI client class not available. Please install openai>=1.x that exposes AzureOpenAI / OpenAI classes.")
+    client = OpenAI(api_key=API_KEY)
 
 # --- helpers for normalization and metrics ---
 _tok_re = re.compile(r"[A-Za-z0-9\-_]+")
@@ -149,19 +174,70 @@ def build_strict_prompt(question, passages):
     lines.append("Now answer following the instructions above.")
     return "\n".join(lines)
 
-# Call GPT (ChatCompletion)
-def call_gpt(prompt):
-    resp = openai.ChatCompletion.create(
-        model=MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=TEMPERATURE,
-        max_tokens=MAX_TOKENS,
-    )
-    text = resp["choices"][0]["message"]["content"]
-    tokens = resp["usage"].get("total_tokens") if "usage" in resp else None
-    return text, tokens
+# Call GPT using the instantiated client (supports AzureOpenAI and OpenAI)
+def call_gpt(prompt, max_tokens=MAX_TOKENS, temperature=TEMPERATURE, model_name=None):
+    model_to_use = model_name or (DEPLOYMENT if IS_AZURE else MODEL)
+    # Build args
+    kwargs = {
+        "model": model_to_use,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": max_tokens,
+        "temperature": temperature,
+    }
 
-# ---------- main evaluation loop ----------
+    # call client
+    try:
+        resp = client.chat.completions.create(**kwargs)
+    except Exception as e:
+        try:
+            if IS_AZURE:
+                resp = client.create_chat_completion(model=model_to_use, messages=kwargs["messages"], max_tokens=max_tokens, temperature=temperature)
+            else:
+                resp = client.create_chat_completion(model=model_to_use, messages=kwargs["messages"], max_tokens=max_tokens, temperature=temperature)
+        except Exception as e2:
+            raise
+
+    text = None
+    total_tokens = None
+    try:
+        choices = resp.get("choices") if isinstance(resp, dict) else getattr(resp, "choices", None)
+        if choices:
+            first = choices[0]
+            msg = first.get("message") if isinstance(first, dict) else getattr(first, "message", None)
+            if msg:
+                text = msg.get("content") if isinstance(msg, dict) else getattr(msg, "content", None)
+            else:
+                text = first.get("text") if isinstance(first, dict) else getattr(first, "text", None)
+    except Exception:
+        text = None
+    if not text:
+        try:
+            choices = resp.choices if hasattr(resp, "choices") else None
+            if choices:
+                first = choices[0]
+                msg = getattr(first, "message", None)
+                if msg:
+                    text = getattr(msg, "content", None)
+                else:
+                    text = getattr(first, "text", None)
+        except Exception:
+            pass
+
+    if text is None:
+        # final fallback: stringified response
+        text = str(resp)
+    try:
+        if isinstance(resp, dict):
+            total_tokens = resp.get("usage", {}).get("total_tokens")
+        else:
+            usage = getattr(resp, "usage", None)
+            if usage:
+                total_tokens = getattr(usage, "total_tokens", None)
+    except Exception:
+        total_tokens = None
+
+    return text, total_tokens
+
 def main(call_all=False, top_k=TOP_K):
     if not os.path.exists(QA_XLSX):
         print(f"ERROR: QA file not found: {QA_XLSX}")
@@ -227,7 +303,7 @@ def main(call_all=False, top_k=TOP_K):
             prompt = build_strict_prompt(question, passages)
             start = time.time()
             try:
-                model_answer, model_tokens = call_gpt(prompt)
+                model_answer, model_tokens = call_gpt(prompt, max_tokens=MAX_TOKENS, temperature=TEMPERATURE, model_name=(DEPLOYMENT if IS_AZURE else MODEL))
             except Exception as e:
                 model_answer = f"[LLM_ERROR] {e}"
                 model_tokens = None
