@@ -140,6 +140,7 @@ def extract_text_from_pdf(pdf_path):
 
 def clean_text(text, page_texts=None):
     diagnostics = {"header_footer_removed": {}, "page_number_lines_removed": 0}
+
     if page_texts:
         cleaned_pages, removed = remove_repeated_headers_footers(page_texts)
     else:
@@ -147,6 +148,7 @@ def clean_text(text, page_texts=None):
 
     cleaned_pages2 = []
     pn_count = 0
+
     for p in cleaned_pages:
         lines = [ln for ln in p.splitlines()]
         out_lines = []
@@ -155,18 +157,22 @@ def clean_text(text, page_texts=None):
                 pn_count += 1
                 continue
             out_lines.append(ln)
+
         page_text = "\n".join(out_lines)
         page_text = re.sub(r'\s+\n', '\n', page_text)
         page_text = re.sub(r'\n\s+', '\n', page_text)
         page_text = re.sub(r'\r\n?', '\n', page_text)
         page_text = re.sub(r'[ \t]{2,}', ' ', page_text)
         page_text = re.sub(r'\n{3,}', '\n\n', page_text)
+
         cleaned_pages2.append(page_text.strip())
 
     diagnostics["header_footer_removed"] = removed
     diagnostics["page_number_lines_removed"] = pn_count
+
     joined = "\n\n".join([p for p in cleaned_pages2 if p.strip()])
     joined = re.sub(r' {2,}', ' ', joined)
+
     return joined.strip(), diagnostics
 
 
@@ -197,24 +203,34 @@ def deterministic_chunk_id(file_hash, chunk_index):
     return sha256(f"{file_hash}|{chunk_index}".encode("utf-8")).hexdigest()
 
 
+# UPDATED WITH MUST-HAVE METADATA
 def chunk_text_with_metadata(text, pdf_filename, file_hash, chunk_size, overlap, region):
     words = text.split()
     chunks = []
     start = 0
     chunk_index = 0
+
     while start < len(words):
         end = start + chunk_size
         chunk_text = " ".join(words[start:end])
         cid = deterministic_chunk_id(file_hash, chunk_index)
+
         chunks.append({
             "chunk_id": cid,
             "pdf_file": pdf_filename,
             "chunk_index": chunk_index,
             "text": chunk_text,
-            "region": region
+            "region": region,
+
+            # MUST-HAVE for RAG, evaluation, UI
+            "source": "automotive",
+            "page_from": None,
+            "page_to": None
         })
+
         chunk_index += 1
         start += chunk_size - overlap
+
     return chunks
 
 
@@ -240,7 +256,6 @@ def process_pdf_worker(pdf_path_str, file_hash, chunk_size, overlap, force):
         # Region
         region = get_region(pdf_path, cleaned_text)
 
-        # If no selectable text, write meta and return
         if not cleaned_text.strip():
             meta = {
                 "pdf_file": pdf_name,
@@ -264,6 +279,7 @@ def process_pdf_worker(pdf_path_str, file_hash, chunk_size, overlap, force):
 
         # Chunk
         chunks = chunk_text_with_metadata(cleaned_text, pdf_name, file_hash, chunk_size, overlap, region)
+
         chunks_file.write_text(json.dumps({
             "chunks": chunks,
             "diagnostics": diagnostics,
@@ -291,6 +307,7 @@ def process_pdf_worker(pdf_path_str, file_hash, chunk_size, overlap, force):
             "meta_path": str(meta_file.resolve()),
             "diagnostics": diagnostics
         }
+
     except Exception as e:
         return {
             "status": "error",
@@ -305,32 +322,36 @@ def main():
 
     idx = load_processed_index()
 
-    to_process = []   # workers tasks: (pdf_path_str, file_hash, chunk_size, overlap, force)
+    to_process = []
     reused = []
+
     for p in pdf_files:
         file_hash = compute_file_hash(p)
+
         if file_hash in idx and not FORCE:
-            # check if chunks file exists
             existing_chunks_path = idx[file_hash].get("chunks_path")
             if existing_chunks_path:
                 existing_chunks_path = Path(existing_chunks_path)
+
                 if existing_chunks_path.exists():
-                    # reuse chunks: copy and update pdf_file field
                     with open(existing_chunks_path, "r", encoding="utf-8") as f:
                         data = json.load(f)
-                    source_chunks = data.get("chunks") if isinstance(data, dict) and "chunks" in data else (data if isinstance(data, list) else [])
+
+                    source_chunks = data.get("chunks", [])
                     updated_chunks = []
+
                     for c in source_chunks:
                         nc = c.copy()
                         nc["pdf_file"] = p.name
                         updated_chunks.append(nc)
+
                     new_chunks_file = CHUNKS_DIR / f"{p.stem}_chunks.json"
                     new_chunks_file.write_text(json.dumps({
                         "chunks": updated_chunks,
                         "diagnostics": idx[file_hash].get("diagnostics", {}),
                         "region": idx[file_hash].get("region", "Unknown")
                     }, ensure_ascii=False, indent=2), encoding="utf-8")
-                    # write metadata for this filename
+
                     meta_file = META_DIR / f"{p.stem}_meta.json"
                     meta_file.write_text(json.dumps({
                         "pdf_file": p.name,
@@ -338,18 +359,17 @@ def main():
                         "pages": idx[file_hash].get("pages", 0),
                         "chunks": len(updated_chunks),
                         "region": idx[file_hash].get("region", "Unknown"),
-                        "reused_from": Path(idx[file_hash].get("chunks_path", "")).name if idx[file_hash].get("chunks_path") else None
+                        "reused_from": Path(idx[file_hash].get("chunks_path", "")).name
                     }, ensure_ascii=False, indent=2), encoding="utf-8")
-                    # update filenames list inside idx (master only)
+
                     names = set(idx[file_hash].get("filenames", []))
                     names.add(p.name)
                     idx[file_hash]["filenames"] = list(names)
+
                     reused.append(p.name)
-                    continue  # skip dispatching to worker
+                    continue
 
-        # otherwise schedule for processing
         to_process.append((str(p), file_hash, CHUNK_SIZE, OVERLAP, FORCE))
-
 
     results = []
     if to_process:
@@ -360,9 +380,11 @@ def main():
         else:
             for task in tqdm(to_process):
                 results.append(process_pdf_worker(*task))
-    # Update index with new results
+
+    # Update index
     for r in results:
         status = r.get("status")
+
         if status == "processed":
             fh = r["file_hash"]
             idx[fh] = {
@@ -373,6 +395,7 @@ def main():
                 "region": r.get("region"),
                 "diagnostics": r.get("diagnostics", {})
             }
+
         elif status == "no_text":
             fh = r["file_hash"]
             idx[fh] = {
@@ -383,20 +406,19 @@ def main():
                 "region": r.get("region"),
                 "diagnostics": r.get("diagnostics", {})
             }
+
         elif status == "error":
-            # You may want to log errors; leave them out of index
             print(f"Error processing {r.get('pdf_file')}: {r.get('error')}")
 
-    # Persist index once (master only)
     save_processed_index(idx)
 
-    # Summary
     summary = {
         "processed": [r["pdf_file"] for r in results if r.get("status") == "processed"],
         "no_text": [r["pdf_file"] for r in results if r.get("status") == "no_text"],
         "reused": reused,
         "errors": [r for r in results if r.get("status") == "error"]
     }
+
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 
 

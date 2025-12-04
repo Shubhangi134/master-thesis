@@ -15,8 +15,8 @@ def run_query(query_text, k=TOP_K, abs_threshold=ABS_THRESHOLD,
               use_ratio=USE_RATIO_CHECK, ratio_threshold=RATIO_THRESHOLD):
     """
     Returns a dict with:
-      - 'results': list of result dicts (same as before)
-      - 'confident': bool  (False means "no answer / don't call generator")
+      - 'results': list of result dicts
+      - 'confident': bool
       - 'top_score': float
     """
     if not os.path.exists(INDEX_DIR):
@@ -36,6 +36,9 @@ def run_query(query_text, k=TOP_K, abs_threshold=ABS_THRESHOLD,
                 "chunk_id": r["chunk_id"],
                 "pdf_file": r["pdf_file"],
                 "region": r.get("region", ""),
+                "source": r.get("source", ""),        # NEW
+                "page_from": r.get("page_from"),     # NEW
+                "page_to": r.get("page_to"),         # NEW
                 "text": r["content"]
             })
 
@@ -46,19 +49,17 @@ def run_query(query_text, k=TOP_K, abs_threshold=ABS_THRESHOLD,
     top_score = results_out[0]["score"]
     second_score = results_out[1]["score"] if len(results_out) > 1 else 0.0
 
-    # Absolute threshold check (primary)
+    # Absolute threshold check
     if top_score < abs_threshold:
         return {"results": [], "confident": False, "top_score": top_score}
 
-    # Optional relative ratio check
+    # Optional ratio check
     if use_ratio:
         eps = 1e-9
         ratio = top_score / max(second_score, eps)
         if ratio < ratio_threshold:
-            # not decisively better than other hits
             return {"results": [], "confident": False, "top_score": top_score}
 
-    # Passed checks -> confident
     return {"results": results_out, "confident": True, "top_score": top_score}
 
 
@@ -83,10 +84,12 @@ def main():
         print("\nTop Results:")
         print("=" * 100)
         for i, r in enumerate(results, start=1):
-            print(f"[{i}] score={r['score']:.4f} | pdf={r['pdf_file']} | region={r['region']} | chunk_id={r['chunk_id']}")
+            print(f"[{i}] score={r['score']:.4f} | pdf={r['pdf_file']} | region={r['region']} | source={r['source']} | pages={r['page_from']}-{r['page_to']}")
+
             snippet = (r["text"] or "")[:600].replace("\n", " ")
             print(textwrap.fill(snippet, width=100))
             print("-" * 100)
+
 
 if __name__ == "__main__":
     main()

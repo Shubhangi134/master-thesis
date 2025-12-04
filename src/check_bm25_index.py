@@ -14,11 +14,19 @@ else:
         try:
             with ix.searcher() as s:
                 print("doc_count_all():", s.doc_count_all())
-                # print first 3 documents' chunk_ids
+
+                # Print first 3 documents with all important metadata
                 it = s.all_stored_fields()
                 i = 0
                 for doc in it:
-                    print("sample stored doc:", {k: doc.get(k) for k in ("chunk_id","pdf_file")})
+                    print("sample stored doc:", {
+                        "chunk_id": doc.get("chunk_id"),
+                        "pdf_file": doc.get("pdf_file"),
+                        "source": doc.get("source"),
+                        "region": doc.get("region"),
+                        "page_from": doc.get("page_from"),
+                        "page_to": doc.get("page_to")
+                    })
                     i += 1
                     if i >= 3:
                         break

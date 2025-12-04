@@ -15,13 +15,17 @@ REBUILD = False
 # tokenizer for technical documents
 tokenizer = RegexTokenizer() | LowercaseFilter()
 
-# schema
+# UPDATED SCHEMA (added source, page_from, page_to)
 schema = Schema(
     chunk_id=ID(stored=True, unique=True),
     pdf_file=STORED,
     region=STORED,
+    source=STORED,
+    page_from=STORED,
+    page_to=STORED,
     content=TEXT(stored=True, analyzer=tokenizer)
 )
+
 # INDEX CREATION / OPENING
 def ensure_index(rebuild=False):
     if rebuild and os.path.exists(INDEX_DIR):
@@ -39,7 +43,6 @@ def ensure_index(rebuild=False):
         print("Opened existing index.")
         return ix
     except Exception:
-        # corrupted or unreadable -> recreate
         try:
             shutil.rmtree(INDEX_DIR)
         except Exception:
@@ -49,8 +52,8 @@ def ensure_index(rebuild=False):
         print("Recreated index after error.")
         return ix
 
-# LOAD CHUNKS
 
+# LOAD CHUNKS
 def load_chunks():
     if not os.path.exists(CHUNKS_DIR):
         raise Exception("Chunks directory not found: " + CHUNKS_DIR)
@@ -70,6 +73,7 @@ def load_chunks():
         for c in data.get("chunks", []):
             yield c
 
+
 # INDEXING
 def index_all(ix):
     writer = ix.writer(limitmb=512)
@@ -87,6 +91,9 @@ def index_all(ix):
                 chunk_id=c["chunk_id"],
                 pdf_file=c.get("pdf_file", ""),
                 region=c.get("region", ""),
+                source=c.get("source", ""),               # NEW
+                page_from=c.get("page_from"),            # NEW
+                page_to=c.get("page_to"),                # NEW
                 content=text
             )
             updated += 1
@@ -102,6 +109,7 @@ def index_all(ix):
 
     return total, updated
 
+
 def main():
     ix = ensure_index(rebuild=REBUILD)
 
@@ -111,6 +119,7 @@ def main():
     print("Chunks seen:", total)
     print("Chunks added/updated:", updated)
     print("Done.")
+
 
 if __name__ == "__main__":
     main()
