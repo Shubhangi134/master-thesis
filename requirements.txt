@@ -1,24 +1,39 @@
-# PDF processing
-pdfplumber==0.10.1         # Extract text from PDFs (open-source)
-pytesseract==0.3.10        # OCR for scanned PDFs
-Pillow==10.1.0             # Required by pytesseract for image handling
+# --- Core Data & Parsing ---
+pandas==2.3.3
+openpyxl==3.1.5
+pypdf==6.4.1
+python-dotenv==1.2.1
+tqdm==4.67.1
 
-# Data manipulation
-numpy==1.26.0
-pandas==2.1.1
-openpyxl ==3.1.2          # Excel support for pandas
+# --- OpenAI & Azure Clients ---
+openai==2.11.0
+tiktoken==0.12.0
 
-# Text & embeddings
-sentence-transformers==2.2.2  # Create semantic embeddings (HuggingFace, open-source)
-faiss-cpu==1.7.4             # Efficient vector search
+# --- LangChain Ecosystem ---
+langchain==1.1.3
+langchain-community==0.4.1
+langchain-core==1.2.0
+langchain-text-splitters==1.0.0
+langchain-openai==1.1.3
+ftfy==6.2.0
+langchain-ollama==1.0.1
+langchain-chroma==1.1.0
 
-# Lexical retrieval
-Whoosh==2.7.4               # BM25 indexing & search (fully open-source)
+# --- Retrieval & Vector Stores ---
+chromadb==1.3.7
+rank-bm25==0.2.2
+sentence-transformers==5.2.0
+faiss-cpu>=1.13
+whoosh==2.7.4
 
-# OpenAI GPT-4 API
-openai==2.8.1           # For GPT-4 generation (requires OpenAI account)
+# --- Evaluation Framework ---
+ragas==0.4.1
+datasets==4.4.1
 
-# Utilities
-python-dotenv==1.0.1        # Load API keys from .env
-scikit-learn==1.3.1         # Evaluation metrics (precision, recall, F1)
-tqdm==4.66.1                # Progress bars
+# --- Optional/Local Support ---
+ollama==0.6.1
+torch==2.9.1
+
+# --- Web UI ---
+fastapi==0.115.5
+uvicorn==0.30.6
