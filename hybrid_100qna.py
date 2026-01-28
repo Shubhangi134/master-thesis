@@ -12,10 +12,11 @@ from dataclasses import dataclass
 from typing import List, Dict
 import faiss
 import tiktoken
-
+from sentence_transformers import CrossEncoder
 
 from openai import AzureOpenAI, AsyncAzureOpenAI
 from openai import OpenAI as StandardOpenAI, AsyncOpenAI as StandardAsyncOpenAI
+
 from ragas.embeddings import OpenAIEmbeddings as RagasOpenAIEmbeddings
 from ragas.llms import llm_factory
 
@@ -33,26 +34,24 @@ from ragas.metrics import (
 from ragas.run_config import RunConfig
 from datasets import Dataset
 
-# Modern structured interfaces required by Ragas collections metrics
-
 from whoosh.analysis import StemmingAnalyzer
 from whoosh.fields import Schema, TEXT, ID
 from whoosh.index import create_in, open_dir, exists_in
 from whoosh.qparser import SimpleParser
+from whoosh.query import Term, Or
 
 from dotenv import load_dotenv
 
 load_dotenv(".env")
 
+# Enable verbose Ragas logging for easier debugging
 logging.basicConfig(level=logging.INFO)
 logging.getLogger("ragas").setLevel(logging.DEBUG)
 
+# Suppress Warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 logging.getLogger("pypdf").setLevel(logging.ERROR)
 
-# ==========================================
-# 2. CONFIGURATION SWITCH
-# ==========================================
 USE_AZURE = bool(os.getenv("ENDPOINT"))
 
 CONFIG = {
@@ -74,7 +73,7 @@ CONFIG = {
     "ollama_embed_model": os.getenv("OLLAMA_EMBED_MODEL", "mxbai-embed-large:latest"),
     "reuse_llm_outputs": False,
     "llm_cache_path": "experiment_cache.json",
-    "max_rows": 5,
+    "max_rows": 100,
         
     # --- RAGAS RUNTIME ---
     "ragas_timeout": 600,
@@ -84,8 +83,8 @@ CONFIG = {
     "ragas_max_retries": 15,
 
     # Generic
-    "chunk_size": int(os.getenv("CHUNK_SIZE", 500)),
-    "overlap": int(os.getenv("CHUNK_OVERLAP", 50)),
+    "chunk_size": int(os.getenv("CHUNK_SIZE", 800)),
+    "overlap": int(os.getenv("CHUNK_OVERLAP", 150)),
     "top_k": int(os.getenv("RETRIEVER_TOP_K", 40)),
     "whoosh_index_dir": "whoosh_pdf_index",
     "rebuild_index": os.getenv("REBUILD_INDEX", True),
@@ -101,11 +100,17 @@ CONFIG = {
     "faiss_metadata_path": "faiss_metadata.json",
     "dense_top_k": int(os.getenv("DENSE_TOP_K", 40)),
     "hybrid_top_k": int(os.getenv("HYBRID_TOP_K", 5)),
-    "rrf_k": int(os.getenv("RRF_K", 60)),
-    "rebuild_dense_index": os.getenv("REBUILD_DENSE_INDEX", True),
+    "rrf_top_k": int(os.getenv("RRF_TOP_K", 60)),
+    "rebuild_dense_index": int(os.getenv("REBUILD_DENSE_INDEX", True)),
     "embed_tpm_limit": int(os.getenv("EMBED_TPM_LIMIT", 200000)),
     "embed_rpm_limit": int(os.getenv("EMBED_RPM_LIMIT", 60)),
-    "embed_batch_size": int(os.getenv("EMBED_BATCH_SIZE", 32)),
+    "embed_batch_size": int(os.getenv("EMBED_BATCH_SIZE", 64)),
+
+    # --- RERANKER / LLM RERANKING SETTINGS ---
+    "enable_reranker": os.getenv("ENABLE_RERANKER", "1"),
+    "cross_encoder_model": os.getenv("CROSS_ENCODER_MODEL_NAME"),
+    "rerank_batch_size": int(os.getenv("RERANK_BATCH_SIZE", 5)),
+    "rerank_prompt_template": None,  # Optional custom prompt template for reranking
 }
 
 DEFAULT_GENERATION_PROMPT = """You are an expert in automotive safety standards.
@@ -120,6 +125,9 @@ Context:
 
 Question: {question}"""
 
+_cross_encoder_model = None
+CROSS_ENCODER_DEFAULT = "cross-encoder/ms-marco-MiniLM-L6-v2"
+LOCAL_CROSS_ENCODER_DIR = os.path.join("models", "reranker-ms-marco-MiniLM-L6-v2")
 
 def _get_int_config(name, default):
     """
@@ -131,6 +139,41 @@ def _get_int_config(name, default):
     except (TypeError, ValueError):
         return default
 
+
+def _get_bool_config(name, default=False):
+    """
+    Safely coerce CONFIG entries to bool with a fallback.
+    """
+    value = CONFIG.get(name, default)
+    if isinstance(value, str):
+        return value.strip().lower() in ("1", "true", "yes", "on")
+    return bool(value) if value is not None else bool(default)
+
+
+def log_config_overview():
+    """
+    Log key configuration settings for visibility at startup.
+    """
+    local_ce_dir = os.path.join("models", "reranker-ms-marco-MiniLM-L6-v2")
+    logging.info("[CONFIG] Mode: %s", "AZURE" if USE_AZURE else "LOCAL/Ollama")
+    logging.info(
+        "[CONFIG] Retrieval: top_k=%s dense_top_k=%s hybrid_top_k=%s rrf_top_k=%s",
+        _get_int_config("top_k", 40),
+        _get_int_config("dense_top_k", 40),
+        _get_int_config("hybrid_top_k", 5),
+        _get_int_config("rrf_top_k", 60),
+    )
+    logging.info("[CONFIG] PDF directory: %s", CONFIG.get("pdf_dir"))
+    logging.info(
+        "[CONFIG] Reranker: enabled=%s batch_size=%s configured_model=%s local_default=%s",
+        _get_bool_config("enable_reranker", True),
+        _get_int_config("rerank_batch_size", 5),
+        CONFIG.get("cross_encoder_model") or "(not set)",
+        local_ce_dir,
+    )
+
+
+log_config_overview()
 
 def log_step(name: str):
     """
@@ -296,9 +339,6 @@ class LocalOllamaEmbedder:
             arr = arr / norms
         return arr
 
-# ==========================================
-# 3. MODEL FACTORY (ALL llm_factory)
-# ==========================================
 def get_models():
     print(f"Initializing Models... Mode: {'AZURE NATIVE' if USE_AZURE else 'LOCAL OLLAMA (via Factory)'}")
     
@@ -344,6 +384,7 @@ def get_models():
         )
         
         # 2. Judge (llm_factory with Standard Async Client pointing to Ollama)
+        # This tricks Ragas into thinking it's using OpenAI, so it works!
         ragas_client = StandardAsyncOpenAI(
             base_url=CONFIG["ollama_base_url"],
             api_key=CONFIG["ollama_api_key"],
@@ -404,27 +445,103 @@ def generate_answer(client, context, question, prompt_template=None):
 # ==========================================
 def clean_pdf_text(text):
     """
-    Normalize PDF text by removing headers/footers and collapsing whitespace.
+    Normalize PDF text and remove:
+      - Page headers/footers
+      - Short all-caps lines
+      - Numeric-only lines
+      - Table-of-contents style lines (lots of dots + page numbers)
     """
     if not text:
         return ""
+
     # Normalize line breaks
     normalized = text.replace("\r", "\n")
     cleaned_lines = []
+
     for line in normalized.split("\n"):
         stripped = line.strip()
         if not stripped:
             continue
+
+        # Page headers/footers
         if re.match(r"^page\s+\d+(\s*of\s*\d+)?$", stripped.lower()):
             continue
+
+        # Short all-caps lines (likely headings)
         if len(stripped) <= 40 and stripped.replace(" ", "").isupper():
             continue
+
+        # Numeric-only lines
         if re.match(r"^\d+$", stripped):
             continue
+
+        # Table-of-contents style: lots of dots ending in a number
+        if re.match(r".{10,}\.{5,}\s*\d+$", stripped):
+            continue
+
+        # Optional: remove lines with many repeated special chars (like ------ or ====)
+        if re.match(r"^[\.\-\=]{5,}$", stripped):
+            continue
+
         cleaned_lines.append(stripped)
+
     collapsed = " ".join(cleaned_lines)
     collapsed = re.sub(r"\s+", " ", collapsed)
     return collapsed.strip()
+
+
+def prepare_pdf_chunks(pdf_dir):
+    """
+    Load PDFs, split into chunks, and clean text using updated clean_pdf_text().
+    """
+    if not os.path.exists(pdf_dir):
+        print("PDF Directory not found!")
+        return []
+
+    pdf_files = [f for f in os.listdir(pdf_dir) if f.lower().endswith(".pdf")]
+    print(f"Found {len(pdf_files)} PDFs.")
+
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=CONFIG["chunk_size"],
+        chunk_overlap=CONFIG["overlap"]
+    )
+
+    all_chunks = []
+    for filename in pdf_files:
+        try:
+            loader = PyPDFLoader(os.path.join(pdf_dir, filename))
+            docs = loader.load()
+            normalized_docs = []
+
+            for doc in docs:
+                doc.metadata["source_file"] = filename
+                normalized_docs.append(doc)
+
+            split_docs = text_splitter.split_documents(normalized_docs)
+
+            # Clean each chunk
+            for chunk in split_docs:
+                text = chunk.page_content
+                text = clean_pdf_text(text)
+                text = ftfy.fix_text(text, fix_encoding=True, fix_entities=True)
+                chunk.page_content = text
+                if text == "":
+                    pass
+            
+            split_docs = [
+                doc for doc in split_docs
+                if doc.page_content and doc.page_content.strip()
+            ]
+
+            all_chunks.extend(split_docs)
+
+        except Exception as e:
+            print(f"Failed to process {filename}: {e}")
+            continue
+
+    print(f"Total chunks prepared: {len(all_chunks)}")
+    return all_chunks
+
 
 
 @dataclass
@@ -439,16 +556,30 @@ class WhooshBM25Retriever:
         self.k = k
         self.parser = SimpleParser("content", schema=self.index.schema)
 
-    def invoke(self, query: str) -> List[RetrievedDoc]:
+    def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
         if not query:
             return []
         print(f"[RETRIEVE][BM25] query='{query}' top_k={self.k}")
+        normalized_sources = None
+        if allowed_sources:
+            normalized_sources = {
+                _normalize_doc_label(src)
+                for src in allowed_sources
+                if src and str(src).strip()
+            }
+            if not normalized_sources:
+                normalized_sources = None
         try:
             parsed = self.parser.parse(query)
         except Exception:
             parsed = self.parser.parse(re.sub(r"[^\w\s]", " ", str(query)))
+        source_filter = None
+        if normalized_sources:
+            terms = [Term("source_norm", tok) for tok in normalized_sources]
+            if terms:
+                source_filter = Or(terms) if len(terms) > 1 else terms[0]
         with self.index.searcher() as searcher:
-            hits = searcher.search(parsed, limit=self.k)
+            hits = searcher.search(parsed, limit=self.k, filter=source_filter)
             results = []
             for rank, hit in enumerate(hits):
                 doc_id = str(hit.get("doc_id", rank))
@@ -467,28 +598,35 @@ class WhooshBM25Retriever:
             return results
 
 
-def reciprocal_rank_fusion(result_sets: List[List[RetrievedDoc]], k: int = 60, max_results: int = None):
+def reciprocal_rank_fusion(result_sets: List[List[RetrievedDoc]], rrf_top_k: int):
     """
     Fuse multiple ranked lists using Reciprocal Rank Fusion.
     """
     fused = {}
+    rrf_constant = 60  # RRF parameter
     for result_set in result_sets:
         for rank, doc in enumerate(result_set):
+            if rank < 0:
+                continue
             doc_id = doc.metadata.get("doc_id")
+            # doc_id = doc.metadata.get("source_file")
             if doc_id is None:
                 continue
             key = str(doc_id)
             stored = fused.get(key, {"doc": doc, "score": 0.0})
-            stored["score"] += 1.0 / (k + rank + 1)
+            stored["score"] += 1.0 / (rrf_constant + rank + 1)
             fused[key] = stored
     ordered = sorted(fused.values(), key=lambda x: x["score"], reverse=True)
+    
+    if rrf_top_k:
+        ordered = ordered[:rrf_top_k]
+
     combined = []
     for item in ordered:
         doc = item["doc"]
         doc.metadata["rrf_score"] = item["score"]
         combined.append(doc)
-        if max_results and len(combined) >= max_results:
-            break
+        
     return combined
 
 
@@ -499,86 +637,155 @@ class DenseFAISSRetriever:
         self.embedder = embedder
         self.k = k
 
-    def invoke(self, query: str) -> List[RetrievedDoc]:
+    def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
         if not query:
             return []
+
         print(f"[RETRIEVE][DENSE] query='{query}' top_k={self.k}")
-        query_vec = self.embedder.encode([query], convert_to_numpy=True, normalize_embeddings=True)
-        query_vec = np.array(query_vec, dtype="float32")
+
+        # Normalize allowed sources once
+        allowed_tokens = None
+        if allowed_sources:
+            allowed_tokens = {
+                _normalize_doc_label(src)
+                for src in allowed_sources
+                if src and str(src).strip()
+            }
+            if not allowed_tokens:
+                allowed_tokens = None
+
+        # Embed query
+        query_vec = self.embedder.encode(
+            [query],
+            convert_to_numpy=True,
+            normalize_embeddings=True
+        )
+        query_vec = np.asarray(query_vec, dtype="float32")
+
+        # FAISS search
         scores, indices = self.index.search(query_vec, self.k)
+
         results = []
         for rank, idx in enumerate(indices[0]):
+            if idx < 0:
+                continue
             doc_id = str(idx)
             meta = self.metadata_map.get(doc_id)
             if not meta:
                 continue
+
+            # --- SOURCE FILTER (CRITICAL FIX) ---
+            if allowed_tokens:
+                if meta.get("source_norm", "") not in allowed_tokens:
+                    continue
+
             results.append(
                 RetrievedDoc(
                     page_content=meta.get("content", ""),
                     metadata={
-                        "source_file": meta.get("source_file", ""),
                         "doc_id": doc_id,
+                        "source_file": meta.get("source_file", ""),
                         "rank": rank,
-                        "score": float(scores[0][rank]) if scores is not None else None,
-                        },
-                    )
+                        "score": float(scores[0][rank]),
+                    },
                 )
+            )
+
         print(f"[RETRIEVE][DENSE] returned={len(results)}")
         return results
 
 
 class HybridRetriever:
-    def __init__(self, bm25_retriever, dense_retriever, rrf_k: int, top_k: int):
+    def __init__(self, bm25_retriever, dense_retriever, rrf_top_k: int, top_k: int):
         self.bm25_retriever = bm25_retriever
         self.dense_retriever = dense_retriever
-        self.rrf_k = rrf_k
+        self.rrf_top_k = rrf_top_k
         self.top_k = top_k
+        self.enable_reranker = _get_bool_config("enable_reranker", True)
 
-    def invoke(self, query: str) -> List[RetrievedDoc]:
-        print(f"[RETRIEVE][HYBRID] query='{query}' hybrid_top_k={self.top_k} rrf_k={self.rrf_k}")
+    def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
+        print(f"[RETRIEVE][HYBRID] query='{query}' hybrid_top_k={self.top_k} rrf_top_k={self.rrf_top_k}")
         result_sets = []
         if self.bm25_retriever:
-            result_sets.append(self.bm25_retriever.invoke(query))
+            result_sets.append(self.bm25_retriever.invoke(query, allowed_sources=allowed_sources))
         if self.dense_retriever:
-            result_sets.append(self.dense_retriever.invoke(query))
+            result_sets.append(self.dense_retriever.invoke(query, allowed_sources=allowed_sources))
         if not result_sets:
             return []
         if len(result_sets) == 1:
             fused = result_sets[0][: self.top_k]
         else:
-            fused = reciprocal_rank_fusion(result_sets, k=self.rrf_k, max_results=self.top_k)
+            fused = reciprocal_rank_fusion(result_sets, rrf_top_k=self.rrf_top_k)
         print(f"[RETRIEVE][HYBRID] fused_returned={len(fused)}")
-        return fused
+        if not self.enable_reranker:
+            print("[RERANK] Disabled via ENABLE_RERANKER; returning fused results.")
+            return fused[: self.top_k]
+        reranked = rerank_with_cross_encoder(
+            query=query,
+            retrieved_docs=fused,
+            top_k=self.top_k,
+            batch_size=CONFIG["rerank_batch_size"],
+        )
+        return reranked
+    
+
+def _get_cross_encoder():
+    global _cross_encoder_model
+    if _cross_encoder_model is None:
+        model_name = _resolve_cross_encoder_model()
+        _cross_encoder_model = CrossEncoder(model_name)
+    return _cross_encoder_model
 
 
-def prepare_pdf_chunks(pdf_dir):
-    if not os.path.exists(pdf_dir):
-        print("PDF Directory not found!")
+def _resolve_cross_encoder_model():
+    """
+    Resolve cross-encoder model path/name with preference for local copy.
+    """
+    configured = CONFIG.get("cross_encoder_model")
+    candidates = [configured, LOCAL_CROSS_ENCODER_DIR, CROSS_ENCODER_DEFAULT]
+    chosen = None
+    for candidate in candidates:
+        if candidate and os.path.exists(candidate):
+            chosen = candidate
+            break
+    chosen = chosen or configured or CROSS_ENCODER_DEFAULT
+    logging.info(f"[RERANK][CROSS_ENCODER] Using model: {chosen}")
+    return chosen
+
+
+def rerank_with_cross_encoder(
+    query: str,
+    retrieved_docs: List[RetrievedDoc],
+    batch_size: int = 5,
+    top_k: int = 10,
+) -> List[RetrievedDoc]:
+    """
+    Rerank retrieved documents with a cross-encoder for better local relevance scoring.
+    """
+    if not retrieved_docs:
         return []
 
-    pdf_files = [f for f in os.listdir(pdf_dir) if f.lower().endswith('.pdf')]
-    print(f"Found {len(pdf_files)} PDFs.")
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=CONFIG["chunk_size"], chunk_overlap=CONFIG["overlap"])
+    model = _get_cross_encoder()
+    pairs = [(query, doc.page_content) for doc in retrieved_docs]
+    scores = model.predict(pairs, batch_size=batch_size)
 
-    all_chunks = []
-    for filename in pdf_files:
-        try:
-            loader = PyPDFLoader(os.path.join(pdf_dir, filename))
-            docs = loader.load()
-            normalized_docs = []
-            for doc in docs:
-                doc.metadata["source_file"] = filename
-                normalized_docs.append(doc)
-            split_docs = text_splitter.split_documents(normalized_docs)
-            for chunk in split_docs:
-                text = chunk.page_content
-                text = clean_pdf_text(text)
-                text = ftfy.fix_text(text, fix_encoding=True, fix_entities=True)
-                chunk.page_content = text
-            all_chunks.extend(split_docs)
-        except Exception:
+    for doc, score in zip(retrieved_docs, scores):
+        doc.metadata["rerank_score"] = float(score)
+
+    reranked = sorted(retrieved_docs, key=lambda d: d.metadata["rerank_score"], reverse=True)
+
+    seen = set()
+    final_docs = []
+    for doc in reranked:
+        key = (doc.metadata.get("source_file", ""), doc.page_content[:100])
+        if key in seen:
             continue
-    return all_chunks
+        seen.add(key)
+        final_docs.append(doc)
+        if len(final_docs) >= top_k:
+            break
+
+    return final_docs
 
 
 def build_whoosh_index(chunks, index_dir: str, k: int):
@@ -589,15 +796,18 @@ def build_whoosh_index(chunks, index_dir: str, k: int):
     os.makedirs(index_dir, exist_ok=True)
     schema = Schema(
         doc_id=ID(stored=True, unique=True),
-        source_file=TEXT(stored=True),
+        source_file=ID(stored=True),
+        source_norm=ID(stored=True),
         content=TEXT(stored=True, analyzer=StemmingAnalyzer()),
     )
     index = create_in(index_dir, schema)
     writer = index.writer()
     for idx, chunk in enumerate(chunks):
+        src = str(chunk.metadata.get("source_file", ""))
         writer.add_document(
             doc_id=str(idx),
-            source_file=str(chunk.metadata.get("source_file", "")),
+            source_file=src,
+            source_norm=_normalize_doc_label(src),
             content=chunk.page_content,
         )
     writer.commit()
@@ -626,11 +836,14 @@ def build_dense_retriever(chunks, embedder, index_path: str, metadata_path: str,
     faiss.write_index(index, index_path)
     metadata_payload = []
     for idx, chunk in enumerate(chunks):
+        src = str(chunk.metadata.get("source_file", ""))
         metadata_payload.append({
             "doc_id": str(idx),
-            "source_file": str(chunk.metadata.get("source_file", "")),
+            "source_file": src,
+            "source_norm": _normalize_doc_label(src),
             "content": chunk.page_content,
         })
+
     with open(metadata_path, "w", encoding="utf-8") as f:
         json.dump(metadata_payload, f, ensure_ascii=False, indent=2)
     metadata_map = {str(item["doc_id"]): item for item in metadata_payload}
@@ -663,7 +876,7 @@ def load_and_build_retriever(pdf_dir):
     bm25_top_k = _get_int_config("top_k", 5)
     dense_top_k = _get_int_config("dense_top_k", bm25_top_k)
     hybrid_top_k = _get_int_config("hybrid_top_k", bm25_top_k)
-    rrf_k = _get_int_config("rrf_k", 60)
+    rrf_top_k = _get_int_config("rrf_top_k", 60)
     embed_tpm_limit = _get_int_config("embed_tpm_limit", 120000)
     embed_rpm_limit = _get_int_config("embed_rpm_limit", 60)
     embed_batch_size = _get_int_config("embed_batch_size", 16)
@@ -726,7 +939,7 @@ def load_and_build_retriever(pdf_dir):
         return None
     if not bm25_retriever:
         return dense_retriever
-    return HybridRetriever(bm25_retriever, dense_retriever, rrf_k, hybrid_top_k)
+    return HybridRetriever(bm25_retriever, dense_retriever, rrf_top_k, hybrid_top_k)
 
 
 def _normalize_doc_label(name):
@@ -790,10 +1003,6 @@ def _ensure_retriever_metrics(record):
     found_files = record.get('found_files', [])
     return _compute_retriever_metrics(target_docs, found_files)
 
-
-# ==========================================
-# 6. EXPERIMENT LOOP
-# ==========================================
 def run_experiment(excel_path, retriever, generator_client):
     if not os.path.exists(excel_path):
         print("Excel file not found!")
@@ -884,9 +1093,6 @@ def save_experiment_cache(experiment_data, cache_path):
     except Exception as exc:
         print(f"Failed to save cache {cache_path}: {exc}")
 
-# ==========================================
-# 7. MAIN EXECUTION
-# ==========================================
 if __name__ == "__main__":
     # 1. Init
     log_step("Initialize models and retrievers")
@@ -910,7 +1116,7 @@ if __name__ == "__main__":
     if not experiment_data:
         exit()
 
-    # 3. Prepare Dataset
+    # 3. Dataset Preparation
     log_step("Prepare Ragas dataset")
     ragas_ds = Dataset.from_dict({
         "question": [str(x["question"]) for x in experiment_data],
@@ -961,7 +1167,7 @@ if __name__ == "__main__":
     df_out['target_pdf'] = [x['target_pdf'] for x in experiment_data]
     df_out['found_files'] = [str(x['found_files']) for x in experiment_data]
 
-    fname = "Results_Native_Azure.csv" if USE_AZURE else "Results_Local.csv"
+    fname = "Results_Native_Azure_hybrid.csv" if USE_AZURE else "Results_Local_hybrid.csv"
     while True:
         try:
             df_out.to_csv(fname, index=False)

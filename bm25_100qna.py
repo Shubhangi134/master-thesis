@@ -9,13 +9,10 @@ import shutil
 from dataclasses import dataclass
 from typing import List, Dict
 
-# --- 1. IMPORTS ---
-# Native Azure Client for Generation (This works fine)
+
 from openai import AzureOpenAI, AsyncAzureOpenAI
 from openai import OpenAI as StandardOpenAI, AsyncOpenAI as StandardAsyncOpenAI
 
-# UNIVERSAL WRAPPERS (The Fix)
-# We will wrap LangChain objects for Ragas evaluation to avoid ImportErrors
 from ragas.embeddings import LangchainEmbeddingsWrapper
 from ragas.embeddings import OpenAIEmbeddings as RagasOpenAIEmbeddings
 from ragas.llms import llm_factory
@@ -34,14 +31,13 @@ from ragas.metrics import (
 from ragas.run_config import RunConfig
 from datasets import Dataset
 
-# UNIVERSAL WRAPPERS (The Fix)
-# Modern structured interfaces required by Ragas collections metrics
 from ragas.embeddings import HuggingFaceEmbeddings, LangchainEmbeddingsWrapper
 
 from whoosh.analysis import StemmingAnalyzer
 from whoosh.fields import Schema, TEXT, ID
 from whoosh.index import create_in, open_dir, exists_in
 from whoosh.qparser import SimpleParser
+from whoosh.query import Term, Or
 
 from dotenv import load_dotenv
 
@@ -77,7 +73,7 @@ CONFIG = {
     "local_embed_model": "sentence-transformers/all-MiniLM-L6-v2",
     "reuse_llm_outputs": False,
     "llm_cache_path": "experiment_cache.json",
-    "max_rows": 5,
+    "max_rows": 100,
         
     # --- RAGAS RUNTIME ---
     "ragas_timeout": 600,
@@ -87,11 +83,11 @@ CONFIG = {
     "ragas_max_retries": 15,
 
     # Generic
-    "chunk_size": int(os.getenv("CHUNK_SIZE", 500)),
-    "overlap": int(os.getenv("CHUNK_OVERLAP", 50)),
+    "chunk_size": int(os.getenv("CHUNK_SIZE", 800)),
+    "overlap": int(os.getenv("CHUNK_OVERLAP", 150)),
     "top_k": int(os.getenv("RETRIEVER_TOP_K", 5)),
     "whoosh_index_dir": "whoosh_pdf_index",
-    "rebuild_index": False,
+    "rebuild_index": bool(os.getenv("REBUILD_INDEX", 1)),
     "generation_prompt": None,  # Optional custom prompt template using {context} and {question}
 
     # Critical: Ollama Base URL for OpenAI compatibility
@@ -112,9 +108,7 @@ Context:
 
 Question: {question}"""
 
-# ==========================================
-# 3. MODEL FACTORY (ALL llm_factory)
-# ==========================================
+
 def get_models():
     print(f"Initializing Models... Mode: {'AZURE NATIVE' if USE_AZURE else 'LOCAL OLLAMA (via Factory)'}")
     
@@ -151,16 +145,13 @@ def get_models():
         )
         
     else:
-        # --- B. LOCAL MODE (Ollama via OpenAI-Compatible API) ---
-        # 1. Generator (Standard OpenAI Client pointing to Ollama)
+
         generator_client = StandardOpenAI(
             base_url=CONFIG["ollama_base_url"],
             api_key=CONFIG["ollama_api_key"],
             timeout=180.0
         )
         
-        # 2. Judge (llm_factory with Standard Async Client pointing to Ollama)
-        # This tricks Ragas into thinking it's using OpenAI, so it works!
         ragas_client = StandardAsyncOpenAI(
             base_url=CONFIG["ollama_base_url"],
             api_key=CONFIG["ollama_api_key"],
@@ -172,8 +163,7 @@ def get_models():
             client=ragas_client
         )
         
-        # 3. Embeddings (Local HuggingFace - Keeps it fast/free)
-        # We stick to Wrapper here because llm_factory doesn't handle HF embeddings
+
         embed_model_raw = HuggingFaceEmbeddings(model=CONFIG["local_embed_model"])
         ragas_embeddings = LangchainEmbeddingsWrapper(embed_model_raw)
 
@@ -183,9 +173,6 @@ def get_models():
         "ragas_embeddings": ragas_embeddings
     }
 
-# ==========================================
-# 4. GENERATION FUNCTION
-# ==========================================
 def generate_answer(client, context, question, prompt_template=None):
     """
     Generate an answer using the provided LLM client and context.
@@ -199,7 +186,6 @@ def generate_answer(client, context, question, prompt_template=None):
     except Exception:
         prompt = DEFAULT_GENERATION_PROMPT.format(context=context, question=question)
 
-    # Unified call for both Azure and Ollama (since both use OpenAI Client structure now)
     try:
         model_name = CONFIG["azure_gen_deployment"] if USE_AZURE else CONFIG["ollama_model"]
         
@@ -215,32 +201,98 @@ def generate_answer(client, context, question, prompt_template=None):
     except Exception as e:
         return f"Generation Error: {str(e)}"
 
-# ==========================================
-# 5. RETRIEVER SETUP
-# ==========================================
 def clean_pdf_text(text):
     """
-    Normalize PDF text by removing headers/footers and collapsing whitespace.
+    Normalize PDF text and remove:
+      - Page headers/footers
+      - Short all-caps lines
+      - Numeric-only lines
+      - Table-of-contents style lines (lots of dots + page numbers)
     """
     if not text:
         return ""
+
     # Normalize line breaks
     normalized = text.replace("\r", "\n")
     cleaned_lines = []
+
     for line in normalized.split("\n"):
         stripped = line.strip()
         if not stripped:
             continue
+
+        # Page headers/footers
         if re.match(r"^page\s+\d+(\s*of\s*\d+)?$", stripped.lower()):
             continue
+
+        # Short all-caps lines (likely headings)
         if len(stripped) <= 40 and stripped.replace(" ", "").isupper():
             continue
+
+        # Numeric-only lines
         if re.match(r"^\d+$", stripped):
             continue
+
+        # Table-of-contents style: lots of dots ending in a number
+        if re.match(r".{10,}\.{5,}\s*\d+$", stripped):
+            continue
+
+        # Optional: remove lines with many repeated special chars (like ------ or ====)
+        if re.match(r"^[\.\-\=]{5,}$", stripped):
+            continue
+
         cleaned_lines.append(stripped)
+
     collapsed = " ".join(cleaned_lines)
     collapsed = re.sub(r"\s+", " ", collapsed)
     return collapsed.strip()
+
+
+def prepare_pdf_chunks(pdf_dir):
+    """
+    Load PDFs, split into chunks, and clean text using updated clean_pdf_text().
+    """
+    if not os.path.exists(pdf_dir):
+        print("PDF Directory not found!")
+        return []
+
+    pdf_files = [f for f in os.listdir(pdf_dir) if f.lower().endswith(".pdf")]
+    print(f"Found {len(pdf_files)} PDFs.")
+
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=CONFIG["chunk_size"],
+        chunk_overlap=CONFIG["overlap"]
+    )
+
+    all_chunks = []
+    for filename in pdf_files:
+        try:
+            loader = PyPDFLoader(os.path.join(pdf_dir, filename))
+            docs = loader.load()
+            normalized_docs = []
+
+            for doc in docs:
+                doc.metadata["source_file"] = filename
+                normalized_docs.append(doc)
+
+            split_docs = text_splitter.split_documents(normalized_docs)
+
+            # Clean each chunk
+            for chunk in split_docs:
+                text = chunk.page_content
+                text = clean_pdf_text(text)
+                text = ftfy.fix_text(text, fix_encoding=True, fix_entities=True)
+                chunk.page_content = text
+
+            all_chunks.extend(split_docs)
+
+        except Exception as e:
+            print(f"Failed to process {filename}: {e}")
+            continue
+
+    print(f"Total chunks prepared: {len(all_chunks)}")
+    return all_chunks
+
 
 
 @dataclass
@@ -255,15 +307,30 @@ class WhooshBM25Retriever:
         self.k = k
         self.parser = SimpleParser("content", schema=self.index.schema)
 
-    def invoke(self, query: str) -> List[RetrievedDoc]:
+    def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
         if not query:
             return []
+
         try:
             parsed = self.parser.parse(query)
         except Exception:
             parsed = self.parser.parse(re.sub(r"[^\w\s]", " ", str(query)))
+        source_filter = None
+        if allowed_sources:
+            normalized_sources = {
+                _normalize_doc_label(src)
+                for src in allowed_sources
+                if src and str(src).strip()
+            }
+
+            if normalized_sources:
+                terms = [
+                    Term("source_norm", src) for src in normalized_sources
+                ]
+                source_filter = Or(terms) if len(terms) > 1 else terms[0]
+
         with self.index.searcher() as searcher:
-            hits = searcher.search(parsed, limit=self.k)
+            hits = searcher.search(parsed, limit=self.k, filter=source_filter)
             return [
                 RetrievedDoc(
                     page_content=hit.get("content", ""),
@@ -274,6 +341,13 @@ class WhooshBM25Retriever:
 
 
 def load_and_build_retriever(pdf_dir):
+    index_dir = CONFIG.get("whoosh_index_dir", "whoosh_pdf_index")
+    rebuild = CONFIG.get("rebuild_index", True)
+
+    # Fast path: reuse existing index without touching PDFs when rebuild is False.
+    if not rebuild and exists_in(index_dir):
+        return WhooshBM25Retriever(index_dir, int(CONFIG.get("top_k", 5) or 5))
+
     all_chunks = []
     if not os.path.exists(pdf_dir):
         print("PDF Directory not found!")
@@ -308,23 +382,24 @@ def load_and_build_retriever(pdf_dir):
     if not all_chunks:
         return None
 
-    index_dir = CONFIG.get("whoosh_index_dir", "whoosh_pdf_index")
-    rebuild = CONFIG.get("rebuild_index", True)
     if rebuild and os.path.exists(index_dir):
         shutil.rmtree(index_dir)
     if not os.path.exists(index_dir):
         os.makedirs(index_dir, exist_ok=True)
         schema = Schema(
             doc_id=ID(stored=True, unique=True),
-            source_file=TEXT(stored=True),
+            source_file=ID(stored=True),
+            source_norm=ID(stored=True),
             content=TEXT(stored=True, analyzer=StemmingAnalyzer()),
         )
         index = create_in(index_dir, schema)
         writer = index.writer()
         for idx, chunk in enumerate(all_chunks):
+            src = str(chunk.metadata.get("source_file", ""))
             writer.add_document(
                 doc_id=str(idx),
-                source_file=str(chunk.metadata.get("source_file", "")),
+                source_file=src,
+                source_norm=_normalize_doc_label(src),
                 content=chunk.page_content,
             )
         writer.commit()
@@ -506,9 +581,6 @@ def save_experiment_cache(experiment_data, cache_path):
     except Exception as exc:
         print(f"Failed to save cache {cache_path}: {exc}")
 
-# ==========================================
-# 7. MAIN EXECUTION
-# ==========================================
 if __name__ == "__main__":
     # 1. Init
     models = get_models()
@@ -529,7 +601,7 @@ if __name__ == "__main__":
     if not experiment_data:
         exit()
 
-    # 3. Prepare Dataset
+    # 3. Dataset Preparation
     print("Preparing Ragas Dataset...")
     ragas_ds = Dataset.from_dict({
         "question": [str(x["question"]) for x in experiment_data],
