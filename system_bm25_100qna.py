@@ -9,10 +9,13 @@ import shutil
 from dataclasses import dataclass
 from typing import List, Dict
 
-
+# --- 1. IMPORTS ---
+# Native Azure Client for Generation (This works fine)
 from openai import AzureOpenAI, AsyncAzureOpenAI
 from openai import OpenAI as StandardOpenAI, AsyncOpenAI as StandardAsyncOpenAI
 
+# UNIVERSAL WRAPPERS (The Fix)
+# We will wrap LangChain objects for Ragas evaluation to avoid ImportErrors
 from ragas.embeddings import LangchainEmbeddingsWrapper
 from ragas.embeddings import OpenAIEmbeddings as RagasOpenAIEmbeddings
 from ragas.llms import llm_factory
@@ -26,11 +29,15 @@ from ragas import evaluate
 from ragas.metrics import (
     AnswerCorrectness,
     ContextPrecision,
-    Faithfulness
+    Faithfulness,
+    # ExactMatch
 )
+# from ragas.metrics.collections import BleuScore
 from ragas.run_config import RunConfig
 from datasets import Dataset
 
+# UNIVERSAL WRAPPERS (The Fix)
+# Modern structured interfaces required by Ragas collections metrics
 from ragas.embeddings import HuggingFaceEmbeddings, LangchainEmbeddingsWrapper
 
 from whoosh.analysis import StemmingAnalyzer
@@ -40,6 +47,8 @@ from whoosh.qparser import SimpleParser
 from whoosh.query import Term, Or
 
 from dotenv import load_dotenv
+
+from query_expansion_helper import load_abbrev_map, expand_query_for_bm25
 
 load_dotenv(".env")
 
@@ -87,13 +96,18 @@ CONFIG = {
     "overlap": int(os.getenv("CHUNK_OVERLAP", 150)),
     "top_k": int(os.getenv("RETRIEVER_TOP_K", 5)),
     "whoosh_index_dir": "whoosh_pdf_index",
-    "rebuild_index": bool(os.getenv("REBUILD_INDEX", 1)),
+    "rebuild_index": int(os.getenv("REBUILD_INDEX", 1)),
     "generation_prompt": None,  # Optional custom prompt template using {context} and {question}
 
     # Critical: Ollama Base URL for OpenAI compatibility
     "ollama_base_url": "http://localhost:11434/v1", 
     "ollama_model": "mistral-large-3:675b-cloud", # Your specific model name
     "ollama_api_key": "ollama", # Dummy key required by client
+
+    # Query Expansion
+    "abbrev_map_path": os.getenv("ABBREV_MAP_PATH", "abbreviations.json"),
+    "bm25_enable_query_expansion": int(os.getenv("BM25_ENABLE_QUERY_EXPANSION", 0)),
+    "bm25_max_query_expansions": int(os.getenv("BM25_MAX_QUERY_EXPANSIONS", 10)),
 }
 
 DEFAULT_GENERATION_PROMPT = """You are an expert in automotive safety standards.
@@ -108,7 +122,9 @@ Context:
 
 Question: {question}"""
 
-
+# ==========================================
+# 3. MODEL FACTORY (ALL llm_factory)
+# ==========================================
 def get_models():
     print(f"Initializing Models... Mode: {'AZURE NATIVE' if USE_AZURE else 'LOCAL OLLAMA (via Factory)'}")
     
@@ -145,13 +161,16 @@ def get_models():
         )
         
     else:
-
+        # --- B. LOCAL MODE (Ollama via OpenAI-Compatible API) ---
+        # 1. Generator (Standard OpenAI Client pointing to Ollama)
         generator_client = StandardOpenAI(
             base_url=CONFIG["ollama_base_url"],
             api_key=CONFIG["ollama_api_key"],
             timeout=180.0
         )
         
+        # 2. Judge (llm_factory with Standard Async Client pointing to Ollama)
+        # This tricks Ragas into thinking it's using OpenAI, so it works!
         ragas_client = StandardAsyncOpenAI(
             base_url=CONFIG["ollama_base_url"],
             api_key=CONFIG["ollama_api_key"],
@@ -163,7 +182,8 @@ def get_models():
             client=ragas_client
         )
         
-
+        # 3. Embeddings (Local HuggingFace - Keeps it fast/free)
+        # We stick to Wrapper here because llm_factory doesn't handle HF embeddings
         embed_model_raw = HuggingFaceEmbeddings(model=CONFIG["local_embed_model"])
         ragas_embeddings = LangchainEmbeddingsWrapper(embed_model_raw)
 
@@ -173,6 +193,9 @@ def get_models():
         "ragas_embeddings": ragas_embeddings
     }
 
+# ==========================================
+# 4. GENERATION FUNCTION
+# ==========================================
 def generate_answer(client, context, question, prompt_template=None):
     """
     Generate an answer using the provided LLM client and context.
@@ -180,12 +203,16 @@ def generate_answer(client, context, question, prompt_template=None):
     prompt_template: Optional string with {context} and {question} placeholders.
     Falls back to CONFIG["generation_prompt"] or DEFAULT_GENERATION_PROMPT.
     """
+    if not question or not context:
+        return "I do not know"
+
     template = prompt_template or CONFIG.get("generation_prompt") or DEFAULT_GENERATION_PROMPT
     try:
         prompt = template.format(context=context, question=question)
     except Exception:
         prompt = DEFAULT_GENERATION_PROMPT.format(context=context, question=question)
 
+    # Unified call for both Azure and Ollama (since both use OpenAI Client structure now)
     try:
         model_name = CONFIG["azure_gen_deployment"] if USE_AZURE else CONFIG["ollama_model"]
         
@@ -201,6 +228,9 @@ def generate_answer(client, context, question, prompt_template=None):
     except Exception as e:
         return f"Generation Error: {str(e)}"
 
+# ==========================================
+# 5. RETRIEVER SETUP
+# ==========================================
 def clean_pdf_text(text):
     """
     Normalize PDF text and remove:
@@ -284,6 +314,11 @@ def prepare_pdf_chunks(pdf_dir):
                 text = ftfy.fix_text(text, fix_encoding=True, fix_entities=True)
                 chunk.page_content = text
 
+            split_docs = [
+                doc for doc in split_docs
+                if doc.page_content and doc.page_content.strip()
+            ]
+
             all_chunks.extend(split_docs)
 
         except Exception as e:
@@ -307,14 +342,28 @@ class WhooshBM25Retriever:
         self.k = k
         self.parser = SimpleParser("content", schema=self.index.schema)
 
+        self.enable_query_expansion = CONFIG.get("bm25_enable_query_expansion", 0)
+        self.max_query_expansions = CONFIG.get("bm25_max_query_expansions", 10)
+
     def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
         if not query:
-            return []
+            return [], {}
+        
+        debug = {}
+        bm25_query = query
+        if self.enable_query_expansion:
+            bm25_query, qe_debug = expand_query_for_bm25(
+                user_query=query,
+                abbrev_map_path=CONFIG.get("abbrev_map_path"),
+                max_expansions=self.max_query_expansions
+            )
+            debug["query_expansions"] = qe_debug
 
         try:
-            parsed = self.parser.parse(query)
+            parsed = self.parser.parse(bm25_query)
         except Exception:
-            parsed = self.parser.parse(re.sub(r"[^\w\s]", " ", str(query)))
+            parsed = self.parser.parse(re.sub(r"[^\w\s]", " ", str(bm25_query)))
+        
         source_filter = None
         if allowed_sources:
             normalized_sources = {
@@ -327,17 +376,21 @@ class WhooshBM25Retriever:
                 terms = [
                     Term("source_norm", src) for src in normalized_sources
                 ]
-                source_filter = Or(terms) if len(terms) > 1 else terms[0]
+                source_filter = Or(terms) if len(terms) > 1 else terms[0] 
 
         with self.index.searcher() as searcher:
             hits = searcher.search(parsed, limit=self.k, filter=source_filter)
-            return [
+            docs = [
                 RetrievedDoc(
                     page_content=hit.get("content", ""),
                     metadata={"source_file": hit.get("source_file", "")},
                 )
                 for hit in hits
             ]
+
+        debug["bm25_query_used"] = bm25_query
+        debug["num_hits"] = len(docs)
+        return docs, debug
 
 
 def load_and_build_retriever(pdf_dir):
@@ -521,7 +574,7 @@ def run_experiment(excel_path, retriever, generator_client):
         print(f"Processing Q{index+1}...")
         
         # Retrieve
-        docs = retriever.invoke(q)
+        docs, debug_info = retriever.invoke(q)
         ctx_list = [d.page_content for d in docs]
         found_files = [d.metadata.get("source_file", "") for d in docs]
         
@@ -543,6 +596,7 @@ def run_experiment(excel_path, retriever, generator_client):
             "retriever_f1": retriever_f1,
             "retriever_precision": retriever_precision,
             "retriever_recall": retriever_recall,
+            "bm25_debug": json.dumps(debug_info)
         })
 
     return results
@@ -581,6 +635,9 @@ def save_experiment_cache(experiment_data, cache_path):
     except Exception as exc:
         print(f"Failed to save cache {cache_path}: {exc}")
 
+# ==========================================
+# 7. MAIN EXECUTION
+# ==========================================
 if __name__ == "__main__":
     # 1. Init
     models = get_models()
@@ -601,7 +658,7 @@ if __name__ == "__main__":
     if not experiment_data:
         exit()
 
-    # 3. Dataset Preparation
+    # 3. Prepare Dataset
     print("Preparing Ragas Dataset...")
     ragas_ds = Dataset.from_dict({
         "question": [str(x["question"]) for x in experiment_data],
@@ -617,7 +674,8 @@ if __name__ == "__main__":
         AnswerCorrectness(
             llm=models["ragas_judge"],
             embeddings=models["ragas_embeddings"],
-        )
+        ),
+        # ExactMatch()
     ]
     ragas_run_config = RunConfig(
         timeout=CONFIG["ragas_timeout"],
@@ -640,18 +698,21 @@ if __name__ == "__main__":
     retriever_precisions = []
     retriever_recalls = []
     retriever_f1s = []
+    bm25_debug_infos = []
     for record in experiment_data:
         prec, rec, f1 = _ensure_retriever_metrics(record)
         retriever_precisions.append(prec)
         retriever_recalls.append(rec)
         retriever_f1s.append(f1)
+        bm25_debug_infos.append(record.get("bm25_debug", "{}"))
     df_out['retriever_precision'] = retriever_precisions
     df_out['retriever_recall'] = retriever_recalls
     df_out['retriever_f1'] = retriever_f1s
     df_out['target_pdf'] = [x['target_pdf'] for x in experiment_data]
     df_out['found_files'] = [str(x['found_files']) for x in experiment_data]
+    df_out['bm25_debug'] = bm25_debug_infos
 
-    fname = "Results_Native_Azure.csv" if USE_AZURE else "Results_Local.csv"
+    fname = "Results_BM25_Azure.csv" if USE_AZURE else "Results_BM25_Local.csv"
     while True:
         try:
             df_out.to_csv(fname, index=False)

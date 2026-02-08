@@ -14,9 +14,13 @@ import faiss
 import tiktoken
 from sentence_transformers import CrossEncoder
 
+# --- 1. IMPORTS ---
+# Native Azure Client for Generation (This works fine)
 from openai import AzureOpenAI, AsyncAzureOpenAI
 from openai import OpenAI as StandardOpenAI, AsyncOpenAI as StandardAsyncOpenAI
 
+# UNIVERSAL WRAPPERS (The Fix)
+# We will wrap LangChain objects for Ragas evaluation to avoid ImportErrors
 from ragas.embeddings import OpenAIEmbeddings as RagasOpenAIEmbeddings
 from ragas.llms import llm_factory
 
@@ -29,10 +33,14 @@ from ragas import evaluate
 from ragas.metrics import (
     AnswerCorrectness,
     ContextPrecision,
-    Faithfulness
+    Faithfulness,
+    # ExactMatch
 )
 from ragas.run_config import RunConfig
 from datasets import Dataset
+
+# UNIVERSAL WRAPPERS (The Fix)
+# Modern structured interfaces required by Ragas collections metrics
 
 from whoosh.analysis import StemmingAnalyzer
 from whoosh.fields import Schema, TEXT, ID
@@ -41,6 +49,8 @@ from whoosh.qparser import SimpleParser
 from whoosh.query import Term, Or
 
 from dotenv import load_dotenv
+
+from query_expansion_helper import expand_query_for_bm25, expand_query_for_dense
 
 load_dotenv(".env")
 
@@ -52,6 +62,9 @@ logging.getLogger("ragas").setLevel(logging.DEBUG)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 logging.getLogger("pypdf").setLevel(logging.ERROR)
 
+# ==========================================
+# 2. CONFIGURATION SWITCH
+# ==========================================
 USE_AZURE = bool(os.getenv("ENDPOINT"))
 
 CONFIG = {
@@ -110,7 +123,12 @@ CONFIG = {
     "enable_reranker": os.getenv("ENABLE_RERANKER", "1"),
     "cross_encoder_model": os.getenv("CROSS_ENCODER_MODEL_NAME"),
     "rerank_batch_size": int(os.getenv("RERANK_BATCH_SIZE", 5)),
-    "rerank_prompt_template": None,  # Optional custom prompt template for reranking
+
+    # Query Expansion
+    "abbrev_map_path": os.getenv("ABBREV_MAP_PATH", "abbreviations.json"),
+    "bm25_enable_query_expansion": int(os.getenv("BM25_ENABLE_QUERY_EXPANSION", 0)),
+    "bm25_max_query_expansions": int(os.getenv("BM25_MAX_QUERY_EXPANSIONS", 10)),
+    "dense_enable_query_expansion": int(os.getenv("DENSE_ENABLE_QUERY_EXPANSION", 0))
 }
 
 DEFAULT_GENERATION_PROMPT = """You are an expert in automotive safety standards.
@@ -339,6 +357,9 @@ class LocalOllamaEmbedder:
             arr = arr / norms
         return arr
 
+# ==========================================
+# 3. MODEL FACTORY (ALL llm_factory)
+# ==========================================
 def get_models():
     print(f"Initializing Models... Mode: {'AZURE NATIVE' if USE_AZURE else 'LOCAL OLLAMA (via Factory)'}")
     
@@ -556,10 +577,24 @@ class WhooshBM25Retriever:
         self.k = k
         self.parser = SimpleParser("content", schema=self.index.schema)
 
+        self.enable_query_expansion = CONFIG.get("bm25_enable_query_expansion", 0)
+        self.max_query_expansions = CONFIG.get("bm25_max_query_expansions", 10)
+
     def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
         if not query:
-            return []
+            return [], {}
         print(f"[RETRIEVE][BM25] query='{query}' top_k={self.k}")
+
+        debug = {}
+        bm25_query = query
+        if self.enable_query_expansion:
+            bm25_query, qe_debug = expand_query_for_bm25(
+                user_query=query,
+                abbrev_map_path=CONFIG.get("abbrev_map_path"),
+                max_expansions=self.max_query_expansions
+            )
+            debug["query_expansions"] = qe_debug
+
         normalized_sources = None
         if allowed_sources:
             normalized_sources = {
@@ -569,10 +604,12 @@ class WhooshBM25Retriever:
             }
             if not normalized_sources:
                 normalized_sources = None
+        
         try:
-            parsed = self.parser.parse(query)
+            parsed = self.parser.parse(bm25_query)
         except Exception:
-            parsed = self.parser.parse(re.sub(r"[^\w\s]", " ", str(query)))
+            parsed = self.parser.parse(re.sub(r"[^\w\s]", " ", str(bm25_query)))
+        
         source_filter = None
         if normalized_sources:
             terms = [Term("source_norm", tok) for tok in normalized_sources]
@@ -595,7 +632,11 @@ class WhooshBM25Retriever:
                     )
                 )
             print(f"[RETRIEVE][BM25] returned={len(results)}")
-            return results
+
+            debug["bm25_query_used"] = bm25_query
+            debug["num_hits"] = len(results)
+
+            return results, debug
 
 
 def reciprocal_rank_fusion(result_sets: List[List[RetrievedDoc]], rrf_top_k: int):
@@ -637,11 +678,22 @@ class DenseFAISSRetriever:
         self.embedder = embedder
         self.k = k
 
+        self.enable_query_expansion = CONFIG.get("dense_enable_query_expansion", 0)
+
     def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
         if not query:
             return []
 
-        print(f"[RETRIEVE][DENSE] query='{query}' top_k={self.k}")
+        print(f"[RETRIEVE][DENSE] query='{query[:20]}' top_k={self.k}")
+
+        debug = {}
+        dense_query = query
+        if self.enable_query_expansion:
+            dense_query, qe_debug = expand_query_for_dense(
+                user_query=query,
+                abbrev_map_path=CONFIG.get("abbrev_map_path"),
+            )
+            debug["query_expansions"] = qe_debug
 
         # Normalize allowed sources once
         allowed_tokens = None
@@ -656,7 +708,7 @@ class DenseFAISSRetriever:
 
         # Embed query
         query_vec = self.embedder.encode(
-            [query],
+            [dense_query],
             convert_to_numpy=True,
             normalize_embeddings=True
         )
@@ -692,7 +744,9 @@ class DenseFAISSRetriever:
             )
 
         print(f"[RETRIEVE][DENSE] returned={len(results)}")
-        return results
+        debug["dense_query_used"] = dense_query
+        debug["num_hits"] = len(results)
+        return results, debug
 
 
 class HybridRetriever:
@@ -704,14 +758,19 @@ class HybridRetriever:
         self.enable_reranker = _get_bool_config("enable_reranker", True)
 
     def invoke(self, query: str, allowed_sources: set[str] | None = None) -> List[RetrievedDoc]:
-        print(f"[RETRIEVE][HYBRID] query='{query}' hybrid_top_k={self.top_k} rrf_top_k={self.rrf_top_k}")
+        print(f"[RETRIEVE][HYBRID] query='{query[:20]}' hybrid_top_k={self.top_k} rrf_top_k={self.rrf_top_k}")
         result_sets = []
+        debug_info = {}
         if self.bm25_retriever:
-            result_sets.append(self.bm25_retriever.invoke(query, allowed_sources=allowed_sources))
+            result, debug_ = self.bm25_retriever.invoke(query, allowed_sources=allowed_sources)
+            debug_info["bm25_debug"] = debug_
+            result_sets.append(result)
         if self.dense_retriever:
-            result_sets.append(self.dense_retriever.invoke(query, allowed_sources=allowed_sources))
+            result, debug_ = self.dense_retriever.invoke(query, allowed_sources=allowed_sources)
+            debug_info["dense_debug"] = debug_
+            result_sets.append(result)
         if not result_sets:
-            return []
+            return [], debug_info
         if len(result_sets) == 1:
             fused = result_sets[0][: self.top_k]
         else:
@@ -719,14 +778,14 @@ class HybridRetriever:
         print(f"[RETRIEVE][HYBRID] fused_returned={len(fused)}")
         if not self.enable_reranker:
             print("[RERANK] Disabled via ENABLE_RERANKER; returning fused results.")
-            return fused[: self.top_k]
+            return fused[: self.top_k], debug_info
         reranked = rerank_with_cross_encoder(
             query=query,
             retrieved_docs=fused,
             top_k=self.top_k,
             batch_size=CONFIG["rerank_batch_size"],
         )
-        return reranked
+        return reranked, debug_info
     
 
 def _get_cross_encoder():
@@ -1003,6 +1062,10 @@ def _ensure_retriever_metrics(record):
     found_files = record.get('found_files', [])
     return _compute_retriever_metrics(target_docs, found_files)
 
+
+# ==========================================
+# 6. EXPERIMENT LOOP
+# ==========================================
 def run_experiment(excel_path, retriever, generator_client):
     if not os.path.exists(excel_path):
         print("Excel file not found!")
@@ -1033,7 +1096,7 @@ def run_experiment(excel_path, retriever, generator_client):
         print(f"Processing Q{index+1}...")
         
         # Retrieve
-        docs = retriever.invoke(q)
+        docs, debug_info = retriever.invoke(q)
         ctx_list = [d.page_content for d in docs]
         found_files = [d.metadata.get("source_file", "") for d in docs]
         
@@ -1055,6 +1118,7 @@ def run_experiment(excel_path, retriever, generator_client):
             "retriever_f1": retriever_f1,
             "retriever_precision": retriever_precision,
             "retriever_recall": retriever_recall,
+            **debug_info
         })
 
     return results
@@ -1093,6 +1157,9 @@ def save_experiment_cache(experiment_data, cache_path):
     except Exception as exc:
         print(f"Failed to save cache {cache_path}: {exc}")
 
+# ==========================================
+# 7. MAIN EXECUTION
+# ==========================================
 if __name__ == "__main__":
     # 1. Init
     log_step("Initialize models and retrievers")
@@ -1116,7 +1183,7 @@ if __name__ == "__main__":
     if not experiment_data:
         exit()
 
-    # 3. Dataset Preparation
+    # 3. Prepare Dataset
     log_step("Prepare Ragas dataset")
     ragas_ds = Dataset.from_dict({
         "question": [str(x["question"]) for x in experiment_data],
@@ -1132,7 +1199,8 @@ if __name__ == "__main__":
         AnswerCorrectness(
             llm=models["ragas_judge"],
             embeddings=models["ragas_embeddings"],
-        )
+        ),
+        # ExactMatch()
     ]
     ragas_run_config = RunConfig(
         timeout=CONFIG["ragas_timeout"],
@@ -1156,18 +1224,24 @@ if __name__ == "__main__":
     retriever_precisions = []
     retriever_recalls = []
     retriever_f1s = []
+    bm25_debugs = []
+    dense_debugs = []
     for record in experiment_data:
         prec, rec, f1 = _ensure_retriever_metrics(record)
         retriever_precisions.append(prec)
         retriever_recalls.append(rec)
         retriever_f1s.append(f1)
+        bm25_debugs.append(record.get("bm25_debug", {}))
+        dense_debugs.append(record.get("dense_debug", {}))
     df_out['retriever_precision'] = retriever_precisions
     df_out['retriever_recall'] = retriever_recalls
     df_out['retriever_f1'] = retriever_f1s
     df_out['target_pdf'] = [x['target_pdf'] for x in experiment_data]
     df_out['found_files'] = [str(x['found_files']) for x in experiment_data]
+    df_out['bm25_debug'] = bm25_debugs
+    df_out['dense_debug'] = dense_debugs
 
-    fname = "Results_Native_Azure_hybrid.csv" if USE_AZURE else "Results_Local_hybrid.csv"
+    fname = "Results_Hybrid_Azure.csv" if USE_AZURE else "Results_Hybrid_Local.csv"
     while True:
         try:
             df_out.to_csv(fname, index=False)
