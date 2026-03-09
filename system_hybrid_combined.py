@@ -17,11 +17,12 @@ from tqdm import tqdm
 from sentence_transformers import CrossEncoder
 
 # --- 1. IMPORTS ---
-
+# Native Azure Client for Generation (This works fine)
 from openai import AzureOpenAI, AsyncAzureOpenAI
 from openai import OpenAI as StandardOpenAI, AsyncOpenAI as StandardAsyncOpenAI
 
-
+# UNIVERSAL WRAPPERS (The Fix)
+# We will wrap LangChain objects for Ragas evaluation to avoid ImportErrors
 from ragas.embeddings import OpenAIEmbeddings as RagasOpenAIEmbeddings
 from ragas.llms import llm_factory
 
@@ -39,6 +40,8 @@ from ragas.metrics import (
 from ragas.run_config import RunConfig
 from datasets import Dataset, load_dataset
 
+# UNIVERSAL WRAPPERS (The Fix)
+# Modern structured interfaces required by Ragas collections metrics
 
 from whoosh.analysis import StemmingAnalyzer
 from whoosh.fields import Schema, TEXT, ID
@@ -551,7 +554,7 @@ def get_models():
     generator_client = None 
 
     if USE_AZURE:
-
+        # --- A. AZURE MODE ---
         # 1. Generator (Native Azure Client)
         generator_client = AzureOpenAI(
             api_key=CONFIG["azure_api_key"],
@@ -579,6 +582,7 @@ def get_models():
         )
         
     else:
+        # --- B. LOCAL MODE (Ollama via OpenAI-Compatible API) ---
         # 1. Generator (Standard OpenAI Client pointing to Ollama)
         generator_client = StandardOpenAI(
             base_url=CONFIG["ollama_base_url"],
@@ -587,6 +591,7 @@ def get_models():
         )
         
         # 2. Judge (llm_factory with Standard Async Client pointing to Ollama)
+        # This tricks Ragas into thinking it's using OpenAI, so it works!
         ragas_client = StandardAsyncOpenAI(
             base_url=CONFIG["ollama_base_url"],
             api_key=CONFIG["ollama_api_key"],
@@ -595,7 +600,9 @@ def get_models():
         
         ragas_judge = llm_factory(
             model=CONFIG["ollama_model"],
-            client=ragas_client
+            client=ragas_client,
+            max_tokens=4096,
+            max_completion_tokens=4096,
         )
         
         # 3. Embeddings (Ollama/OpenAI-compatible embeddings) for Ragas
@@ -632,6 +639,7 @@ def generate_answer(client, context, question, prompt_template=None):
     except Exception:
         prompt = DEFAULT_GENERATION_PROMPT.format(context=context, question=question)
 
+    # Unified call for both Azure and Ollama (since both use OpenAI Client structure now)
     try:
         model_name = CONFIG["azure_gen_deployment"] if USE_AZURE else CONFIG["ollama_model"]
         
@@ -1012,12 +1020,23 @@ def run_frames_experiment(questions: List[Dict], retriever, generator_client):
     for row in tqdm(questions_eval, desc="FRAMES questions", unit="q"):
         query = row["query"]
         target_titles = row.get("target_titles", [])
+        retrieval_time_start = time.perf_counter()
         docs, debug_info = retriever.invoke(query)
+        retrieval_time_end = time.perf_counter()
 
         contexts = [d.page_content for d in docs]
-        found_titles = [d.metadata.get("source_file", "") for d in docs]
+        # Deduplicate found_titles while preserving order
+        seen = set()
+        found_titles = []
+        for d in docs:
+            src = d.metadata.get("source_file", "")
+            if src not in seen:
+                found_titles.append(src)
+                seen.add(src)
 
+        generation_time_start = time.perf_counter()
         ans = generate_answer(generator_client, "\n\n".join(contexts), query)
+        generation_time_end = time.perf_counter()
 
         precision, recall, f1 = _compute_retriever_metrics(target_titles, found_titles)
 
@@ -1033,6 +1052,8 @@ def run_frames_experiment(questions: List[Dict], retriever, generator_client):
                 "retriever_recall": recall,
                 "retriever_f1": f1,
                 "debug": debug_info,
+                "retrieval_time_sec": retrieval_time_end - retrieval_time_start,
+                "generation_time_sec": generation_time_end - generation_time_start,
             }
         )
 
@@ -1097,7 +1118,11 @@ class WhooshBM25Retriever:
             if terms:
                 source_filter = Or(terms) if len(terms) > 1 else terms[0]
         with self.index.searcher() as searcher:
-            hits = searcher.search(parsed, limit=self.k, filter=source_filter)
+            try:
+                hits = searcher.search(parsed, limit=self.k, filter=source_filter)
+            except Exception as e:
+                print(f"[WHOOSH][ERROR] Search failed: {e}")
+                hits = []
             results = []
             for rank, hit in enumerate(hits):
                 doc_id = str(hit.get("doc_id", rank))
@@ -1202,8 +1227,7 @@ class DenseFAISSRetriever:
         for rank, idx in enumerate(indices[0]):
             if idx < 0:
                 continue
-            doc_id = str(idx)
-            meta = self.metadata_map.get(doc_id)
+            meta = self.metadata_map.get(idx)
             if not meta:
                 continue
 
@@ -1216,7 +1240,8 @@ class DenseFAISSRetriever:
                 RetrievedDoc(
                     page_content=meta.get("content", ""),
                     metadata={
-                        "doc_id": doc_id,
+                        "faiss_row_id": int(idx),
+                        "doc_id": meta.get("doc_id"),
                         "source_file": meta.get("source_file", ""),
                         "section": meta.get("section", ""),
                         "page": meta.get("page", ""),
@@ -1297,6 +1322,14 @@ def _resolve_cross_encoder_model():
     return chosen
 
 
+import hashlib
+def _dedup_key(doc):
+    # Use normalized content and chunk_id if available
+    content = doc.page_content.strip().lower()
+    content_hash = hashlib.sha1(content.encode("utf-8")).hexdigest()
+    source_file = doc.metadata.get("source_file", "")
+    return (source_file, content_hash)
+
 def rerank_with_cross_encoder(
     query: str,
     retrieved_docs: List[RetrievedDoc],
@@ -1320,8 +1353,12 @@ def rerank_with_cross_encoder(
 
     seen = set()
     final_docs = []
+    mode = str(CONFIG.get("doc_mode", "pdf")).lower()
     for doc in reranked:
-        key = (doc.metadata.get("source_file", ""), doc.page_content[:100])
+        if mode == "frames":
+            key = _dedup_key(doc)
+        else:
+            key = (doc.metadata.get("source_file", ""), doc.page_content[:100])
         if key in seen:
             continue
         seen.add(key)
@@ -1384,8 +1421,11 @@ def build_dense_retriever(chunks, embedder, index_path: str, metadata_path: str,
     for idx, chunk in enumerate(chunks):
         src = str(chunk.metadata.get("source_file", ""))
         doc_id = str(chunk.metadata.get("chunk_id", idx))
+        faiss_row_id = idx
         metadata_payload.append({
+            "faiss_row_id": faiss_row_id,
             "doc_id": doc_id,
+            "chunk_id": chunk.metadata.get("chunk_id", doc_id), 
             "source_file": src,
             "source_norm": _normalize_doc_label(src),
             "section": chunk.metadata.get("section", ""),
@@ -1397,7 +1437,7 @@ def build_dense_retriever(chunks, embedder, index_path: str, metadata_path: str,
 
     with open(metadata_path, "w", encoding="utf-8") as f:
         json.dump(metadata_payload, f, ensure_ascii=False, indent=2)
-    metadata_map = {str(item["doc_id"]): item for item in metadata_payload}
+    metadata_map = {int(item["faiss_row_id"]): item for item in metadata_payload}
     return DenseFAISSRetriever(index, metadata_map, embedder, k)
 
 
@@ -1410,7 +1450,7 @@ def load_dense_retriever(embedder, index_path: str, metadata_path: str, k: int):
             metadata_payload = json.load(f)
         if not isinstance(metadata_payload, list):
             return None
-        metadata_map = {str(item.get("doc_id")): item for item in metadata_payload}
+        metadata_map = {int(item.get("faiss_row_id")): item for item in metadata_payload}
         return DenseFAISSRetriever(index, metadata_map, embedder, k)
     except Exception as exc:
         print(f"Failed to load FAISS index, rebuilding: {exc}")
@@ -1697,13 +1737,17 @@ def run_experiment(excel_path, retriever, generator_client):
         gt_formatted = str(gt_raw)
 
         # Retrieve
+        retrieval_time_start = time.perf_counter()
         docs, debug_info = retriever.invoke(q)
+        retrieval_time_end = time.perf_counter()
         ctx_list = [d.page_content for d in docs]
         found_files = [d.metadata.get("source_file", "") for d in docs]
         
         # Generate
+        generation_time_start = time.perf_counter()
         ans = generate_answer(generator_client, "\n\n".join(ctx_list), q)
-            
+        generation_time_end = time.perf_counter()
+
         retriever_precision, retriever_recall, retriever_f1 = _compute_retriever_metrics(
             target_docs,
             found_files
@@ -1719,7 +1763,9 @@ def run_experiment(excel_path, retriever, generator_client):
             "retriever_f1": retriever_f1,
             "retriever_precision": retriever_precision,
             "retriever_recall": retriever_recall,
-            "debug": debug_info
+            "debug": debug_info,
+            "retrieval_time_sec": retrieval_time_end - retrieval_time_start,
+            "generation_time_sec": generation_time_end - generation_time_start,
         })
 
     return results
@@ -1930,6 +1976,8 @@ if __name__ == "__main__":
     df_out['target_pdf'] = [x.get('target_pdf') or x.get('target_titles') for x in experiment_data]
     df_out['found_files'] = [str(x.get('found_files')) for x in experiment_data]
     df_out['debug'] = debug
+    df_out['retrieval_time_sec'] = [x.get('retrieval_time_sec', 0.0) for x in experiment_data]
+    df_out['generation_time_sec'] = [x.get('generation_time_sec', 0.0) for x in experiment_data]
 
     mode_tag = mode.lower()
     azure_tag = "azure" if USE_AZURE else "local"
